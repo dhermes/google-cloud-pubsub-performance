@@ -12,4 +12,4 @@ Some issues worth exploring:
 - Reports of lease management causing [CPU spikes][1] (seems like
   zombie threads)
 
-[1]: For https://github.com/GoogleCloudPlatform/google-cloud-python/issues/4288
+[1]: https://github.com/GoogleCloudPlatform/google-cloud-python/issues/4288
