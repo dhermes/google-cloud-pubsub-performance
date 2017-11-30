@@ -6,3 +6,10 @@ for the Google Cloud Pub / Sub Python client.
 In particular, it tracks the threads created (including the parent
 thread creating them) and makes sure threads don't get turned
 into "zombies".
+
+Some issues worth exploring:
+
+- Reports of lease management causing [CPU spikes][1] (seems like
+  zombie threads)
+
+[1]: For https://github.com/GoogleCloudPlatform/google-cloud-python/issues/4288

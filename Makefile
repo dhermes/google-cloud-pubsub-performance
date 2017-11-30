@@ -25,17 +25,19 @@ help:
 
 venv-0.29.2:
 	python -m virtualenv --python=python3.6 venv-0.29.2
-	venv-0.29.2/bin/python -m install \
+	venv-0.29.2/bin/python -m pip install \
 	  'google-cloud-pubsub==0.29.2' \
 	  'grpcio==1.7.0' \
 	  'pydot==1.2.3' \
 	  'networkx==2.0'
 
 run-not-found: venv-0.29.2
-	venv-0.29.2/bin/python not-found.py 2> not-found-0.29.2.txt
+	PYTHONPATH=. venv-0.29.2/bin/python \
+	  not-found/script.py 2> not-found/0.29.2.txt
 
 run-no-messages: venv-0.29.2
-	venv-0.29.2/bin/python no-messages.py 2> no-messages-0.29.2.txt
+	PYTHONPATH=. venv-0.29.2/bin/python \
+	  no-messages/script.py 2> no-messages/0.29.2.txt
 
 clean:
 	rm -fr \

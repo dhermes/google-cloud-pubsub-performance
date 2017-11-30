@@ -13,37 +13,16 @@
 # limitations under the License.
 
 import logging
-import threading
+import os
 import time
-
-import six
 
 # Should be next to this file.
 import thread_names
 import utils
 
 
-LOGGER = logging.getLogger('not-found-repro')
-
-
-def publish_target(count, interval, publisher, topic_path):
-    for index in six.moves.range(count):
-        data = u'Wooooo! The claaaaaw! (index={})'.format(index)
-        publisher.publish(
-            topic_path,
-            data.encode('utf-8'),
-        )
-        LOGGER.info('Published: %s', data)
-        time.sleep(interval)
-
-
-def publish_async(publisher, topic_path):
-    thread = threading.Thread(
-        target=publish_target,
-        args=(5, 3.0, publisher, topic_path),
-        name='Thread-ReproPublish',
-    )
-    thread.start()
+LOGGER = logging.getLogger('no-messages-repro')
+CURR_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def main():
@@ -54,20 +33,18 @@ def main():
 
     # Get clients and resource paths.
     topic_name = 't-repro-{}'.format(int(1000 * time.time()))
-    client_info = utils.get_client_info(topic_name, 's-not-exist')
+    subscription_name = 's-repro-{}'.format(int(1000 * time.time()))
+    client_info = utils.get_client_info(topic_name, subscription_name)
     publisher, topic_path, subscriber, subscription_path = client_info
 
-    # Create a topic.
+    # Create a topic, though we won't push messages to it.
     publisher.create_topic(topic_path)
 
-    # Subscribe to the topic. We do this before the messages are
-    # published so that we'll receive them as they come in.
+    # Subscribe to the topic, even though it won't publish any messages.
+    subscriber.create_subscription(subscription_path, topic_path)
     LOGGER.info('Listening for messages on %s', subscription_path)
     subscription = subscriber.subscribe(subscription_path)
     sub_future = subscription.open(utils.AckCallback(LOGGER))
-
-    # Set off async job to publish some messages.
-    publish_async(publisher, topic_path)
 
     # The subscriber is non-blocking, so we must keep the main thread from
     # exiting to allow it to process messages in the background.
@@ -75,7 +52,8 @@ def main():
 
     # Do clean-up.
     publisher.delete_topic(topic_path)
-    thread_names.save_tree('not-found-{}.svg')
+    subscriber.delete_subscription(subscription_path)
+    thread_names.save_tree(CURR_DIR)
     thread_names.restore()
 
 

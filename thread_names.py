@@ -141,8 +141,11 @@ def get_names_remap(thread_names):
     return names_map
 
 
-def save_tree(filename_template):
-    filename = filename_template.format(PUBSUB_VERSION)
+def save_tree(directory):
+    filename = os.path.join(
+        directory,
+        '{}.svg'.format(PUBSUB_VERSION),
+    )
     assert len(THREAD_NAMES) == len(THREAD_PARENTS)
 
     # Pass copy of thread names to avoid edit-during-read.
