@@ -19,34 +19,14 @@ import time
 import google.auth
 import six
 
-from google.cloud.pubsub_v1.subscriber.policy import base
 from google.cloud import pubsub_v1
 
 # Should be next to this file.
 import thread_names
+import utils
 
 
-SCOPE = 'https://www.googleapis.com/auth/pubsub'
-# NOTE: Must set the logging level on the "root" logger since
-#       the orchestration across threads is funky (I still do
-#       not **fully** understand it).
-logging.getLogger().setLevel(logging.DEBUG)
-LOGGER_NAME = 'REPRO'
-LOGGER = logging.getLogger(LOGGER_NAME)
-FORMAT = (
-    'timeLevel=%(relativeCreated)08d:%(levelname)s\n'
-    'logger=%(name)s\n'
-    'threadName=%(threadName)s\n'
-    '%(message)s\n'
-    '----------------------------------------')
-logging.basicConfig(format=FORMAT)
-HEARTBEAT_TEMPLATE = """\
-Heartbeat:
-running=%s
-done=%s
-active threads (%d) =
-%s
-exception=%r"""
+LOGGER = logging.getLogger('not-found-repro')
 MAX_TIME = 300
 
 
@@ -81,44 +61,12 @@ def publish(count, interval, publisher, topic_path):
         time.sleep(interval)
 
 
-def heartbeat(sub_future, done_count):
-    is_running = sub_future.running()
-    is_done = sub_future.done()
-    if is_done:
-        exception = sub_future.exception()
-    else:
-        exception = None
-
-    thread_count = threading.active_count()
-    parts = ['  - ' + thread.name for thread in threading.enumerate()]
-    assert thread_count == len(parts)
-    pretty_names = '\n'.join(parts)
-
-    LOGGER.info(
-        HEARTBEAT_TEMPLATE, is_running, is_done,
-        thread_count, pretty_names, exception)
-    done_count += int(is_done)
-    return done_count
-
-
-class NotRandom(object):
-
-    def __init__(self, result):
-        self.result = result
-
-    def uniform(self, a, b):
-        return self.result
-
-
-def make_lease_deterministic():
-    base.random = NotRandom(3.0)
-
-
 def main():
+    utils.setup_root_logger()
     thread_names.monkey_patch()
-    make_lease_deterministic()
+    utils.make_lease_deterministic()
 
-    credentials, project = google.auth.default(scopes=(SCOPE,))
+    credentials, project = google.auth.default(scopes=(utils.SCOPE,))
     publisher = pubsub_v1.PublisherClient(credentials=credentials)
     topic_path = get_topic_path(project, publisher)
     subscriber = pubsub_v1.SubscriberClient(credentials=credentials)
@@ -150,7 +98,7 @@ def main():
     deadline = time.time() + MAX_TIME
     done_count = 0
     while time.time() < deadline:
-        done_count = heartbeat(sub_future, done_count)
+        done_count = utils.heartbeat(LOGGER, sub_future, done_count)
         if done_count > 3:
             break
         time.sleep(5)
