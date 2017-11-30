@@ -15,6 +15,7 @@
 
 import logging
 import threading
+import time
 
 import google.auth
 from google.cloud.pubsub_v1.subscriber.policy import base
@@ -35,6 +36,8 @@ done=%s
 active threads (%d) =
 %s
 exception=%r"""
+MAX_TIME = 300
+DONE_HEARTBEATS = 4
 
 
 def setup_root_logger():
@@ -66,6 +69,18 @@ def heartbeat(logger, future, done_count):
     return done_count
 
 
+def heartbeats_block(logger, future):
+    deadline = time.time() + MAX_TIME
+    done_count = 0
+    while time.time() < deadline and done_count < DONE_HEARTBEATS:
+        done_count = heartbeat(logger, future, done_count)
+        time.sleep(5)
+
+    # If we exited due to the deadline, do one more heartbeat.
+    if done_count < DONE_HEARTBEATS:
+        heartbeat(logger, future, done_count)
+
+
 def make_lease_deterministic():
     base.random = NotRandom(3.0)
 
@@ -90,3 +105,13 @@ class NotRandom(object):
 
     def uniform(self, a, b):
         return self.result
+
+
+class AckCallback(object):
+
+    def __init__(self, logger):
+        self.logger = logger
+
+    def __call__(self, message):
+        self.logger.info(' Received: %s', message.data.decode('utf-8'))
+        message.ack()
