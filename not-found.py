@@ -44,7 +44,8 @@ HEARTBEAT_TEMPLATE = """\
 Heartbeat:
 running=%s
 done=%s
-active_threads=%d
+active threads (%d) =
+%s
 exception=%r"""
 MAX_TIME = 300
 
@@ -88,9 +89,14 @@ def heartbeat(sub_future, done_count):
     else:
         exception = None
 
+    thread_count = threading.active_count()
+    parts = ['  - ' + thread.name for thread in threading.enumerate()]
+    assert thread_count == len(parts)
+    pretty_names = '\n'.join(parts)
+
     LOGGER.info(
         HEARTBEAT_TEMPLATE, is_running, is_done,
-        threading.active_count(), exception)
+        thread_count, pretty_names, exception)
     done_count += int(is_done)
     return done_count
 

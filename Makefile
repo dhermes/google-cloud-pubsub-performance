@@ -16,10 +16,10 @@ help:
 	@echo 'Makefile for google-cloud-pubsub examples'
 	@echo ''
 	@echo 'Usage:'
-	@echo '   make run            Run script'
-	@echo '   make venv-0.29.2    Create a virtual environment with'
-	@echo '                       google-cloud-pubsub==0.29.2'
-	@echo '   make clean          Clean generated files'
+	@echo '   make run-not-found    Run script'
+	@echo '   make venv-0.29.2      Create a virtual environment with'
+	@echo '                         google-cloud-pubsub==0.29.2'
+	@echo '   make clean            Clean generated files'
 	@echo ''
 
 venv-0.29.2:
@@ -29,10 +29,12 @@ venv-0.29.2:
 	  'pydot==1.2.3' \
 	  'networkx==2.0'
 
-run: venv-0.29.2
+run-not-found: venv-0.29.2
 	venv-0.29.2/bin/python not-found.py 2> not-found-0.29.2.txt
 
 clean:
-	rm -fr venv-0.29.2/
+	rm -fr \
+	  __pycache__/ \
+	  venv-0.29.2/
 
-.PHONY: help run clean
+.PHONY: help run-not-found clean
