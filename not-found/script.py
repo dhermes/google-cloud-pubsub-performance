@@ -19,7 +19,6 @@ import time
 
 import six
 
-# Should be next to this file.
 import thread_names
 import utils
 

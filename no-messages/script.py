@@ -16,7 +16,6 @@ import logging
 import os
 import time
 
-# Should be next to this file.
 import thread_names
 import utils
 
