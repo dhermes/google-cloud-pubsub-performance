@@ -149,7 +149,7 @@ def main():
             break
         time.sleep(5)
 
-    thread_names.save_tree('script-0.29.2.svg')
+    thread_names.save_tree('not-found-0.29.2.svg')
 
     # Do clean-up.
     publisher.delete_topic(topic_path)

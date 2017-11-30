@@ -30,7 +30,7 @@ venv-0.29.2:
 	  'networkx==2.0'
 
 run: venv-0.29.2
-	venv-0.29.2/bin/python script.py
+	venv-0.29.2/bin/python not-found.py 2> not-found-0.29.2.txt
 
 clean:
 	rm -fr venv-0.29.2/
