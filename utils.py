@@ -14,6 +14,7 @@
 
 
 import logging
+import os
 import threading
 import time
 
@@ -40,12 +41,16 @@ MAX_TIME = 300
 DONE_HEARTBEATS = 4
 
 
-def setup_root_logger():
+def setup_logging(directory):
     # NOTE: Must set the logging level on the "root" logger since
     #       the orchestration across threads is funky (I still do
     #       not **fully** understand it).
     logging.getLogger().setLevel(logging.DEBUG)
     logging.basicConfig(format=LOG_FORMAT)
+
+    # Make the "current" logger.
+    logger_name = '{}-repro'.format(os.path.basename(directory))
+    return logging.getLogger(logger_name)
 
 
 def heartbeat(logger, future, done_count):

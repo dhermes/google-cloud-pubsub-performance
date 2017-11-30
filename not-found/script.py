@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import logging
 import os
 import threading
 import time
@@ -23,25 +22,24 @@ import thread_names
 import utils
 
 
-LOGGER = logging.getLogger('not-found-repro')
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-def publish_target(count, interval, publisher, topic_path):
+def publish_target(count, interval, publisher, topic_path, logger):
     for index in six.moves.range(count):
         data = u'Wooooo! The claaaaaw! (index={})'.format(index)
         publisher.publish(
             topic_path,
             data.encode('utf-8'),
         )
-        LOGGER.info('Published: %s', data)
+        logger.info('Published: %s', data)
         time.sleep(interval)
 
 
-def publish_async(publisher, topic_path):
+def publish_async(publisher, topic_path, logger):
     thread = threading.Thread(
         target=publish_target,
-        args=(5, 3.0, publisher, topic_path),
+        args=(5, 3.0, publisher, topic_path, logger),
         name='Thread-ReproPublish',
     )
     thread.start()
@@ -49,7 +47,7 @@ def publish_async(publisher, topic_path):
 
 def main():
     # Do set-up.
-    utils.setup_root_logger()
+    logger = utils.setup_logging(CURR_DIR)
     thread_names.monkey_patch()
     utils.make_lease_deterministic()
 
@@ -63,16 +61,16 @@ def main():
 
     # Subscribe to the topic. We do this before the messages are
     # published so that we'll receive them as they come in.
-    LOGGER.info('Listening for messages on %s', subscription_path)
+    logger.info('Listening for messages on %s', subscription_path)
     subscription = subscriber.subscribe(subscription_path)
-    sub_future = subscription.open(utils.AckCallback(LOGGER))
+    sub_future = subscription.open(utils.AckCallback(logger))
 
     # Set off async job to publish some messages.
-    publish_async(publisher, topic_path)
+    publish_async(publisher, topic_path, logger)
 
     # The subscriber is non-blocking, so we must keep the main thread from
     # exiting to allow it to process messages in the background.
-    utils.heartbeats_block(LOGGER, sub_future)
+    utils.heartbeats_block(logger, sub_future)
 
     # Do clean-up.
     publisher.delete_topic(topic_path)
