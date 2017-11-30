@@ -51,3 +51,9 @@ def not_found(session, version):
 @nox.parametrize('version', VERSIONS)
 def no_messages(session, version):
     _run('no-messages', session, version)
+
+
+@nox.session
+@nox.parametrize('version', VERSIONS)
+def message_after_recover(session, version):
+    _run('message-after-recover', session, version)
