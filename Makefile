@@ -24,8 +24,8 @@ help:
 	@echo ''
 
 venv-0.29.2:
-	python -m virtualenv venv-0.29.2
-	venv-0.29.2/bin/pip install \
+	python -m virtualenv --python=python3.6 venv-0.29.2
+	venv-0.29.2/bin/python -m install \
 	  'google-cloud-pubsub==0.29.2' \
 	  'grpcio==1.7.0' \
 	  'pydot==1.2.3' \
