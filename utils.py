@@ -1,4 +1,4 @@
-# Copyright 2017 Google Inc. All rights reserved.
+# Copyright 2017 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,8 +21,10 @@ import time
 import google.auth
 from google.cloud.pubsub_v1.subscriber import policy
 from google.cloud import pubsub_v1
+import pkg_resources
 
 
+PUBSUB_VERSION = pkg_resources.get_distribution('google-cloud-pubsub').version
 SCOPE = 'https://www.googleapis.com/auth/pubsub'
 LOG_FORMAT = """\
 timeLevel=%(relativeCreated)08d:%(levelname)s
@@ -46,7 +48,15 @@ def setup_logging(directory):
     #       the orchestration across threads is funky (I still do
     #       not **fully** understand it).
     logging.getLogger().setLevel(logging.DEBUG)
-    logging.basicConfig(format=LOG_FORMAT)
+    filename = os.path.join(
+        directory,
+        '{}.txt'.format(PUBSUB_VERSION),
+    )
+    logging.basicConfig(
+        format=LOG_FORMAT,
+        filename=filename,
+        filemode='w',
+    )
 
     # Make the "current" logger.
     logger_name = '{}-repro'.format(os.path.basename(directory))

@@ -1,4 +1,4 @@
-# Copyright 2017 Google Inc. All rights reserved.
+# Copyright 2017 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,10 +20,10 @@ import grpc._channel
 import grpc._common
 import networkx
 import networkx.drawing.nx_pydot
-import pkg_resources
+
+import utils
 
 
-PUBSUB_VERSION = pkg_resources.get_distribution('google-cloud-pubsub').version
 ORIGINAL_THREAD = threading.Thread
 ORIGINAL_CLEANUP_THREAD_CONSTRUCTOR = grpc._common.CleanupThread.__init__
 PLUGIN_GET_METADATA_REPR = (
@@ -145,7 +145,7 @@ def get_names_remap(thread_names):
 def save_tree(directory):
     filename = os.path.join(
         directory,
-        '{}.svg'.format(PUBSUB_VERSION),
+        '{}.svg'.format(utils.PUBSUB_VERSION),
     )
     assert len(THREAD_NAMES) == len(THREAD_PARENTS)
 
