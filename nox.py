@@ -22,7 +22,9 @@ PINNED_DEPS = (
     'pydot==1.2.3',
     'networkx==2.0',
 )
+LOCAL = 'local'
 VERSIONS = (
+    LOCAL,
     '0.29.1',
     '0.29.2',
 )
@@ -31,8 +33,14 @@ VERSIONS = (
 def _run(directory, session, version):
     session.interpreter = 'python3.6'
     session.install(*PINNED_DEPS)
-    pubsub_dep = 'google-cloud-pubsub=={}'.format(version)
-    session.install(pubsub_dep)
+    if version == LOCAL:
+        # NOTE: This assumes, but does not check, that google-cloud-python
+        #       is cloned and the desired branch is checked out.
+        path = os.path.join('google-cloud-python', 'pubsub')
+        session.install(path)
+    else:
+        pubsub_dep = 'google-cloud-pubsub=={}'.format(version)
+        session.install(pubsub_dep)
 
     # Add current directory to PYTHONPATH so that ``thread_names.py`` and
     # ``utils.py`` can be imported.

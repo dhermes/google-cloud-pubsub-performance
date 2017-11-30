@@ -77,7 +77,7 @@ def update_thread_kwargs(args, kwargs):
         kwargs['name'] = 'Thread-gRPC-ConsumeRequestIterator'
         return
 
-    if utils.PUBSUB_VERSION == '0.29.1':
+    if utils.PUBSUB.version() == '0.29.1':
         func = getattr(target, '__func__', None)
         # Expected case 6: Spawned in ``policy.thread.Policy.open()``, though
         # takes into account our override.
@@ -160,7 +160,7 @@ def get_names_remap(thread_names):
 def save_tree(directory):
     filename = os.path.join(
         directory,
-        '{}.svg'.format(utils.PUBSUB_VERSION),
+        '{}.svg'.format(utils.PUBSUB.version()),
     )
     assert len(THREAD_NAMES) == len(THREAD_PARENTS)
 

@@ -16,6 +16,7 @@
 import distutils.sysconfig
 import logging
 import os
+import subprocess
 import sys
 import threading
 import time
@@ -26,8 +27,8 @@ from google.cloud import pubsub_v1
 import pkg_resources
 
 
-PUBSUB_VERSION = pkg_resources.get_distribution('google-cloud-pubsub').version
 SCOPE = 'https://www.googleapis.com/auth/pubsub'
+HERE = os.path.dirname(os.path.abspath(__file__))
 LOG_FORMAT = """\
 timeLevel=%(relativeCreated)08d:%(levelname)s
 logger=%(name)s
@@ -53,7 +54,7 @@ def setup_logging(directory):
     logging.getLogger().setLevel(logging.DEBUG)
     filename = os.path.join(
         directory,
-        '{}.txt'.format(PUBSUB_VERSION),
+        '{}.txt'.format(PUBSUB.version()),
     )
     logging.basicConfig(
         format=LOG_FORMAT,
@@ -90,7 +91,7 @@ def heartbeat(logger, future, done_count):
 
 
 def done_count_extra(future, done_count):
-    if PUBSUB_VERSION == '0.29.1':
+    if PUBSUB.version() == '0.29.1':
         if done_count < DONE_HEARTBEATS:
             return done_count
         # We don't allow an exit while the consumer is active.
@@ -174,7 +175,6 @@ class Policy(policy.thread.Policy):
 class StdErrLogger(object):
 
     HOME = os.path.expanduser('~')
-    HERE = os.path.dirname(os.path.abspath(__file__))
     SITE_PACKAGES = distutils.sysconfig.get_python_lib()
 
     def write(self, error_msg):
@@ -185,6 +185,36 @@ class StdErrLogger(object):
         #       ${HOME} and ${HERE}.
         error_msg = error_msg.replace(self.SITE_PACKAGES, '${SITE_PACKAGES}')
         # NOTE: Must first replace ${HERE} since it **may** contain ${HOME}.
-        error_msg = error_msg.replace(self.HERE, '${HERE}')
+        error_msg = error_msg.replace(HERE, '${HERE}')
         error_msg = error_msg.replace(self.HOME, '${HOME}')
         logging.error(error_msg)
+
+
+class PUBSUB(object):
+
+    _version = None
+
+    @staticmethod
+    def _compute_version():
+        distribution = pkg_resources.get_distribution('google-cloud-pubsub')
+        full_version = distribution.version
+        base_version, last_segment = full_version.rsplit('.', 1)
+        if not last_segment.startswith('dev'):
+            return full_version
+
+        gcp_dir = os.path.join(HERE, 'google-cloud-python')
+        branch_name = subprocess.check_output(
+            ('git', 'rev-parse', '--abbrev-ref', 'HEAD'), cwd=gcp_dir)
+        branch_name = branch_name.strip().decode('utf-8')
+        commit_hash = subprocess.check_output(
+            ('git', 'log', '-1', '--pretty=%H'), cwd=gcp_dir)
+        commit_hash = commit_hash.strip().decode('utf-8')
+        return '{}.{}.{}'.format(base_version, branch_name, commit_hash)
+
+    @classmethod
+    def version(cls):
+        with threading.Lock():
+            if cls._version is None:
+                cls._version = cls._compute_version()
+
+            return cls._version
