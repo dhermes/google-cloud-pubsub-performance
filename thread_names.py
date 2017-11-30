@@ -19,8 +19,10 @@ import grpc._channel
 import grpc._common
 import networkx
 import networkx.drawing.nx_pydot
+import pkg_resources
 
 
+PUBSUB_VERSION = pkg_resources.get_distribution('google-cloud-pubsub').version
 ORIGINAL_THREAD = threading.Thread
 ORIGINAL_CLEANUP_THREAD_CONSTRUCTOR = grpc._common.CleanupThread.__init__
 PLUGIN_GET_METADATA_REPR = (
@@ -139,7 +141,8 @@ def get_names_remap(thread_names):
     return names_map
 
 
-def save_tree(filename):
+def save_tree(filename_template):
+    filename = filename_template.format(PUBSUB_VERSION)
     assert len(THREAD_NAMES) == len(THREAD_PARENTS)
 
     # Pass copy of thread names to avoid edit-during-read.

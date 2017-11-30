@@ -51,7 +51,7 @@ def main():
     # Do clean-up.
     publisher.delete_topic(topic_path)
     subscriber.delete_subscription(subscription_path)
-    thread_names.save_tree('no-messages-0.29.2.svg')
+    thread_names.save_tree('no-messages-{}.svg')
     thread_names.restore()
 
 

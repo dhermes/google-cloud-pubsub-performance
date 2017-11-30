@@ -75,7 +75,7 @@ def main():
 
     # Do clean-up.
     publisher.delete_topic(topic_path)
-    thread_names.save_tree('not-found-0.29.2.svg')
+    thread_names.save_tree('not-found-{}.svg')
     thread_names.restore()
 
 
