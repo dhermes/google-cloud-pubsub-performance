@@ -52,6 +52,7 @@ def main():
     subscriber.delete_subscription(subscription_path)
     thread_names.save_tree(CURR_DIR)
     thread_names.restore()
+    utils.restore()
 
 
 if __name__ == '__main__':

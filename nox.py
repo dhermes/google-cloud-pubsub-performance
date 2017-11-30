@@ -23,6 +23,7 @@ PINNED_DEPS = (
     'networkx==2.0',
 )
 VERSIONS = (
+    '0.29.1',
     '0.29.2',
 )
 

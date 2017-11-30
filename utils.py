@@ -13,8 +13,10 @@
 # limitations under the License.
 
 
+import distutils.sysconfig
 import logging
 import os
+import sys
 import threading
 import time
 
@@ -41,6 +43,7 @@ active threads (%d) =
 exception=%r"""
 MAX_TIME = 300
 DONE_HEARTBEATS = 4
+ORIGINAL_STDERR = sys.stderr
 
 
 def setup_logging(directory):
@@ -57,6 +60,8 @@ def setup_logging(directory):
         filename=filename,
         filemode='w',
     )
+    # Redirect ``stderr`` to logging.
+    sys.stderr = StdErrLogger()
 
     # Make the "current" logger.
     logger_name = '{}-repro'.format(os.path.basename(directory))
@@ -84,11 +89,25 @@ def heartbeat(logger, future, done_count):
     return done_count
 
 
+def done_count_extra(future, done_count):
+    if PUBSUB_VERSION == '0.29.1':
+        if done_count < DONE_HEARTBEATS:
+            return done_count
+        # We don't allow an exit while the consumer is active.
+        if future._policy._consumer.active:
+            return done_count - 1
+        else:
+            return done_count
+    else:
+        return done_count
+
+
 def heartbeats_block(logger, future):
     deadline = time.time() + MAX_TIME
     done_count = 0
     while time.time() < deadline and done_count < DONE_HEARTBEATS:
         done_count = heartbeat(logger, future, done_count)
+        done_count = done_count_extra(future, done_count)
         time.sleep(5)
 
     # If we exited due to the deadline, do one more heartbeat.
@@ -112,6 +131,10 @@ def get_client_info(topic_name, subscription_name):
         project, subscription_name)
 
     return publisher, topic_path, subscriber, subscription_path
+
+
+def restore():
+    sys.stderr = ORIGINAL_STDERR
 
 
 class NotRandom(object):
@@ -138,3 +161,28 @@ class Policy(policy.thread.Policy):
     def on_exception(self, exception):
         policy.thread._LOGGER.debug('on_exception(%r)', exception)
         return super(Policy, self).on_exception(exception)
+
+    def maintain_leases(self):
+        result = super(Policy, self).maintain_leases()
+        policy.base._LOGGER.debug(
+            'Consumer inactive, ending lease maintenance.')
+        return result
+
+
+class StdErrLogger(object):
+
+    HOME = os.path.expanduser('~')
+    HERE = os.path.dirname(os.path.abspath(__file__))
+    SITE_PACKAGES = distutils.sysconfig.get_python_lib()
+
+    def write(self, error_msg):
+        if error_msg == '\n':
+            return
+
+        # NOTE: Must first replace ${SITE_PACKAGES} since it **may** contain
+        #       ${HOME} and ${HERE}.
+        error_msg = error_msg.replace(self.SITE_PACKAGES, '${SITE_PACKAGES}')
+        # NOTE: Must first replace ${HERE} since it **may** contain ${HOME}.
+        error_msg = error_msg.replace(self.HERE, '${HERE}')
+        error_msg = error_msg.replace(self.HOME, '${HOME}')
+        logging.error(error_msg)

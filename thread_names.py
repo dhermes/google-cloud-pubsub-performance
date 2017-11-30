@@ -16,6 +16,8 @@ import collections
 import os
 import threading
 
+from google.cloud import pubsub_v1
+from google.cloud.pubsub_v1.subscriber import policy
 import grpc._channel
 import grpc._common
 import networkx
@@ -74,6 +76,19 @@ def update_thread_kwargs(args, kwargs):
     if target_repr.startswith(CONSUME_REQUEST_REPR):
         kwargs['name'] = 'Thread-gRPC-ConsumeRequestIterator'
         return
+
+    if utils.PUBSUB_VERSION == '0.29.1':
+        func = getattr(target, '__func__', None)
+        # Expected case 6: Spawned in ``policy.thread.Policy.open()``, though
+        # takes into account our override.
+        if func is utils.Policy.maintain_leases:
+            kwargs['name'] = 'Thread-LeaseMaintenance'
+            return
+
+        # Expected case 7: Spawned in ``batch.thread.Batch`` constructor.
+        if func is pubsub_v1.publisher.batch.thread.Batch.monitor:
+            kwargs['name'] = 'Thread-MonitorBatchPublisher'
+            return
 
     raise TypeError(
         'Unexpected target', args, kwargs)
