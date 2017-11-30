@@ -1,85 +1,84 @@
-timeLevel=00000555:DEBUG
+timeLevel=00000758:DEBUG
 logger=google.auth.transport.requests
 threadName=Thread-gRPC-PluginGetMetadata
 Making request: POST https://accounts.google.com/o/oauth2/token
 ----------------------------------------
-timeLevel=00000557:DEBUG
+timeLevel=00000761:DEBUG
 logger=urllib3.connectionpool
 threadName=Thread-gRPC-PluginGetMetadata
 Starting new HTTPS connection (1): accounts.google.com
 ----------------------------------------
-timeLevel=00000900:DEBUG
+timeLevel=00000930:DEBUG
 logger=urllib3.connectionpool
 threadName=Thread-gRPC-PluginGetMetadata
 https://accounts.google.com:443 "POST /o/oauth2/token HTTP/1.1" 200 None
 ----------------------------------------
-timeLevel=00002334:DEBUG
+timeLevel=00001890:INFO
+logger=not-found-repro
+threadName=MainThread
+Listening for messages on projects/precise-truck-742/subscriptions/s-not-exist
+----------------------------------------
+timeLevel=00001892:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
 threadName=MainThread
 Creating callback requests thread (not starting).
 ----------------------------------------
-timeLevel=00002335:INFO
-logger=REPRO
-threadName=Thread-ReproPublish
-Published: Wooooo! The claaaaaw! (index=0)
-----------------------------------------
-timeLevel=00002335:DEBUG
+timeLevel=00001893:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
 threadName=MainThread
 Starting callback requests worker.
 ----------------------------------------
-timeLevel=00002336:DEBUG
+timeLevel=00001893:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._helper_threads
 threadName=MainThread
 Started helper thread CallbackRequestsWorker
 ----------------------------------------
-timeLevel=00002338:DEBUG
+timeLevel=00001894:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._helper_threads
 threadName=MainThread
 Started helper thread ConsumeBidirectionalStream
 ----------------------------------------
-timeLevel=00002338:DEBUG
+timeLevel=00001895:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
 threadName=MainThread
 Starting lease maintenance worker.
 ----------------------------------------
-timeLevel=00002339:DEBUG
+timeLevel=00001896:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.base
 threadName=Thread-LeaseMaintenance
 The current p99 value is 10 seconds.
 ----------------------------------------
-timeLevel=00002340:DEBUG
+timeLevel=00001897:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.base
 threadName=Thread-LeaseMaintenance
 Renewing lease for 0 ack IDs.
 ----------------------------------------
-timeLevel=00002340:DEBUG
+timeLevel=00001898:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.base
 threadName=Thread-LeaseMaintenance
 Snoozing lease management for 3.000000 seconds.
 ----------------------------------------
-timeLevel=00002341:INFO
-logger=REPRO
-threadName=MainThread
-Listening for messages on projects/precise-truck-742/subscriptions/s-not-exist
-----------------------------------------
-timeLevel=00002342:INFO
-logger=REPRO
+timeLevel=00001899:INFO
+logger=not-found-repro
 threadName=MainThread
 Heartbeat:
 running=True
 done=False
-active threads (7) =
+active threads (6) =
   - MainThread
-  - Thread-ReproPublish
-  - Thread-MonitorBatchPublisher
   - Thread-ConsumerHelper-CallbackRequestsWorker
   - Thread-ConsumerHelper-ConsumeBidirectionalStream
   - Thread-LeaseMaintenance
-  - Thread-gRPC-StopChannelSpin
+  - Thread-ReproPublish
+  - Thread-MonitorBatchPublisher
 exception=None
 ----------------------------------------
-timeLevel=00002343:DEBUG
+timeLevel=00001900:INFO
+logger=not-found-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=0)
+----------------------------------------
+timeLevel=00001906:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
 threadName=Thread-gRPC-ConsumeRequestIterator
 Sending initial request:
@@ -87,53 +86,58 @@ subscription: "projects/precise-truck-742/subscriptions/s-not-exist"
 stream_ack_deadline_seconds: 10
 
 ----------------------------------------
-timeLevel=00002581:DEBUG
+timeLevel=00002163:DEBUG
 logger=google.cloud.pubsub_v1.publisher.batch.thread
 threadName=Thread-MonitorBatchPublisher
-gRPC Publish took 0.19675278663635254 seconds.
+gRPC Publish took 0.21367383003234863 seconds.
 ----------------------------------------
-timeLevel=00002662:DEBUG
+timeLevel=00002222:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
+on_exception(NotFound('Resource not found (resource=s-not-exist).',))
+----------------------------------------
+timeLevel=00002223:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._helper_threads
 threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
 Stopping helper thread CallbackRequestsWorker
 ----------------------------------------
-timeLevel=00002662:DEBUG
+timeLevel=00002224:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._helper_threads
 threadName=Thread-ConsumerHelper-CallbackRequestsWorker
 Exiting the QueueCallbackThread.
 ----------------------------------------
-timeLevel=00002663:DEBUG
+timeLevel=00002224:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._helper_threads
 threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
 Cannot stop current thread ConsumeBidirectionalStream
 ----------------------------------------
-timeLevel=00002663:DEBUG
+timeLevel=00002224:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
 threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
 Event signalled consumer exit.
 ----------------------------------------
-timeLevel=00002663:DEBUG
+timeLevel=00002225:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
 threadName=Thread-gRPC-ConsumeRequestIterator
 Request generator signaled to stop.
 ----------------------------------------
-timeLevel=00005338:INFO
-logger=REPRO
+timeLevel=00004902:INFO
+logger=not-found-repro
 threadName=Thread-ReproPublish
 Published: Wooooo! The claaaaaw! (index=1)
 ----------------------------------------
-timeLevel=00005344:DEBUG
+timeLevel=00004903:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.base
 threadName=Thread-LeaseMaintenance
 Consumer inactive, ending lease maintenance.
 ----------------------------------------
-timeLevel=00005585:DEBUG
+timeLevel=00005237:DEBUG
 logger=google.cloud.pubsub_v1.publisher.batch.thread
 threadName=Thread-MonitorBatchPublisher+
-gRPC Publish took 0.19776606559753418 seconds.
+gRPC Publish took 0.28461170196533203 seconds.
 ----------------------------------------
-timeLevel=00007343:INFO
-logger=REPRO
+timeLevel=00006905:INFO
+logger=not-found-repro
 threadName=MainThread
 Heartbeat:
 running=False
@@ -143,28 +147,28 @@ active threads (2) =
   - Thread-ReproPublish
 exception=NotFound('Resource not found (resource=s-not-exist).',)
 ----------------------------------------
-timeLevel=00008340:INFO
-logger=REPRO
+timeLevel=00007904:INFO
+logger=not-found-repro
 threadName=Thread-ReproPublish
 Published: Wooooo! The claaaaaw! (index=2)
 ----------------------------------------
-timeLevel=00008489:DEBUG
+timeLevel=00008042:DEBUG
 logger=google.cloud.pubsub_v1.publisher.batch.thread
 threadName=Thread-MonitorBatchPublisher++
-gRPC Publish took 0.09932613372802734 seconds.
+gRPC Publish took 0.08765006065368652 seconds.
 ----------------------------------------
-timeLevel=00011344:INFO
-logger=REPRO
+timeLevel=00010908:INFO
+logger=not-found-repro
 threadName=Thread-ReproPublish
 Published: Wooooo! The claaaaaw! (index=3)
 ----------------------------------------
-timeLevel=00011483:DEBUG
+timeLevel=00011057:DEBUG
 logger=google.cloud.pubsub_v1.publisher.batch.thread
 threadName=Thread-MonitorBatchPublisher+++
-gRPC Publish took 0.08901333808898926 seconds.
+gRPC Publish took 0.09873294830322266 seconds.
 ----------------------------------------
-timeLevel=00012349:INFO
-logger=REPRO
+timeLevel=00011911:INFO
+logger=not-found-repro
 threadName=MainThread
 Heartbeat:
 running=False
@@ -174,28 +178,29 @@ active threads (2) =
   - Thread-ReproPublish
 exception=NotFound('Resource not found (resource=s-not-exist).',)
 ----------------------------------------
-timeLevel=00014348:INFO
-logger=REPRO
+timeLevel=00013912:INFO
+logger=not-found-repro
 threadName=Thread-ReproPublish
 Published: Wooooo! The claaaaaw! (index=4)
 ----------------------------------------
-timeLevel=00014490:DEBUG
+timeLevel=00014052:DEBUG
 logger=google.cloud.pubsub_v1.publisher.batch.thread
 threadName=Thread-MonitorBatchPublisher++++
-gRPC Publish took 0.0929558277130127 seconds.
+gRPC Publish took 0.0900731086730957 seconds.
 ----------------------------------------
-timeLevel=00017353:INFO
-logger=REPRO
+timeLevel=00016912:INFO
+logger=not-found-repro
 threadName=MainThread
 Heartbeat:
 running=False
 done=True
-active threads (1) =
+active threads (2) =
   - MainThread
+  - Thread-ReproPublish
 exception=NotFound('Resource not found (resource=s-not-exist).',)
 ----------------------------------------
-timeLevel=00022356:INFO
-logger=REPRO
+timeLevel=00021918:INFO
+logger=not-found-repro
 threadName=MainThread
 Heartbeat:
 running=False

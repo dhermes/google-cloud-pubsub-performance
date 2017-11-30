@@ -18,7 +18,7 @@ import threading
 import time
 
 import google.auth
-from google.cloud.pubsub_v1.subscriber.policy import base
+from google.cloud.pubsub_v1.subscriber import policy
 from google.cloud import pubsub_v1
 
 
@@ -82,7 +82,7 @@ def heartbeats_block(logger, future):
 
 
 def make_lease_deterministic():
-    base.random = NotRandom(3.0)
+    policy.base.random = NotRandom(3.0)
 
 
 def get_client_info(topic_name, subscription_name):
@@ -91,7 +91,8 @@ def get_client_info(topic_name, subscription_name):
     publisher = pubsub_v1.PublisherClient(credentials=credentials)
     topic_path = publisher.topic_path(project, topic_name)
 
-    subscriber = pubsub_v1.SubscriberClient(credentials=credentials)
+    subscriber = pubsub_v1.SubscriberClient(
+        policy_class=Policy, credentials=credentials)
     subscription_path = subscriber.subscription_path(
         project, subscription_name)
 
@@ -115,3 +116,10 @@ class AckCallback(object):
     def __call__(self, message):
         self.logger.info(' Received: %s', message.data.decode('utf-8'))
         message.ack()
+
+
+class Policy(policy.thread.Policy):
+
+    def on_exception(self, exception):
+        policy.thread._LOGGER.debug('on_exception(%r)', exception)
+        return super(Policy, self).on_exception(exception)
