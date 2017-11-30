@@ -16,10 +16,7 @@ import logging
 import threading
 import time
 
-import google.auth
 import six
-
-from google.cloud import pubsub_v1
 
 # Should be next to this file.
 import thread_names
@@ -30,35 +27,29 @@ LOGGER = logging.getLogger('not-found-repro')
 MAX_TIME = 300
 
 
-def info(published, data):
-    data = data.decode('utf-8')
-    if published:
-        msg = 'Published: {}'.format(data)
-    else:
-        msg = ' Received: {}'.format(data)
-    LOGGER.info(msg)
-
-
 def ack_callback(message):
-    info(False, message.data)
+    LOGGER.info(' Received: %s', message.data.decode('utf-8'))
     message.ack()
 
 
-def get_topic_path(project, publisher):
-    topic_name = 't-repro-{}'.format(int(1000 * time.time()))
-    return publisher.topic_path(project, topic_name)
-
-
-def publish(count, interval, publisher, topic_path):
+def publish_target(count, interval, publisher, topic_path):
     for index in six.moves.range(count):
         data = u'Wooooo! The claaaaaw! (index={})'.format(index)
-        data = data.encode('utf-8')
         publisher.publish(
             topic_path,
-            data,
+            data.encode('utf-8'),
         )
-        info(True, data)
+        LOGGER.info('Published: %s', data)
         time.sleep(interval)
+
+
+def publish_async(publisher, topic_path):
+    thread = threading.Thread(
+        target=publish_target,
+        args=(5, 3.0, publisher, topic_path),
+        name='Thread-ReproPublish',
+    )
+    thread.start()
 
 
 def main():
@@ -66,48 +57,33 @@ def main():
     thread_names.monkey_patch()
     utils.make_lease_deterministic()
 
-    credentials, project = google.auth.default(scopes=(utils.SCOPE,))
-    publisher = pubsub_v1.PublisherClient(credentials=credentials)
-    topic_path = get_topic_path(project, publisher)
-    subscriber = pubsub_v1.SubscriberClient(credentials=credentials)
-    subscription_path = subscriber.subscription_path(project, 's-not-exist')
+    topic_name = 't-repro-{}'.format(int(1000 * time.time()))
+    client_info = utils.get_client_info(topic_name, 's-not-exist')
+    publisher, topic_path, subscriber, subscription_path = client_info
 
     # Create a topic.
     publisher.create_topic(topic_path)
 
-    # Subscribe to the topic. This must happen before the messages
-    # are published.
+    # Subscribe to the topic. We do this before the messages are
+    # published so that we'll receive them as they come in.
     subscription = subscriber.subscribe(subscription_path)
+    sub_future = subscription.open(ack_callback)
 
     # Set off async job to publish some messages.
-    thread = threading.Thread(
-        target=publish,
-        args=(5, 3, publisher, topic_path),
-        name='Thread-ReproPublish',
-    )
-    thread.start()
-
-    # Actually open the subscription and hold it open.
-    sub_future = subscription.open(ack_callback)
+    publish_async(publisher, topic_path)
 
     # The subscriber is non-blocking, so we must keep the main thread from
     # exiting to allow it to process messages in the background.
-    msg = 'Listening for messages on {}'.format(subscription_path)
-    LOGGER.info(msg)
-
+    LOGGER.info('Listening for messages on %s', subscription_path)
     deadline = time.time() + MAX_TIME
     done_count = 0
-    while time.time() < deadline:
+    while time.time() < deadline and done_count <= 3:
         done_count = utils.heartbeat(LOGGER, sub_future, done_count)
-        if done_count > 3:
-            break
         time.sleep(5)
-
-    thread_names.save_tree('not-found-0.29.2.svg')
 
     # Do clean-up.
     publisher.delete_topic(topic_path)
-
+    thread_names.save_tree('not-found-0.29.2.svg')
     thread_names.restore()
 
 

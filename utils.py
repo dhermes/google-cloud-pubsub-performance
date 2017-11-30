@@ -16,7 +16,9 @@
 import logging
 import threading
 
+import google.auth
 from google.cloud.pubsub_v1.subscriber.policy import base
+from google.cloud import pubsub_v1
 
 
 SCOPE = 'https://www.googleapis.com/auth/pubsub'
@@ -66,6 +68,19 @@ def heartbeat(logger, future, done_count):
 
 def make_lease_deterministic():
     base.random = NotRandom(3.0)
+
+
+def get_client_info(topic_name, subscription_name):
+    credentials, project = google.auth.default(scopes=(SCOPE,))
+
+    publisher = pubsub_v1.PublisherClient(credentials=credentials)
+    topic_path = publisher.topic_path(project, topic_name)
+
+    subscriber = pubsub_v1.SubscriberClient(credentials=credentials)
+    subscription_path = subscriber.subscription_path(
+        project, subscription_name)
+
+    return publisher, topic_path, subscriber, subscription_path
 
 
 class NotRandom(object):
