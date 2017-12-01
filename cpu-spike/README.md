@@ -28,3 +28,12 @@ active threads (18) =
   - Thread-gRPC-StopChannelSpin++
   - Thread-gRPC-ConsumeRequestIterator++
 ```
+
+This is a feature of `ThreadPoolExecutor` and we should
+almost certainly call `executor.shutdown()` **somewhere**.
+We don't keep references to futures, but this has been
+widely [reported][1] by users ([e.g.][2], [e.g.][3]).
+
+[1]: https://bugs.python.org/issue27144
+[2]: https://stackoverflow.com/q/37445540/1068170
+[3]: https://stackoverflow.com/q/34770169/1068170
