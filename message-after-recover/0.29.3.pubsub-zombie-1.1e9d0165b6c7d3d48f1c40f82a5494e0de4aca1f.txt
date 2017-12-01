@@ -1,0 +1,1125 @@
+timeLevel=00000452:DEBUG
+logger=google.auth.transport.requests
+threadName=Thread-gRPC-PluginGetMetadata
+Making request: POST https://accounts.google.com/o/oauth2/token
+----------------------------------------
+timeLevel=00000457:DEBUG
+logger=urllib3.connectionpool
+threadName=Thread-gRPC-PluginGetMetadata
+Starting new HTTPS connection (1): accounts.google.com
+----------------------------------------
+timeLevel=00000675:DEBUG
+logger=urllib3.connectionpool
+threadName=Thread-gRPC-PluginGetMetadata
+https://accounts.google.com:443 "POST /o/oauth2/token HTTP/1.1" 200 None
+----------------------------------------
+timeLevel=00003240:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Listening for messages on projects/precise-truck-742/subscriptions/s-repro-1512091412082
+----------------------------------------
+timeLevel=00003241:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=MainThread
+Creating callback requests thread (not starting).
+----------------------------------------
+timeLevel=00003241:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=MainThread
+Starting callback requests worker.
+----------------------------------------
+timeLevel=00003241:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._helper_threads
+threadName=MainThread
+Started helper thread CallbackRequestsWorker
+----------------------------------------
+timeLevel=00003241:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._helper_threads
+threadName=MainThread
+Started helper thread ConsumeBidirectionalStream
+----------------------------------------
+timeLevel=00003241:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=MainThread
+Starting lease maintenance worker.
+----------------------------------------
+timeLevel=00003242:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00003243:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00003243:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00003244:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (6) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+exception=None
+----------------------------------------
+timeLevel=00003244:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending initial request:
+subscription: "projects/precise-truck-742/subscriptions/s-repro-1512091412082"
+stream_ack_deadline_seconds: 10
+
+----------------------------------------
+timeLevel=00006247:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00006247:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00006247:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00008249:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00009248:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00009248:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00009249:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00012252:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00012252:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00012253:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00013255:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00015256:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00015256:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00015256:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00018258:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00018258:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00018259:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00018260:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00021262:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00021262:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00021263:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00023264:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00024266:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00024266:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00024266:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00027268:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00027269:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00027269:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00028269:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00030272:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00030272:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00030272:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00033275:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00033276:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00033276:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00033276:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00036279:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00036279:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00036279:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00038280:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00039283:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00039283:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00039283:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00042286:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00042287:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00042287:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00043286:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00045290:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00045290:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00045291:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00048291:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00048292:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00048292:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00048292:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00051295:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00051296:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00051296:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00053297:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00054299:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00054300:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00054300:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00057303:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00057303:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00057304:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00058302:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00060307:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00060307:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00060307:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00063306:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00063308:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00063308:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00063308:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00066312:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00066312:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00066312:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00068312:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00069315:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00069316:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00069316:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00072319:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00072320:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00072320:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00073317:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00075323:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00075323:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00075324:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00078323:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00078327:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00078327:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00078327:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00081331:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00081331:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00081331:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00083328:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+exception=None
+----------------------------------------
+timeLevel=00084333:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00084333:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00084333:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00085200:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
+on_exception(ServiceUnavailable('The service was unable to fulfill your request. Please try again. [code=8a75]',))
+----------------------------------------
+timeLevel=00085206:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Request generator signaled to stop.
+----------------------------------------
+timeLevel=00085207:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator+
+Sending initial request:
+subscription: "projects/precise-truck-742/subscriptions/s-repro-1512091412082"
+stream_ack_deadline_seconds: 10
+
+----------------------------------------
+timeLevel=00087337:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00087337:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00087337:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00088334:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (7) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00090340:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00090341:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00090341:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00093309:INFO
+logger=message-after-recover-repro
+threadName=Thread-ReproPublish
+Published: After the policy recovered from failure.
+----------------------------------------
+timeLevel=00093339:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (8) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+  - Thread-MonitorBatchPublisher
+exception=None
+----------------------------------------
+timeLevel=00093343:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00093343:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00093344:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00093477:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher
+gRPC Publish took 0.11765575408935547 seconds.
+----------------------------------------
+timeLevel=00093770:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
+Received response:
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREEIG8TJEJZHmJoXFx1B1ALGXIrMCFvWEYJCEVZfndrOTJpW1t1AVALHHF7aHVjXRApt7uO7NJgZh89WxJLLD4"
+  message {
+    data: "After the policy recovered from failure."
+    message_id: "177061653690973"
+    publish_time {
+      seconds: 1512091505
+      nanos: 392000000
+    }
+  }
+}
+
+----------------------------------------
+timeLevel=00093771:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREEIG8TJEJZHmJoXFx1B1ALGXIrMCFvWEYJCEVZfndrOTJpW1t1AVALHHF7aHVjXRApt7uO7NJgZh89WxJLLD4"
+message {
+  data: "After the policy recovered from failure."
+  message_id: "177061653690973"
+  publish_time {
+    seconds: 1512091505
+    nanos: 392000000
+  }
+}
+
+----------------------------------------
+timeLevel=00093772:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f7bfd178d68>
+----------------------------------------
+timeLevel=00093773:INFO
+logger=message-after-recover-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy_0
+ Received: After the policy recovered from failure.
+----------------------------------------
+timeLevel=00093773:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
+Result: None
+----------------------------------------
+timeLevel=00093774:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator+
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREEIG8TJEJZHmJoXFx1B1ALGXIrMCFvWEYJCEVZfndrOTJpW1t1AVALHHF7aHVjXRApt7uO7NJgZh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00096344:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00096344:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00096345:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00098343:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (8) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+  - ThreadPoolExecutor-SubscriberPolicy_0
+exception=None
+----------------------------------------
+timeLevel=00099348:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00099348:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00099348:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00102352:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00102352:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00102352:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00103343:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (8) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+  - ThreadPoolExecutor-SubscriberPolicy_0
+exception=None
+----------------------------------------
+timeLevel=00105356:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00105356:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00105356:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00108349:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (8) =
+  - MainThread
+  - Thread-ConsumerHelper-CallbackRequestsWorker
+  - Thread-ConsumerHelper-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+  - ThreadPoolExecutor-SubscriberPolicy_0
+exception=None
+----------------------------------------
+timeLevel=00108360:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00108360:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00108360:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00111363:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00111364:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00111364:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00113314:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._helper_threads
+threadName=Thread-ReproPublish
+Stopping helper thread CallbackRequestsWorker
+----------------------------------------
+timeLevel=00113315:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._helper_threads
+threadName=Thread-ConsumerHelper-CallbackRequestsWorker
+Exiting the QueueCallbackThread.
+----------------------------------------
+timeLevel=00113315:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._helper_threads
+threadName=Thread-ReproPublish
+Stopping helper thread ConsumeBidirectionalStream
+----------------------------------------
+timeLevel=00113316:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator+
+Request generator signaled to stop.
+----------------------------------------
+timeLevel=00113349:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
+Clean RPC loop exit signalled consumer exit.
+----------------------------------------
+timeLevel=00113354:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=False
+done=True
+active threads (3) =
+  - MainThread
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy_0
+exception=None
+----------------------------------------
+timeLevel=00114367:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Consumer inactive, ending lease maintenance.
+----------------------------------------
+timeLevel=00114367:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Consumer inactive, ending lease maintenance.
+----------------------------------------
+timeLevel=00118360:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=False
+done=True
+active threads (2) =
+  - MainThread
+  - ThreadPoolExecutor-SubscriberPolicy_0
+exception=None
+----------------------------------------
+timeLevel=00123361:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=False
+done=True
+active threads (2) =
+  - MainThread
+  - ThreadPoolExecutor-SubscriberPolicy_0
+exception=None
+----------------------------------------
+timeLevel=00128366:INFO
+logger=message-after-recover-repro
+threadName=MainThread
+Heartbeat:
+running=False
+done=True
+active threads (2) =
+  - MainThread
+  - ThreadPoolExecutor-SubscriberPolicy_0
+exception=None
+----------------------------------------
