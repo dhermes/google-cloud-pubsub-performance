@@ -65,3 +65,9 @@ def no_messages(session, version):
 @nox.parametrize('version', VERSIONS)
 def message_after_recover(session, version):
     _run('message-after-recover', session, version)
+
+
+@nox.session
+@nox.parametrize('version', VERSIONS)
+def cpu_spike(session, version):
+    _run('cpu-spike', session, version)
