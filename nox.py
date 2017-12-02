@@ -71,3 +71,9 @@ def message_after_recover(session, version):
 @nox.parametrize('version', VERSIONS)
 def cpu_spike(session, version):
     _run('cpu-spike', session, version)
+
+
+@nox.session
+@nox.parametrize('version', VERSIONS)
+def flow_control(session, version):
+    _run('flow-control', session, version)
