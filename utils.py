@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 import distutils.sysconfig
 import logging
 import os
@@ -25,6 +24,8 @@ import google.auth
 from google.cloud.pubsub_v1.subscriber import policy
 from google.cloud import pubsub_v1
 import pkg_resources
+
+import grpc_patches
 
 
 SCOPE = 'https://www.googleapis.com/auth/pubsub'
@@ -48,6 +49,7 @@ ORIGINAL_STDERR = sys.stderr
 
 
 def setup_logging(directory):
+    grpc_patches.patch()
     # NOTE: Must set the logging level on the "root" logger since
     #       the orchestration across threads is funky (I still do
     #       not **fully** understand it).

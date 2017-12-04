@@ -85,7 +85,7 @@
 <polygon fill="black" stroke="black" points="1610.52,-179.798 1619.69,-174.491 1609.22,-172.921 1610.52,-179.798"/>
 </g>
 <!-- ReproPublish -->
-<g id="node11" class="node"><title>ReproPublish</title>
+<g id="node12" class="node"><title>ReproPublish</title>
 <ellipse fill="none" stroke="black" cx="1829.59" cy="-162" rx="58.4896" ry="18"/>
 <text text-anchor="middle" x="1829.59" y="-158.3" font-family="Times,serif" font-size="14.00">ReproPublish</text>
 </g>
@@ -135,7 +135,7 @@
 <polygon fill="black" stroke="black" points="301.704,-118.153 298.347,-108.104 294.705,-118.053 301.704,-118.153"/>
 </g>
 <!-- gRPC&#45;PluginGetMetadata2 -->
-<g id="node12" class="node"><title>gRPC&#45;PluginGetMetadata2</title>
+<g id="node11" class="node"><title>gRPC&#45;PluginGetMetadata2</title>
 <ellipse fill="none" stroke="black" cx="596.592" cy="-90" rx="107.781" ry="18"/>
 <text text-anchor="middle" x="596.592" y="-86.3" font-family="Times,serif" font-size="14.00">gRPC&#45;PluginGetMetadata2</text>
 </g>

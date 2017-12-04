@@ -51,14 +51,14 @@ def _run(directory, session, version):
 
 @nox.session
 @nox.parametrize('version', VERSIONS)
-def not_found(session, version):
-    _run('not-found', session, version)
+def cpu_spike(session, version):
+    _run('cpu-spike', session, version)
 
 
 @nox.session
 @nox.parametrize('version', VERSIONS)
-def no_messages(session, version):
-    _run('no-messages', session, version)
+def flow_control(session, version):
+    _run('flow-control', session, version)
 
 
 @nox.session
@@ -69,11 +69,11 @@ def message_after_recover(session, version):
 
 @nox.session
 @nox.parametrize('version', VERSIONS)
-def cpu_spike(session, version):
-    _run('cpu-spike', session, version)
+def no_messages(session, version):
+    _run('no-messages', session, version)
 
 
 @nox.session
 @nox.parametrize('version', VERSIONS)
-def flow_control(session, version):
-    _run('flow-control', session, version)
+def not_found(session, version):
+    _run('not-found', session, version)
