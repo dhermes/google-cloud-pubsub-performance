@@ -1,3 +1,13 @@
+1. Creates a new topic
+1. Creates a subscription to the created topic
+1. Opens a subscriber to the new subscription
+1. Spawns a publisher worker (in the background) that waits until the
+   subscriber has recovered from an UNAVAILABLE error before publishing
+   a single message, then sleeping for 20 seconds and closing the
+   subscriber
+
+----
+
 This indicates an inherent problem:
 
 ```

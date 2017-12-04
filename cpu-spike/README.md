@@ -1,3 +1,21 @@
+This example does the following:
+
+1.  Creates a new topic
+1.  Creates a subscription to the created topic
+1.  Opens a subscriber to the new subscription
+1.  Spawns a publisher worker that does the following in order
+    in the background:
+    - pushes 18 messages
+    - sleeps 3 seconds
+    - pushes 5 messages
+    - sleeps 10 seconds
+    - pushes 1 messages
+    - sleeps 5 seconds
+    - pushes 7 messages
+    - sleeps 3 seconds
+
+----
+
 Note here that the once all 10 executor threads are
 active, they never become inactive:
 
