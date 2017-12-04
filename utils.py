@@ -46,6 +46,10 @@ exception=%r"""
 MAX_TIME = 300
 DONE_HEARTBEATS = 4
 ORIGINAL_STDERR = sys.stderr
+LOGGER_BASE = logging.getLogger(
+    'google.cloud.pubsub_v1.subscriber.policy.base')
+LOGGER_THREAD = logging.getLogger(
+    'google.cloud.pubsub_v1.subscriber.policy.thread')
 
 
 def setup_logging(directory):
@@ -93,7 +97,7 @@ def heartbeat(logger, future, done_count):
 
 
 def done_count_extra(future, done_count):
-    if PUBSUB.version() == '0.29.1':
+    if PUBSUB.version() in ('0.29.0', '0.29.1'):
         if done_count < DONE_HEARTBEATS:
             return done_count
         # We don't allow an exit while the consumer is active.
@@ -164,12 +168,12 @@ class AckCallback(object):
 class Policy(policy.thread.Policy):
 
     def on_exception(self, exception):
-        policy.thread._LOGGER.debug('on_exception(%r)', exception)
+        LOGGER_THREAD.debug('on_exception(%r)', exception)
         return super(Policy, self).on_exception(exception)
 
     def maintain_leases(self):
         result = super(Policy, self).maintain_leases()
-        policy.base._LOGGER.debug(
+        LOGGER_BASE.debug(
             'Consumer inactive, ending lease maintenance.')
         return result
 

@@ -77,7 +77,7 @@ def update_thread_kwargs(args, kwargs):
         kwargs['name'] = 'Thread-gRPC-ConsumeRequestIterator'
         return
 
-    if utils.PUBSUB.version() == '0.29.1':
+    if utils.PUBSUB.version() in ('0.29.0', '0.29.1'):
         func = getattr(target, '__func__', None)
         # Expected case 6: Spawned in ``policy.thread.Policy.open()``, though
         # takes into account our override.
