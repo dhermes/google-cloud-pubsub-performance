@@ -69,6 +69,6 @@ def no_messages(session, version):
 
 
 @nox.session
-@nox.parametrize('version', ('0.29.1', '0.29.2'))
+@nox.parametrize('version', ('0.29.0', '0.29.1', '0.29.2'))
 def not_found(session, version):
     _run('not-found', session, version)
