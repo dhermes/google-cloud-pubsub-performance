@@ -157,7 +157,7 @@ def get_names_remap(thread_names):
     return names_map
 
 
-def save_tree(directory):
+def save_tree(directory, logger=None):
     filename = os.path.join(
         directory,
         '{}.svg'.format(utils.PUBSUB.version()),
@@ -168,8 +168,14 @@ def save_tree(directory):
     names_map = get_names_remap(THREAD_NAMES[::])
 
     graph = networkx.DiGraph()
+    to_log = []
     for parent, name in zip(THREAD_PARENTS, THREAD_NAMES):
+        to_log.append('{} -> {}'.format(parent, name))
         graph.add_edge(names_map[parent], names_map[name])
+
+    if logger is not None:
+        logger.debug(
+            'Thread / Parent relationships:\n%s', '\n'.join(to_log))
 
     dot = networkx.drawing.nx_pydot.to_pydot(graph)
     with open(filename, 'wb') as file_obj:

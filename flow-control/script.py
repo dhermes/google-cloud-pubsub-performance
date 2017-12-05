@@ -18,7 +18,6 @@ import threading
 import time
 
 from google.cloud.pubsub_v1 import types
-from google.cloud.pubsub_v1.subscriber import policy
 import six
 
 import thread_names
@@ -73,11 +72,19 @@ class Policy(utils.Policy):
             self.flow_control.max_bytes,
         )
 
+    def close(self):
+        utils.LOGGER_THREAD.debug('Closing policy %r.', self)
+        return super(Policy, self).close()
+
+    def open(self, callback):
+        utils.LOGGER_THREAD.debug('Opening policy %r with %r.', self, callback)
+        return super(Policy, self).open(callback)
+
     @property
     def _load(self):
         policy_info = self._get_policy_info()
         result = super(Policy, self)._load
-        policy.base._LOGGER.debug(
+        utils.LOGGER_BASE.debug(
             'Policy._load: %s\ninfo =\n%s', result, policy_info)
         return result
 
@@ -120,7 +127,7 @@ def main():
     subscription.close()
     publisher.delete_topic(topic_path)
     subscriber.delete_subscription(subscription_path)
-    thread_names.save_tree(CURR_DIR)
+    thread_names.save_tree(CURR_DIR, logger=logger)
     thread_names.restore()
     utils.restore()
 
