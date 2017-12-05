@@ -1,3 +1,5 @@
+## Status: Still not able to reproduce
+
 This example does the following:
 
 1.  Creates a new topic
@@ -13,6 +15,9 @@ This example does the following:
     - sleeps 5 seconds
     - pushes 7 messages
     - sleeps 3 seconds
+
+The goal of this example is to reproduce [reported][4] increases
+in CPU usage.
 
 ----
 
@@ -55,3 +60,4 @@ widely [reported][1] by users ([e.g.][2], [e.g.][3]).
 [1]: https://bugs.python.org/issue27144
 [2]: https://stackoverflow.com/q/37445540/1068170
 [3]: https://stackoverflow.com/q/34770169/1068170
+[4]: https://github.com/GoogleCloudPlatform/google-cloud-python/issues/4234#issuecomment-339400158

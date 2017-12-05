@@ -38,7 +38,7 @@ def publish_target(message_counts, intervals, publisher, topic_path, logger):
             )
             logger.info('Published: %s', data)
             index += 1
-            time.sleep(interval)
+        time.sleep(interval)
 
 
 def publish_async(publisher, topic_path, logger):
@@ -83,6 +83,7 @@ def main():
 
     # Do clean-up.
     publisher.delete_topic(topic_path)
+    subscriber.delete_subscription(subscription_path)
     thread_names.save_tree(CURR_DIR)
     thread_names.restore()
     utils.restore()

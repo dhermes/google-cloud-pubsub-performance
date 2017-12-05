@@ -1,4 +1,4 @@
-**Status**: Fixed in `0.29.1` ([#4444][1])
+## Status: Fixed in `0.29.1` ([#4444][1])
 
 1. Creates a new topic
 1. Creates a subscription to the created topic

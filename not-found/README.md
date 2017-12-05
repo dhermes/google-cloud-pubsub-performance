@@ -1,4 +1,4 @@
-**Status**: Fixed in `0.29.2` ([#4472][1] and [#4498][2])
+## Status: Fixed in `0.29.2` ([#4472][1] and [#4498][2])
 
 This example does the following:
 
