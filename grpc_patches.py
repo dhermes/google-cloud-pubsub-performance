@@ -37,6 +37,8 @@ def _consume_request_iterator(
             try:
                 request = next(request_iterator)
             except StopIteration:
+                LOGGER.debug(
+                    'consume_request_iterator() encountered StopIteration')
                 break
             except Exception:
                 LOGGER.exception('Exception iterating requests!')
@@ -76,8 +78,15 @@ def _consume_request_iterator(
                                         request)
                                     break
                             else:
+                                LOGGER.debug(
+                                    'consume_request_iterator() exiting in '
+                                    'error (%r) after waiting for '
+                                    'send_message()', state.code)
                                 return
                 else:
+                    LOGGER.debug(
+                        'consume_request_iterator() exiting in error before '
+                        'sending newly consumed request:\n%r', request)
                     return
         with state.condition:
             if state.code is None:
@@ -87,6 +96,10 @@ def _consume_request_iterator(
                 call.start_client_batch(
                     cygrpc.Operations(operations), event_handler)
                 state.due.add(cygrpc.OperationType.send_close_from_client)
+            else:
+                LOGGER.debug(
+                    'consume_request_iterator() exiting in error (%r) after a '
+                    'request iterator is exhausted', state.code)
 
     def stop_consumption_thread(timeout):
         with state.condition:
