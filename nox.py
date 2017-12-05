@@ -45,19 +45,19 @@ def _run(directory, session, version):
 
 
 @nox.session
-@nox.parametrize('version', (LOCAL, '0.29.1', '0.29.2'))
+@nox.parametrize('version', ('0.29.1', '0.29.2', LOCAL))
 def cpu_spike(session, version):
     _run('cpu-spike', session, version)
 
 
 @nox.session
-@nox.parametrize('version', (LOCAL, '0.29.2'))
+@nox.parametrize('version', ('0.29.2', LOCAL))
 def flow_control(session, version):
     _run('flow-control', session, version)
 
 
 @nox.session
-@nox.parametrize('version', ('0.29.1', '0.29.2'))
+@nox.parametrize('version', ('0.29.2', LOCAL))
 def message_after_recover(session, version):
     _run('message-after-recover', session, version)
 

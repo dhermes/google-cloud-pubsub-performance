@@ -1,3 +1,5 @@
+## Status: Fixed, but not released ([#4503][1])
+
 1. Creates a new topic
 1. Creates a subscription to the created topic
 1. Opens a subscriber to the new subscription
@@ -8,75 +10,84 @@
 
 ----
 
-This indicates an inherent problem:
+This indicates an inherent problem, present in `0.29.2`:
 
 ```
-timeLevel=00003115:DEBUG
+----------------------------------------
+timeLevel=00003890:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
 threadName=Thread-gRPC-ConsumeRequestIterator
 Sending initial request:
-subscription: "projects/precise-truck-742/subscriptions/s-repro-1512072427168"
+subscription: "projects/precise-truck-742/subscriptions/s-repro-1512434066551"
 stream_ack_deadline_seconds: 10
 
 ----------------------------------------
-timeLevel=00115947:DEBUG
+timeLevel=00115817:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
 threadName=Thread-gRPC-ConsumeRequestIterator+
 Sending initial request:
-subscription: "projects/precise-truck-742/subscriptions/s-repro-1512072427168"
+subscription: "projects/precise-truck-742/subscriptions/s-repro-1512434066551"
 stream_ack_deadline_seconds: 10
 
 ----------------------------------------
-timeLevel=00123195:INFO
+timeLevel=00123991:INFO
 logger=message-after-recover-repro
 threadName=Thread-ReproPublish
 Published: After the policy recovered from failure.
 ----------------------------------------
-timeLevel=00123646:DEBUG
+timeLevel=00124823:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
 threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
 Received response:
 received_messages {
-  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREDIG8TJEJZGWJoXFx1B1ALGXIoaSZrXUBQCEVZfndrOTJpW1p8A1cLG3t4ZnVsXBYpjaCV5MNgZh89WxJLLD4"
+  ack_id: "fjUyRUFeQBJMPgdESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREHIG8TJkJaHmJoXFx1B1ALGXB5YCRuUxZVCEVZfndrOTJpW1RzDlkNHXd9aXFoWBMptIbEx9BmZh89WxJLLD4"
   message {
     data: "After the policy recovered from failure."
-    message_id: "176946629570665"
+    message_id: "178698045084220"
     publish_time {
-      seconds: 1512072550
-      nanos: 359000000
+      seconds: 1512434190
+      nanos: 692000000
     }
   }
 }
 
 ----------------------------------------
-timeLevel=00123648:DEBUG
+timeLevel=00124825:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
 threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
 New message received from Pub/Sub:
-ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREDIG8TJEJZGWJoXFx1B1ALGXIoaSZrXUBQCEVZfndrOTJpW1p8A1cLG3t4ZnVsXBYpjaCV5MNgZh89WxJLLD4"
+ack_id: "fjUyRUFeQBJMPgdESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREHIG8TJkJaHmJoXFx1B1ALGXB5YCRuUxZVCEVZfndrOTJpW1RzDlkNHXd9aXFoWBMptIbEx9BmZh89WxJLLD4"
 message {
   data: "After the policy recovered from failure."
-  message_id: "176946629570665"
+  message_id: "178698045084220"
   publish_time {
-    seconds: 1512072550
-    nanos: 359000000
+    seconds: 1512434190
+    nanos: 692000000
   }
 }
 
 ----------------------------------------
-timeLevel=00123649:INFO
+timeLevel=00124826:INFO
 logger=message-after-recover-repro
 threadName=ThreadPoolExecutor-SubscriberPolicy_0
  Received: After the policy recovered from failure.
 ----------------------------------------
-timeLevel=00123651:DEBUG
+timeLevel=00124827:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
+Result: Message {
+    data: b'After the policy recovered from failure.'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f85f547f8f0>
+}
+----------------------------------------
+timeLevel=00124828:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
 threadName=Thread-gRPC-ConsumeRequestIterator
 Sending request:
-ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREDIG8TJEJZGWJoXFx1B1ALGXIoaSZrXUBQCEVZfndrOTJpW1p8A1cLG3t4ZnVsXBYpjaCV5MNgZh89WxJLLD4"
+ack_ids: "fjUyRUFeQBJMPgdESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREHIG8TJkJaHmJoXFx1B1ALGXB5YCRuUxZVCEVZfndrOTJpW1RzDlkNHXd9aXFoWBMptIbEx9BmZh89WxJLLD4"
 
 ----------------------------------------
-timeLevel=00143209:DEBUG
+timeLevel=00144011:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
 threadName=Thread-gRPC-ConsumeRequestIterator+
 Request generator signaled to stop.
@@ -97,3 +108,5 @@ that thread called the blocking `get()` **FIRST**. Then after we call
 `Thread-gRPC-ConsumeRequestIterator+` because it's `get()` call is
 the oldest remaining. Hence, the **second** thread gets shut down, but
 the first remains a zombie.
+
+[1]: https://github.com/GoogleCloudPlatform/google-cloud-python/pull/4503
