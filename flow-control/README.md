@@ -1,3 +1,5 @@
+## Status: Identified as broken but not yet fixed
+
 1. Creates a new topic
 1. Creates a subscription to the created topic
 1. Opens a subscriber to the new subscription

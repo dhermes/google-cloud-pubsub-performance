@@ -51,7 +51,7 @@ def cpu_spike(session, version):
 
 
 @nox.session
-@nox.parametrize('version', (LOCAL, '0.29.1', '0.29.2'))
+@nox.parametrize('version', (LOCAL, '0.29.2'))
 def flow_control(session, version):
     _run('flow-control', session, version)
 

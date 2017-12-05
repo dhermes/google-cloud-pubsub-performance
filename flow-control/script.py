@@ -17,6 +17,7 @@ import random
 import threading
 import time
 
+from google.cloud.pubsub_v1 import types
 from google.cloud.pubsub_v1.subscriber import policy
 import six
 
@@ -33,11 +34,14 @@ POLICY_INFO_TEMPLATE = """\
   max_bytes = {}"""
 
 
-def publish_target(publisher, topic_path, logger):
+def publish_target(publisher, consumer, topic_path, logger):
     index = 0
     # Finish 10 seconds early.
     deadline = time.time() + MAX_TIME - 10.0
     while time.time() < deadline:
+        if not consumer.active:
+            return
+
         for _ in six.moves.xrange(6):
             data = u'Wooooo! The claaaaaw! (index={})'.format(index)
             publisher.publish(
@@ -50,10 +54,10 @@ def publish_target(publisher, topic_path, logger):
         time.sleep(random.random())
 
 
-def publish_async(publisher, topic_path, logger):
+def publish_async(publisher, consumer, topic_path, logger):
     thread = threading.Thread(
         target=publish_target,
-        args=(publisher, topic_path, logger),
+        args=(publisher, consumer, topic_path, logger),
         name='Thread-ReproPublish',
     )
     thread.start()
@@ -99,11 +103,14 @@ def main():
     # published so that we'll receive them as they come in.
     subscriber.create_subscription(subscription_path, topic_path)
     logger.info('Listening for messages on %s', subscription_path)
-    subscription = subscriber.subscribe(subscription_path)
+    flow_control = types.FlowControl(max_messages=8)
+    subscription = subscriber.subscribe(
+        subscription_path, flow_control=flow_control)
     sub_future = subscription.open(utils.AckCallback(logger))
+    consumer = subscription._consumer
 
     # Set off async job to publish some messages.
-    publish_async(publisher, topic_path, logger)
+    publish_async(publisher, consumer, topic_path, logger)
 
     # The subscriber is non-blocking, so we must keep the main thread from
     # exiting to allow it to process messages in the background.
