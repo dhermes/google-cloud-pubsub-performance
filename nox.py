@@ -20,7 +20,6 @@ import nox
 PINNED_DEPS = (
     'grpcio==1.7.0',
     'pydot==1.2.3',
-    'networkx==2.0',
 )
 LOCAL = 'local'
 
