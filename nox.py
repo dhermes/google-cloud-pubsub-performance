@@ -44,13 +44,13 @@ def _run(directory, session, version):
 
 
 @nox.session
-@nox.parametrize('version', ('0.29.1', '0.29.2', LOCAL))
+@nox.parametrize('version', ('0.29.1', '0.29.2'))
 def cpu_spike(session, version):
     _run('cpu-spike', session, version)
 
 
 @nox.session
-@nox.parametrize('version', ('0.29.2', LOCAL))
+@nox.parametrize('version', ('0.29.2',))
 def flow_control(session, version):
     _run('flow-control', session, version)
 

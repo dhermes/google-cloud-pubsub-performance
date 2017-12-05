@@ -143,10 +143,11 @@ def restore():
     grpc._common.CleanupThread.__init__ = ORIGINAL_CLEANUP_THREAD_CONSTRUCTOR
 
 
-def save_tree(directory, logger=None):
-    filename = os.path.join(
+def save_tree(directory, logger):
+    # Make the base without a file extension.
+    filename_base = os.path.join(
         directory,
-        '{}.svg'.format(utils.PUBSUB.version()),
+        utils.PUBSUB.version(),
     )
     assert len(THREAD_NAMES) == len(THREAD_PARENTS)
 
@@ -157,8 +158,7 @@ def save_tree(directory, logger=None):
         sub_tree.add_child(name)
         to_log.append('{} -> {}'.format(parent, name))
 
-    if logger is not None:
-        logger.debug(
-            'Thread / Parent relationships:\n%s', '\n'.join(to_log))
+    logger.debug(
+        'Thread / Parent relationships:\n%s', '\n'.join(to_log))
 
-    root.save_graphviz(filename)
+    root.save_graphviz(filename_base)

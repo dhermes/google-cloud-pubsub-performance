@@ -1,0 +1,96 @@
+digraph G {
+subgraph  {
+subgraph  {
+}
+
+"Thread-gRPC-SubscribeMoot" -> "Thread-gRPC-SpawnDelivery";
+}
+
+subgraph  {
+}
+
+subgraph  {
+subgraph  {
+}
+
+subgraph  {
+subgraph  {
+}
+
+subgraph  {
+}
+
+subgraph  {
+}
+
+"Thread-ConsumerHelper-ConsumeBidirectionalStream+" -> "Thread-gRPC-PluginGetMetadata+++++++++";
+"Thread-ConsumerHelper-ConsumeBidirectionalStream+" -> "Thread-gRPC-StopChannelSpin+";
+"Thread-ConsumerHelper-ConsumeBidirectionalStream+" -> "Thread-gRPC-ConsumeRequestIterator+";
+}
+
+subgraph  {
+}
+
+"Thread-ConsumerHelper-CallbackRequestsWorker" -> "Thread-ConsumerHelper-CallbackRequestsWorker+";
+"Thread-ConsumerHelper-CallbackRequestsWorker" -> "Thread-ConsumerHelper-ConsumeBidirectionalStream+";
+"Thread-ConsumerHelper-CallbackRequestsWorker" -> "Thread-LeaseMaintenance+";
+}
+
+subgraph  {
+subgraph  {
+}
+
+subgraph  {
+}
+
+subgraph  {
+}
+
+subgraph  {
+}
+
+"Thread-ConsumerHelper-ConsumeBidirectionalStream" -> "Thread-gRPC-PluginGetMetadata++";
+"Thread-ConsumerHelper-ConsumeBidirectionalStream" -> "Thread-gRPC-StopChannelSpin";
+"Thread-ConsumerHelper-ConsumeBidirectionalStream" -> "Thread-gRPC-ConsumeRequestIterator";
+"Thread-ConsumerHelper-ConsumeBidirectionalStream" -> "ThreadPoolExecutor-SubscriberPolicy"  [label=10];
+}
+
+subgraph  {
+}
+
+subgraph  {
+subgraph  {
+subgraph  {
+}
+
+"Thread-MonitorBatchPublisher" -> "Thread-gRPC-PluginGetMetadata+++";
+}
+
+"Thread-ReproPublish" -> "Thread-MonitorBatchPublisher"  [label=47];
+}
+
+MainThread -> "Thread-gRPC-SubscribeMoot"  [label=2];
+MainThread -> "Thread-gRPC-PluginGetMetadata"  [label=4];
+MainThread -> "Thread-ConsumerHelper-CallbackRequestsWorker";
+MainThread -> "Thread-ConsumerHelper-ConsumeBidirectionalStream";
+MainThread -> "Thread-LeaseMaintenance";
+MainThread -> "Thread-ReproPublish";
+"Thread-ConsumerHelper-ConsumeBidirectionalStream" [label="ConsumerHelper-ConsumeBidirectionalStream"];
+"Thread-gRPC-PluginGetMetadata" [label="gRPC-PluginGetMetadata"];
+"Thread-gRPC-ConsumeRequestIterator" [label="gRPC-ConsumeRequestIterator"];
+"Thread-ConsumerHelper-CallbackRequestsWorker+" [label="ConsumerHelper-CallbackRequestsWorker"];
+"Thread-MonitorBatchPublisher" [label=MonitorBatchPublisher];
+"Thread-gRPC-PluginGetMetadata+++" [label="gRPC-PluginGetMetadata"];
+"Thread-ReproPublish" [label=ReproPublish];
+"Thread-gRPC-PluginGetMetadata+++++++++" [label="gRPC-PluginGetMetadata"];
+"Thread-gRPC-SpawnDelivery" [label="gRPC-SpawnDelivery"];
+"Thread-gRPC-ConsumeRequestIterator+" [label="gRPC-ConsumeRequestIterator"];
+"Thread-gRPC-StopChannelSpin+" [label="gRPC-StopChannelSpin"];
+"Thread-gRPC-StopChannelSpin" [label="gRPC-StopChannelSpin"];
+"Thread-ConsumerHelper-CallbackRequestsWorker" [label="ConsumerHelper-CallbackRequestsWorker"];
+"Thread-LeaseMaintenance" [label=LeaseMaintenance];
+"Thread-gRPC-SubscribeMoot" [label="gRPC-SubscribeMoot"];
+"Thread-LeaseMaintenance+" [label=LeaseMaintenance];
+"Thread-ConsumerHelper-ConsumeBidirectionalStream+" [label="ConsumerHelper-ConsumeBidirectionalStream"];
+"Thread-gRPC-PluginGetMetadata++" [label="gRPC-PluginGetMetadata"];
+}

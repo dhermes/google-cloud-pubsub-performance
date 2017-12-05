@@ -1,0 +1,50 @@
+digraph G {
+subgraph  {
+}
+
+subgraph  {
+subgraph  {
+}
+
+"Thread-gRPC-SubscribeMoot+" -> "Thread-gRPC-SpawnDelivery";
+}
+
+subgraph  {
+}
+
+subgraph  {
+}
+
+subgraph  {
+subgraph  {
+}
+
+subgraph  {
+}
+
+subgraph  {
+}
+
+"Consumer helper: consume bidirectional stream" -> "Thread-gRPC-PluginGetMetadata++"  [label=2];
+"Consumer helper: consume bidirectional stream" -> "Thread-gRPC-StopChannelSpin"  [label=2];
+"Consumer helper: consume bidirectional stream" -> "Thread-gRPC-ConsumeRequestIterator"  [label=2];
+}
+
+subgraph  {
+}
+
+MainThread -> "Thread-gRPC-SubscribeMoot";
+MainThread -> "Thread-gRPC-SubscribeMoot+";
+MainThread -> "Thread-gRPC-PluginGetMetadata"  [label=4];
+MainThread -> "Consumer helper: callback requests worker";
+MainThread -> "Consumer helper: consume bidirectional stream";
+MainThread -> "Thread-LeaseMaintenance";
+"Thread-gRPC-ConsumeRequestIterator" [label="gRPC-ConsumeRequestIterator"];
+"Thread-LeaseMaintenance" [label=LeaseMaintenance];
+"Thread-gRPC-PluginGetMetadata" [label="gRPC-PluginGetMetadata"];
+"Thread-gRPC-SubscribeMoot" [label="gRPC-SubscribeMoot"];
+"Thread-gRPC-SubscribeMoot+" [label="gRPC-SubscribeMoot"];
+"Thread-gRPC-SpawnDelivery" [label="gRPC-SpawnDelivery"];
+"Thread-gRPC-PluginGetMetadata++" [label="gRPC-PluginGetMetadata"];
+"Thread-gRPC-StopChannelSpin" [label="gRPC-StopChannelSpin"];
+}

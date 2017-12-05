@@ -1,91 +1,93 @@
-timeLevel=00001263:DEBUG
+timeLevel=00000439:DEBUG
 logger=google.auth.transport.requests
 threadName=Thread-gRPC-PluginGetMetadata
 Making request: POST https://accounts.google.com/o/oauth2/token
 ----------------------------------------
-timeLevel=00001266:DEBUG
+timeLevel=00000443:DEBUG
 logger=urllib3.connectionpool
 threadName=Thread-gRPC-PluginGetMetadata
 Starting new HTTPS connection (1): accounts.google.com
 ----------------------------------------
-timeLevel=00001481:DEBUG
+timeLevel=00000632:DEBUG
 logger=urllib3.connectionpool
 threadName=Thread-gRPC-PluginGetMetadata
 https://accounts.google.com:443 "POST /o/oauth2/token HTTP/1.1" 200 None
 ----------------------------------------
-timeLevel=00002114:INFO
+timeLevel=00001555:INFO
 logger=not-found-repro
 threadName=MainThread
 Listening for messages on projects/precise-truck-742/subscriptions/s-not-exist
 ----------------------------------------
-timeLevel=00002115:DEBUG
+timeLevel=00001556:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
 threadName=MainThread
 Creating callback requests thread (not starting).
 ----------------------------------------
-timeLevel=00002115:DEBUG
+timeLevel=00001556:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
 threadName=MainThread
 Starting callback requests worker.
 ----------------------------------------
-timeLevel=00002116:DEBUG
+timeLevel=00001557:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._helper_threads
 threadName=MainThread
 Started helper thread callback requests worker
 ----------------------------------------
-timeLevel=00002117:DEBUG
+timeLevel=00001558:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._helper_threads
 threadName=MainThread
 Started helper thread consume bidirectional stream
 ----------------------------------------
-timeLevel=00002117:DEBUG
+timeLevel=00001559:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
 threadName=MainThread
 Spawning lease maintenance worker.
 ----------------------------------------
-timeLevel=00002117:DEBUG
+timeLevel=00001562:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending initial request: subscription: "projects/precise-truck-742/subscriptions/s-not-exist"
+stream_ack_deadline_seconds: 10
+
+----------------------------------------
+timeLevel=00001562:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.base
 threadName=Thread-LeaseMaintenance
 The current p99 value is 10 seconds.
 ----------------------------------------
-timeLevel=00002118:DEBUG
+timeLevel=00001565:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.base
 threadName=Thread-LeaseMaintenance
 Renewing lease for 0 ack IDs.
 ----------------------------------------
-timeLevel=00002118:DEBUG
-logger=google.cloud.pubsub_v1.subscriber.policy.base
-threadName=Thread-LeaseMaintenance
-Snoozing lease management for 3.000000 seconds.
-----------------------------------------
-timeLevel=00002119:INFO
+timeLevel=00001565:INFO
 logger=not-found-repro
 threadName=MainThread
 Heartbeat:
 running=True
 done=False
-active threads (6) =
+active threads (8) =
   - MainThread
   - Consumer helper: callback requests worker
   - Consumer helper: consume bidirectional stream
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
   - Thread-LeaseMaintenance
   - Thread-ReproPublish
   - Thread-MonitorBatchPublisher
 exception=None
 ----------------------------------------
-timeLevel=00002122:DEBUG
-logger=google.cloud.pubsub_v1.subscriber._consumer
-threadName=Thread-gRPC-ConsumeRequestIterator
-Sending initial request: subscription: "projects/precise-truck-742/subscriptions/s-not-exist"
-stream_ack_deadline_seconds: 10
-
+timeLevel=00001565:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
 ----------------------------------------
-timeLevel=00002123:INFO
+timeLevel=00001566:INFO
 logger=not-found-repro
 threadName=Thread-ReproPublish
 Published: Wooooo! The claaaaaw! (index=0)
 ----------------------------------------
-timeLevel=00002290:DEBUG
+timeLevel=00001700:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-ConsumeRequestIterator
 consume_request_iterator() sent:
@@ -93,24 +95,24 @@ subscription: "projects/precise-truck-742/subscriptions/s-not-exist"
 stream_ack_deadline_seconds: 10
 
 ----------------------------------------
-timeLevel=00002342:DEBUG
+timeLevel=00001784:DEBUG
 logger=root
 threadName=Thread-MonitorBatchPublisher
-gRPC Publish took 0.17179298400878906 seconds.
+gRPC Publish took 0.16801238059997559 seconds.
 ----------------------------------------
-timeLevel=00002488:DEBUG
+timeLevel=00001901:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
 threadName=Consumer helper: consume bidirectional stream
 on_exception(<_Rendezvous of RPC that terminated with (StatusCode.NOT_FOUND, Resource not found (resource=s-not-exist).)>)
 ----------------------------------------
-timeLevel=00002491:DEBUG
+timeLevel=00001904:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
 threadName=Thread-gRPC-ConsumeRequestIterator+
 Sending initial request: subscription: "projects/precise-truck-742/subscriptions/s-not-exist"
 stream_ack_deadline_seconds: 10
 
 ----------------------------------------
-timeLevel=00002492:DEBUG
+timeLevel=00001905:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-ConsumeRequestIterator+
 consume_request_iterator() sent:
@@ -118,12 +120,12 @@ subscription: "projects/precise-truck-742/subscriptions/s-not-exist"
 stream_ack_deadline_seconds: 10
 
 ----------------------------------------
-timeLevel=00002616:DEBUG
+timeLevel=00002013:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
 threadName=Consumer helper: consume bidirectional stream
 on_exception(<_Rendezvous of RPC that terminated with (StatusCode.NOT_FOUND, Resource not found (resource=s-not-exist).)>)
 ----------------------------------------
-timeLevel=00002620:ERROR
+timeLevel=00002016:ERROR
 logger=root
 threadName=Consumer helper: consume bidirectional stream
 Exception in thread Consumer helper: consume bidirectional stream:
@@ -154,22 +156,22 @@ Traceback (most recent call last):
 RuntimeError: set_exception can only be called once.
 
 ----------------------------------------
-timeLevel=00005121:DEBUG
-logger=google.cloud.pubsub_v1.subscriber.policy.base
-threadName=Thread-LeaseMaintenance
-Consumer inactive, ending lease maintenance.
-----------------------------------------
-timeLevel=00005125:INFO
+timeLevel=00004569:INFO
 logger=not-found-repro
 threadName=Thread-ReproPublish
 Published: Wooooo! The claaaaaw! (index=1)
 ----------------------------------------
-timeLevel=00005330:DEBUG
+timeLevel=00004570:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Consumer inactive, ending lease maintenance.
+----------------------------------------
+timeLevel=00004768:DEBUG
 logger=root
 threadName=Thread-MonitorBatchPublisher+
-gRPC Publish took 0.15500831604003906 seconds.
+gRPC Publish took 0.14881134033203125 seconds.
 ----------------------------------------
-timeLevel=00007125:INFO
+timeLevel=00006570:INFO
 logger=not-found-repro
 threadName=MainThread
 Heartbeat:
@@ -178,32 +180,32 @@ done=True
 active threads (5) =
   - MainThread
   - Consumer helper: callback requests worker
-  - Thread-ReproPublish
   - Thread-gRPC-ConsumeRequestIterator
+  - Thread-ReproPublish
   - Thread-gRPC-ConsumeRequestIterator+
 exception=<_Rendezvous of RPC that terminated with (StatusCode.NOT_FOUND, Resource not found (resource=s-not-exist).)>
 ----------------------------------------
-timeLevel=00008129:INFO
+timeLevel=00007574:INFO
 logger=not-found-repro
 threadName=Thread-ReproPublish
 Published: Wooooo! The claaaaaw! (index=2)
 ----------------------------------------
-timeLevel=00008240:DEBUG
+timeLevel=00007681:DEBUG
 logger=root
 threadName=Thread-MonitorBatchPublisher++
-gRPC Publish took 0.06123757362365723 seconds.
+gRPC Publish took 0.05688667297363281 seconds.
 ----------------------------------------
-timeLevel=00011133:INFO
+timeLevel=00010578:INFO
 logger=not-found-repro
 threadName=Thread-ReproPublish
 Published: Wooooo! The claaaaaw! (index=3)
 ----------------------------------------
-timeLevel=00011240:DEBUG
+timeLevel=00010697:DEBUG
 logger=root
 threadName=Thread-MonitorBatchPublisher+++
-gRPC Publish took 0.05725669860839844 seconds.
+gRPC Publish took 0.06883478164672852 seconds.
 ----------------------------------------
-timeLevel=00012130:INFO
+timeLevel=00011575:INFO
 logger=not-found-repro
 threadName=MainThread
 Heartbeat:
@@ -212,22 +214,22 @@ done=True
 active threads (5) =
   - MainThread
   - Consumer helper: callback requests worker
-  - Thread-ReproPublish
   - Thread-gRPC-ConsumeRequestIterator
+  - Thread-ReproPublish
   - Thread-gRPC-ConsumeRequestIterator+
 exception=<_Rendezvous of RPC that terminated with (StatusCode.NOT_FOUND, Resource not found (resource=s-not-exist).)>
 ----------------------------------------
-timeLevel=00014137:INFO
+timeLevel=00013582:INFO
 logger=not-found-repro
 threadName=Thread-ReproPublish
 Published: Wooooo! The claaaaaw! (index=4)
 ----------------------------------------
-timeLevel=00014247:DEBUG
+timeLevel=00013725:DEBUG
 logger=root
 threadName=Thread-MonitorBatchPublisher++++
-gRPC Publish took 0.05962538719177246 seconds.
+gRPC Publish took 0.09296011924743652 seconds.
 ----------------------------------------
-timeLevel=00017136:INFO
+timeLevel=00016581:INFO
 logger=not-found-repro
 threadName=MainThread
 Heartbeat:
@@ -236,12 +238,12 @@ done=True
 active threads (5) =
   - MainThread
   - Consumer helper: callback requests worker
-  - Thread-ReproPublish
   - Thread-gRPC-ConsumeRequestIterator
+  - Thread-ReproPublish
   - Thread-gRPC-ConsumeRequestIterator+
 exception=<_Rendezvous of RPC that terminated with (StatusCode.NOT_FOUND, Resource not found (resource=s-not-exist).)>
 ----------------------------------------
-timeLevel=00022142:INFO
+timeLevel=00021587:INFO
 logger=not-found-repro
 threadName=MainThread
 Heartbeat:
@@ -253,4 +255,33 @@ active threads (4) =
   - Thread-gRPC-ConsumeRequestIterator
   - Thread-gRPC-ConsumeRequestIterator+
 exception=<_Rendezvous of RPC that terminated with (StatusCode.NOT_FOUND, Resource not found (resource=s-not-exist).)>
+----------------------------------------
+timeLevel=00027156:DEBUG
+logger=not-found-repro
+threadName=MainThread
+Thread / Parent relationships:
+MainThread -> Thread-gRPC-SubscribeMoot
+MainThread -> Thread-gRPC-SubscribeMoot+
+MainThread -> Thread-gRPC-PluginGetMetadata
+MainThread -> Consumer helper: callback requests worker
+MainThread -> Consumer helper: consume bidirectional stream
+Consumer helper: consume bidirectional stream -> Thread-gRPC-StopChannelSpin
+MainThread -> Thread-LeaseMaintenance
+Consumer helper: consume bidirectional stream -> Thread-gRPC-ConsumeRequestIterator
+MainThread -> Thread-ReproPublish
+Thread-ReproPublish -> Thread-MonitorBatchPublisher
+Thread-MonitorBatchPublisher -> Thread-gRPC-PluginGetMetadata+
+Thread-gRPC-StopChannelSpin -> Thread-gRPC-PluginGetMetadata++
+Consumer helper: consume bidirectional stream -> Thread-gRPC-PluginGetMetadata+++
+Consumer helper: consume bidirectional stream -> Thread-gRPC-StopChannelSpin+
+Consumer helper: consume bidirectional stream -> Thread-gRPC-ConsumeRequestIterator+
+Thread-ReproPublish -> Thread-MonitorBatchPublisher+
+Thread-MonitorBatchPublisher+ -> Thread-gRPC-PluginGetMetadata++++
+Thread-ReproPublish -> Thread-MonitorBatchPublisher++
+Thread-MonitorBatchPublisher++ -> Thread-gRPC-PluginGetMetadata+++++
+Thread-ReproPublish -> Thread-MonitorBatchPublisher+++
+Thread-MonitorBatchPublisher+++ -> Thread-gRPC-PluginGetMetadata++++++
+Thread-ReproPublish -> Thread-MonitorBatchPublisher++++
+Thread-MonitorBatchPublisher++++ -> Thread-gRPC-PluginGetMetadata+++++++
+MainThread -> Thread-gRPC-PluginGetMetadata++++++++
 ----------------------------------------

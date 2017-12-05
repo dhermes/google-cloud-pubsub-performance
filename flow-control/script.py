@@ -127,7 +127,7 @@ def main():
     subscription.close()
     publisher.delete_topic(topic_path)
     subscriber.delete_subscription(subscription_path)
-    thread_names.save_tree(CURR_DIR, logger=logger)
+    thread_names.save_tree(CURR_DIR, logger)
     thread_names.restore()
     utils.restore()
 

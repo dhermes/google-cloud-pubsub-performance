@@ -119,12 +119,20 @@ class Tree(object):
 
         return graph
 
-    def save_graphviz(self, filename):
+    def save_graphviz(self, filename_base):
         self.collapse()
+
         graph = self.pydot()
-        with open(filename, 'wb') as file_obj:
+
+        filename_dot = '{}.dot'.format(filename_base)
+        with open(filename_dot, 'w') as file_obj:
+            file_obj.write(graph.to_string())
+        print('Created {}'.format(filename_dot))
+
+        filename_svg = '{}.svg'.format(filename_base)
+        with open(filename_svg, 'wb') as file_obj:
             file_obj.write(graph.create_svg())
-        print('Created {}'.format(filename))
+        print('Created {}'.format(filename_svg))
 
 
 def clean_name(name):
