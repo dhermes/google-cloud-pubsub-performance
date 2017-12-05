@@ -163,6 +163,7 @@ class AckCallback(object):
     def __call__(self, message):
         self.logger.info(' Received: %s', message.data.decode('utf-8'))
         message.ack()
+        return message
 
 
 class Policy(policy.thread.Policy):
