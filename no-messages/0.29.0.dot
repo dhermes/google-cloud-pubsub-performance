@@ -1,4 +1,5 @@
 digraph G {
+rankdir=LR;
 subgraph  {
 }
 
@@ -39,12 +40,12 @@ MainThread -> "Thread-gRPC-PluginGetMetadata"  [label=4];
 MainThread -> "Consumer helper: callback requests worker";
 MainThread -> "Consumer helper: consume bidirectional stream";
 MainThread -> "Thread-LeaseMaintenance";
-"Thread-gRPC-ConsumeRequestIterator" [label="gRPC-ConsumeRequestIterator"];
-"Thread-LeaseMaintenance" [label=LeaseMaintenance];
-"Thread-gRPC-PluginGetMetadata" [label="gRPC-PluginGetMetadata"];
 "Thread-gRPC-SubscribeMoot" [label="gRPC-SubscribeMoot"];
-"Thread-gRPC-SubscribeMoot+" [label="gRPC-SubscribeMoot"];
 "Thread-gRPC-SpawnDelivery" [label="gRPC-SpawnDelivery"];
+"Thread-LeaseMaintenance" [label=LeaseMaintenance];
 "Thread-gRPC-PluginGetMetadata++" [label="gRPC-PluginGetMetadata"];
 "Thread-gRPC-StopChannelSpin" [label="gRPC-StopChannelSpin"];
+"Thread-gRPC-SubscribeMoot+" [label="gRPC-SubscribeMoot"];
+"Thread-gRPC-PluginGetMetadata" [label="gRPC-PluginGetMetadata"];
+"Thread-gRPC-ConsumeRequestIterator" [label="gRPC-ConsumeRequestIterator"];
 }

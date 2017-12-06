@@ -110,6 +110,7 @@ class Tree(object):
             graph.add_edge(edge)
 
         if self.parent is None:
+            graph.obj_dict['attributes']['rankdir'] = 'LR'
             for name in names:
                 stripped_name = clean_name(name)
                 if stripped_name != name:
