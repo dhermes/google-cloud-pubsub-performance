@@ -1,0 +1,5236 @@
+timeLevel=00000438:DEBUG
+logger=google.auth.transport.requests
+threadName=Thread-gRPC-PluginGetMetadata
+Making request: POST https://accounts.google.com/o/oauth2/token
+----------------------------------------
+timeLevel=00000442:DEBUG
+logger=urllib3.connectionpool
+threadName=Thread-gRPC-PluginGetMetadata
+Starting new HTTPS connection (1): accounts.google.com
+----------------------------------------
+timeLevel=00000621:DEBUG
+logger=urllib3.connectionpool
+threadName=Thread-gRPC-PluginGetMetadata
+https://accounts.google.com:443 "POST /o/oauth2/token HTTP/1.1" 200 None
+----------------------------------------
+timeLevel=00003962:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Listening for messages on projects/precise-truck-742/subscriptions/s-repro-1513017213651
+----------------------------------------
+timeLevel=00003963:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=MainThread
+Starting callback requests worker.
+----------------------------------------
+timeLevel=00003964:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=MainThread
+Started helper thread Thread-Consumer-CallbackRequestsWorker
+----------------------------------------
+timeLevel=00003964:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=MainThread
+Resuming consumer
+----------------------------------------
+timeLevel=00003965:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=MainThread
+Started helper thread Thread-ConsumeBidirectionalStream
+----------------------------------------
+timeLevel=00003965:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=MainThread
+Starting lease maintenance worker.
+----------------------------------------
+timeLevel=00003966:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00003966:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00003967:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00003970:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending initial request:
+subscription: "projects/precise-truck-742/subscriptions/s-repro-1513017213651"
+stream_ack_deadline_seconds: 10
+
+----------------------------------------
+timeLevel=00003971:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (8) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - Thread-MonitorBatchPublisher
+exception=None
+----------------------------------------
+timeLevel=00003971:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=0)
+----------------------------------------
+timeLevel=00003972:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=1)
+----------------------------------------
+timeLevel=00003972:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=2)
+----------------------------------------
+timeLevel=00003972:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=3)
+----------------------------------------
+timeLevel=00003973:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=4)
+----------------------------------------
+timeLevel=00003973:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=5)
+----------------------------------------
+timeLevel=00003973:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=6)
+----------------------------------------
+timeLevel=00003973:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=7)
+----------------------------------------
+timeLevel=00003974:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=8)
+----------------------------------------
+timeLevel=00003974:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=9)
+----------------------------------------
+timeLevel=00003974:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=10)
+----------------------------------------
+timeLevel=00003974:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=11)
+----------------------------------------
+timeLevel=00003974:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=12)
+----------------------------------------
+timeLevel=00003975:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=13)
+----------------------------------------
+timeLevel=00003975:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=14)
+----------------------------------------
+timeLevel=00003975:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=15)
+----------------------------------------
+timeLevel=00003975:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=16)
+----------------------------------------
+timeLevel=00003975:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=17)
+----------------------------------------
+timeLevel=00003976:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+subscription: "projects/precise-truck-742/subscriptions/s-repro-1513017213651"
+stream_ack_deadline_seconds: 10
+
+----------------------------------------
+timeLevel=00004270:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher
+gRPC Publish took 0.24880194664001465 seconds.
+----------------------------------------
+timeLevel=00006011:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-ConsumeBidirectionalStream
+Received response:
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZfndrOTJpVF13BlILHHB4YnBqXxopiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=0)"
+    message_id: "181213652535059"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZf3drOTJpVF13BlILHHB4YnBqXBMpiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=1)"
+    message_id: "181213652535060"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZfHdrOTJpVF13BlILHHB4YnBqXBIpiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=2)"
+    message_id: "181213652535061"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZfXdrOTJpVF13BlILHHB4YnBqXBEpiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=3)"
+    message_id: "181213652535062"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZendrOTJpVF13BlILHHB4YnBqXBApiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=4)"
+    message_id: "181213652535063"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZe3drOTJpVF13BlILHHB4YnBqXBcpiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=5)"
+    message_id: "181213652535064"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZeHdrOTJpVF13BlILHHB4YnBqXBYpiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=6)"
+    message_id: "181213652535065"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZeXdrOTJpVF13BlILHHB4YnBqXBUpiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=7)"
+    message_id: "181213652535066"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZdndrOTJpVF13BlILHHB4YnBqXBQpiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=8)"
+    message_id: "181213652535067"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZd3drOTJpVF13BlILHHB4YnBqXBspiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=9)"
+    message_id: "181213652535068"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_X3MrL1ddVHQFUA4fd39kdm9aFQgqz5K98YR2Zh49WxJLLD5-"
+  message {
+    data: "Wooooo! The claaaaaw! (index=10)"
+    message_id: "181213652535069"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_XnMrL1ddVHQFUA4fd39kdm9aFAEqz5K98YR2Zh49WxJLLD5-"
+  message {
+    data: "Wooooo! The claaaaaw! (index=11)"
+    message_id: "181213652535070"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_XXMrL1ddVHQFUA4fd39kdm9aFAAqz5K98YR2Zh49WxJLLD5-"
+  message {
+    data: "Wooooo! The claaaaaw! (index=12)"
+    message_id: "181213652535071"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_XHMrL1ddVHQFUA4fd39kdm9aFAMqz5K98YR2Zh49WxJLLD5-"
+  message {
+    data: "Wooooo! The claaaaaw! (index=13)"
+    message_id: "181213652535072"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_W3MrL1ddVHQFUA4fd39kdm9aFAIqz5K98YR2Zh49WxJLLD5-"
+  message {
+    data: "Wooooo! The claaaaaw! (index=14)"
+    message_id: "181213652535073"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_WnMrL1ddVHQFUA4fd39kdm9aFAUqz5K98YR2Zh49WxJLLD5-"
+  message {
+    data: "Wooooo! The claaaaaw! (index=15)"
+    message_id: "181213652535074"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_WXMrL1ddVHQFUA4fd39kdm9aFAQqz5K98YR2Zh49WxJLLD5-"
+  message {
+    data: "Wooooo! The claaaaaw! (index=16)"
+    message_id: "181213652535075"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+received_messages {
+  ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_WHMrL1ddVHQFUA4fd39kdm9aFAcqz5K98YR2Zh49WxJLLD5-"
+  message {
+    data: "Wooooo! The claaaaaw! (index=17)"
+    message_id: "181213652535076"
+    publish_time {
+      seconds: 1513017217
+      nanos: 741000000
+    }
+  }
+}
+
+----------------------------------------
+timeLevel=00006012:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZfndrOTJpVF13BlILHHB4YnBqXxopiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=0)"
+  message_id: "181213652535059"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006013:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006014:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy
+ Received: Wooooo! The claaaaaw! (index=0)
+----------------------------------------
+timeLevel=00006014:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZfndrOTJpVF13BlILHHB4YnBqXxopiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006015:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=0)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581eec10>
+}
+----------------------------------------
+timeLevel=00006016:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZf3drOTJpVF13BlILHHB4YnBqXBMpiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=1)"
+  message_id: "181213652535060"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006016:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006016:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+
+ Received: Wooooo! The claaaaaw! (index=1)
+----------------------------------------
+timeLevel=00006017:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=1)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581daf80>
+}
+----------------------------------------
+timeLevel=00006018:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZfHdrOTJpVF13BlILHHB4YnBqXBIpiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=2)"
+  message_id: "181213652535061"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006018:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZfndrOTJpVF13BlILHHB4YnBqXxopiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006019:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006019:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZf3drOTJpVF13BlILHHB4YnBqXBMpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006020:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+
+ Received: Wooooo! The claaaaaw! (index=2)
+----------------------------------------
+timeLevel=00006021:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZfXdrOTJpVF13BlILHHB4YnBqXBEpiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=3)"
+  message_id: "181213652535062"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006021:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy+
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=2)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f1530>
+}
+----------------------------------------
+timeLevel=00006022:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006022:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZf3drOTJpVF13BlILHHB4YnBqXBMpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006024:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZfHdrOTJpVF13BlILHHB4YnBqXBIpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006024:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+++
+ Received: Wooooo! The claaaaaw! (index=3)
+----------------------------------------
+timeLevel=00006025:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=3)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f16c0>
+}
+----------------------------------------
+timeLevel=00006025:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZendrOTJpVF13BlILHHB4YnBqXBApiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=4)"
+  message_id: "181213652535063"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006026:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006026:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++++
+ Received: Wooooo! The claaaaaw! (index=4)
+----------------------------------------
+timeLevel=00006027:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=4)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f1800>
+}
+----------------------------------------
+timeLevel=00006028:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZe3drOTJpVF13BlILHHB4YnBqXBcpiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=5)"
+  message_id: "181213652535064"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006028:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006029:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+++++
+ Received: Wooooo! The claaaaaw! (index=5)
+----------------------------------------
+timeLevel=00006029:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=5)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f19e0>
+}
+----------------------------------------
+timeLevel=00006030:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZfHdrOTJpVF13BlILHHB4YnBqXBIpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006030:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZeHdrOTJpVF13BlILHHB4YnBqXBYpiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=6)"
+  message_id: "181213652535065"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006031:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZfXdrOTJpVF13BlILHHB4YnBqXBEpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006031:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006032:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+++
+ Received: Wooooo! The claaaaaw! (index=6)
+----------------------------------------
+timeLevel=00006033:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZfXdrOTJpVF13BlILHHB4YnBqXBEpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006034:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZendrOTJpVF13BlILHHB4YnBqXBApiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006034:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=6)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f1b70>
+}
+----------------------------------------
+timeLevel=00006035:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZeXdrOTJpVF13BlILHHB4YnBqXBUpiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=7)"
+  message_id: "181213652535066"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006035:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006036:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++++
+ Received: Wooooo! The claaaaaw! (index=7)
+----------------------------------------
+timeLevel=00006037:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZendrOTJpVF13BlILHHB4YnBqXBApiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006037:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZe3drOTJpVF13BlILHHB4YnBqXBcpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006037:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=7)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f1cb0>
+}
+----------------------------------------
+timeLevel=00006038:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZdndrOTJpVF13BlILHHB4YnBqXBQpiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=8)"
+  message_id: "181213652535067"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006038:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006039:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++++++++
+ Received: Wooooo! The claaaaaw! (index=8)
+----------------------------------------
+timeLevel=00006039:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=8)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f1e90>
+}
+----------------------------------------
+timeLevel=00006040:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZd3drOTJpVF13BlILHHB4YnBqXBspiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=9)"
+  message_id: "181213652535068"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006040:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006041:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+++++++++
+ Received: Wooooo! The claaaaaw! (index=9)
+----------------------------------------
+timeLevel=00006041:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=9)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f4080>
+}
+----------------------------------------
+timeLevel=00006042:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_X3MrL1ddVHQFUA4fd39kdm9aFQgqz5K98YR2Zh49WxJLLD5-"
+message {
+  data: "Wooooo! The claaaaaw! (index=10)"
+  message_id: "181213652535069"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006042:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006042:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_XnMrL1ddVHQFUA4fd39kdm9aFAEqz5K98YR2Zh49WxJLLD5-"
+message {
+  data: "Wooooo! The claaaaaw! (index=11)"
+  message_id: "181213652535070"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006042:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006043:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_XXMrL1ddVHQFUA4fd39kdm9aFAAqz5K98YR2Zh49WxJLLD5-"
+message {
+  data: "Wooooo! The claaaaaw! (index=12)"
+  message_id: "181213652535071"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006043:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006043:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_XHMrL1ddVHQFUA4fd39kdm9aFAMqz5K98YR2Zh49WxJLLD5-"
+message {
+  data: "Wooooo! The claaaaaw! (index=13)"
+  message_id: "181213652535072"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006043:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006044:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_W3MrL1ddVHQFUA4fd39kdm9aFAIqz5K98YR2Zh49WxJLLD5-"
+message {
+  data: "Wooooo! The claaaaaw! (index=14)"
+  message_id: "181213652535073"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006044:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006044:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_WnMrL1ddVHQFUA4fd39kdm9aFAUqz5K98YR2Zh49WxJLLD5-"
+message {
+  data: "Wooooo! The claaaaaw! (index=15)"
+  message_id: "181213652535074"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006044:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006045:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_WXMrL1ddVHQFUA4fd39kdm9aFAQqz5K98YR2Zh49WxJLLD5-"
+message {
+  data: "Wooooo! The claaaaaw! (index=16)"
+  message_id: "181213652535075"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006045:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006045:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_WHMrL1ddVHQFUA4fd39kdm9aFAcqz5K98YR2Zh49WxJLLD5-"
+message {
+  data: "Wooooo! The claaaaaw! (index=17)"
+  message_id: "181213652535076"
+  publish_time {
+    seconds: 1513017217
+    nanos: 741000000
+  }
+}
+
+----------------------------------------
+timeLevel=00006045:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00006046:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+ Received: Wooooo! The claaaaaw! (index=10)
+----------------------------------------
+timeLevel=00006046:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+++
+ Received: Wooooo! The claaaaaw! (index=11)
+----------------------------------------
+timeLevel=00006047:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+++++++
+ Received: Wooooo! The claaaaaw! (index=12)
+----------------------------------------
+timeLevel=00006047:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+
+ Received: Wooooo! The claaaaaw! (index=13)
+----------------------------------------
+timeLevel=00006047:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++++++
+ Received: Wooooo! The claaaaaw! (index=14)
+----------------------------------------
+timeLevel=00006047:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++++++++
+ Received: Wooooo! The claaaaaw! (index=15)
+----------------------------------------
+timeLevel=00006048:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+++++
+ Received: Wooooo! The claaaaaw! (index=16)
+----------------------------------------
+timeLevel=00006048:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZe3drOTJpVF13BlILHHB4YnBqXBcpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006048:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=10)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f4580>
+}
+----------------------------------------
+timeLevel=00006049:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++++
+ Received: Wooooo! The claaaaaw! (index=17)
+----------------------------------------
+timeLevel=00006049:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy+++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=11)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f43a0>
+}
+----------------------------------------
+timeLevel=00006050:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy+++++++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=12)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f43f0>
+}
+----------------------------------------
+timeLevel=00006050:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy+
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=13)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f4210>
+}
+----------------------------------------
+timeLevel=00006051:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy++++++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=14)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f4350>
+}
+----------------------------------------
+timeLevel=00006052:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy++++++++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=15)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f4440>
+}
+----------------------------------------
+timeLevel=00006052:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy+++++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=16)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f4490>
+}
+----------------------------------------
+timeLevel=00006053:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZeHdrOTJpVF13BlILHHB4YnBqXBYpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006054:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy++++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=17)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f44e0>
+}
+----------------------------------------
+timeLevel=00006056:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZeHdrOTJpVF13BlILHHB4YnBqXBYpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006057:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZeXdrOTJpVF13BlILHHB4YnBqXBUpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006057:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZeXdrOTJpVF13BlILHHB4YnBqXBUpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006058:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZdndrOTJpVF13BlILHHB4YnBqXBQpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006058:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZdndrOTJpVF13BlILHHB4YnBqXBQpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006059:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZd3drOTJpVF13BlILHHB4YnBqXBspiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006059:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJaEmJoXFx1B1ALGXZ7NSRjWEAJCEVZd3drOTJpVF13BlILHHB4YnBqXBspiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00006060:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_X3MrL1ddVHQFUA4fd39kdm9aFQgqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006060:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_X3MrL1ddVHQFUA4fd39kdm9aFQgqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006061:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_XnMrL1ddVHQFUA4fd39kdm9aFAEqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006061:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_XnMrL1ddVHQFUA4fd39kdm9aFAEqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006062:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_XXMrL1ddVHQFUA4fd39kdm9aFAAqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006062:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_XXMrL1ddVHQFUA4fd39kdm9aFAAqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006063:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_XHMrL1ddVHQFUA4fd39kdm9aFAMqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006063:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_XHMrL1ddVHQFUA4fd39kdm9aFAMqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006064:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_W3MrL1ddVHQFUA4fd39kdm9aFAIqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006064:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_W3MrL1ddVHQFUA4fd39kdm9aFAIqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006065:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_WnMrL1ddVHQFUA4fd39kdm9aFAUqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006065:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_WnMrL1ddVHQFUA4fd39kdm9aFAUqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006065:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_WXMrL1ddVHQFUA4fd39kdm9aFAQqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006066:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_WXMrL1ddVHQFUA4fd39kdm9aFAQqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006066:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_WHMrL1ddVHQFUA4fd39kdm9aFAcqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006067:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbhMkQloSYmhcXHUHUAsZdns1JGNYQAkIRVl_WHMrL1ddVHQFUA4fd39kdm9aFAcqz5K98YR2Zh49WxJLLD5-"
+
+----------------------------------------
+timeLevel=00006969:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00006969:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00006970:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00006980:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=18)
+----------------------------------------
+timeLevel=00006981:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=19)
+----------------------------------------
+timeLevel=00006981:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=20)
+----------------------------------------
+timeLevel=00006981:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=21)
+----------------------------------------
+timeLevel=00006981:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=22)
+----------------------------------------
+timeLevel=00007093:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher+
+gRPC Publish took 0.06302404403686523 seconds.
+----------------------------------------
+timeLevel=00007094:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-ConsumeBidirectionalStream
+Received response:
+received_messages {
+  ack_id: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl-d2s5MGteXnMHUQQYcHtkfGpymcDB64wTZh89WxJL"
+  message {
+    data: "Wooooo! The claaaaaw! (index=18)"
+    message_id: "3226009126590"
+    publish_time {
+      seconds: 1513017220
+      nanos: 605000000
+    }
+  }
+}
+received_messages {
+  ack_id: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl_d2s5MGteXnMHUQQYcHtkfGtymcDB64wTZh89WxJL"
+  message {
+    data: "Wooooo! The claaaaaw! (index=19)"
+    message_id: "3226009126591"
+    publish_time {
+      seconds: 1513017220
+      nanos: 605000000
+    }
+  }
+}
+received_messages {
+  ack_id: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl8d2s5MGteXnMHUQQYcHtkfGhymcDB64wTZh89WxJL"
+  message {
+    data: "Wooooo! The claaaaaw! (index=20)"
+    message_id: "3226009126592"
+    publish_time {
+      seconds: 1513017220
+      nanos: 605000000
+    }
+  }
+}
+received_messages {
+  ack_id: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl9d2s5MGteXnMHUQQYcHtkfGlymcDB64wTZh89WxJL"
+  message {
+    data: "Wooooo! The claaaaaw! (index=21)"
+    message_id: "3226009126593"
+    publish_time {
+      seconds: 1513017220
+      nanos: 605000000
+    }
+  }
+}
+received_messages {
+  ack_id: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl6d2s5MGteXnMHUQQYcHtkfG5ymcDB64wTZh89WxJL"
+  message {
+    data: "Wooooo! The claaaaaw! (index=22)"
+    message_id: "3226009126594"
+    publish_time {
+      seconds: 1513017220
+      nanos: 605000000
+    }
+  }
+}
+
+----------------------------------------
+timeLevel=00007094:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl-d2s5MGteXnMHUQQYcHtkfGpymcDB64wTZh89WxJL"
+message {
+  data: "Wooooo! The claaaaaw! (index=18)"
+  message_id: "3226009126590"
+  publish_time {
+    seconds: 1513017220
+    nanos: 605000000
+  }
+}
+
+----------------------------------------
+timeLevel=00007094:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00007094:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl_d2s5MGteXnMHUQQYcHtkfGtymcDB64wTZh89WxJL"
+message {
+  data: "Wooooo! The claaaaaw! (index=19)"
+  message_id: "3226009126591"
+  publish_time {
+    seconds: 1513017220
+    nanos: 605000000
+  }
+}
+
+----------------------------------------
+timeLevel=00007095:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00007095:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl8d2s5MGteXnMHUQQYcHtkfGhymcDB64wTZh89WxJL"
+message {
+  data: "Wooooo! The claaaaaw! (index=20)"
+  message_id: "3226009126592"
+  publish_time {
+    seconds: 1513017220
+    nanos: 605000000
+  }
+}
+
+----------------------------------------
+timeLevel=00007095:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00007095:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl9d2s5MGteXnMHUQQYcHtkfGlymcDB64wTZh89WxJL"
+message {
+  data: "Wooooo! The claaaaaw! (index=21)"
+  message_id: "3226009126593"
+  publish_time {
+    seconds: 1513017220
+    nanos: 605000000
+  }
+}
+
+----------------------------------------
+timeLevel=00007095:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00007095:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl6d2s5MGteXnMHUQQYcHtkfG5ymcDB64wTZh89WxJL"
+message {
+  data: "Wooooo! The claaaaaw! (index=22)"
+  message_id: "3226009126594"
+  publish_time {
+    seconds: 1513017220
+    nanos: 605000000
+  }
+}
+
+----------------------------------------
+timeLevel=00007095:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00007096:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+ Received: Wooooo! The claaaaaw! (index=18)
+----------------------------------------
+timeLevel=00007096:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy
+ Received: Wooooo! The claaaaaw! (index=19)
+----------------------------------------
+timeLevel=00007096:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+++
+ Received: Wooooo! The claaaaaw! (index=20)
+----------------------------------------
+timeLevel=00007096:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+++++++++
+ Received: Wooooo! The claaaaaw! (index=21)
+----------------------------------------
+timeLevel=00007097:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=18)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f19e0>
+}
+----------------------------------------
+timeLevel=00007097:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+++++++
+ Received: Wooooo! The claaaaaw! (index=22)
+----------------------------------------
+timeLevel=00007098:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=19)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581daf80>
+}
+----------------------------------------
+timeLevel=00007098:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy+++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=20)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581eec10>
+}
+----------------------------------------
+timeLevel=00007098:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl-d2s5MGteXnMHUQQYcHtkfGpymcDB64wTZh89WxJL"
+
+----------------------------------------
+timeLevel=00007099:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy+++++++++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=21)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f1530>
+}
+----------------------------------------
+timeLevel=00007100:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy+++++++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=22)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f16c0>
+}
+----------------------------------------
+timeLevel=00007101:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl-d2s5MGteXnMHUQQYcHtkfGpymcDB64wTZh89WxJL"
+
+----------------------------------------
+timeLevel=00007101:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl_d2s5MGteXnMHUQQYcHtkfGtymcDB64wTZh89WxJL"
+
+----------------------------------------
+timeLevel=00007102:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl_d2s5MGteXnMHUQQYcHtkfGtymcDB64wTZh89WxJL"
+
+----------------------------------------
+timeLevel=00007102:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl8d2s5MGteXnMHUQQYcHtkfGhymcDB64wTZh89WxJL"
+
+----------------------------------------
+timeLevel=00007103:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl8d2s5MGteXnMHUQQYcHtkfGhymcDB64wTZh89WxJL"
+
+----------------------------------------
+timeLevel=00007103:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl9d2s5MGteXnMHUQQYcHtkfGlymcDB64wTZh89WxJL"
+
+----------------------------------------
+timeLevel=00007104:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl9d2s5MGteXnMHUQQYcHtkfGlymcDB64wTZh89WxJL"
+
+----------------------------------------
+timeLevel=00007104:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl6d2s5MGteXnMHUQQYcHtkfG5ymcDB64wTZh89WxJL"
+
+----------------------------------------
+timeLevel=00007104:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQloSYmhcXHUHUAsZdns1JGNYQAkIRFl6d2s5MGteXnMHUQQYcHtkfG5ymcDB64wTZh89WxJL"
+
+----------------------------------------
+timeLevel=00008977:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (17) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00009973:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00009973:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00009973:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00012976:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00012977:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00012977:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00013982:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (17) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00015980:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00015980:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00015981:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00016992:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=23)
+----------------------------------------
+timeLevel=00017103:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher++
+gRPC Publish took 0.060486793518066406 seconds.
+----------------------------------------
+timeLevel=00017591:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-ConsumeBidirectionalStream
+Received response:
+received_messages {
+  ack_id: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQlkbYmhcXHUHUAsZdns1JDlfEgAIRVl-d2s5MGteXnEHVw8dcnhmcWhymcDB64wTZh89WxJL"
+  message {
+    data: "Wooooo! The claaaaaw! (index=23)"
+    message_id: "3224062405742"
+    publish_time {
+      seconds: 1513017230
+      nanos: 616000000
+    }
+  }
+}
+
+----------------------------------------
+timeLevel=00017591:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQlkbYmhcXHUHUAsZdns1JDlfEgAIRVl-d2s5MGteXnEHVw8dcnhmcWhymcDB64wTZh89WxJL"
+message {
+  data: "Wooooo! The claaaaaw! (index=23)"
+  message_id: "3224062405742"
+  publish_time {
+    seconds: 1513017230
+    nanos: 616000000
+  }
+}
+
+----------------------------------------
+timeLevel=00017591:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00017592:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy+
+ Received: Wooooo! The claaaaaw! (index=23)
+----------------------------------------
+timeLevel=00017592:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy+
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=23)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f19e0>
+}
+----------------------------------------
+timeLevel=00017593:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQlkbYmhcXHUHUAsZdns1JDlfEgAIRVl-d2s5MGteXnEHVw8dcnhmcWhymcDB64wTZh89WxJL"
+
+----------------------------------------
+timeLevel=00017594:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "LD5-NTBFQV5AEkw-BURJUytDCypYEU4EISE-MD5FU0RQBhYsXUZIUTcZCGhRDk9eIz81IChFEQAgbxMkQlkbYmhcXHUHUAsZdns1JDlfEgAIRVl-d2s5MGteXnEHVw8dcnhmcWhymcDB64wTZh89WxJL"
+
+----------------------------------------
+timeLevel=00018984:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00018984:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00018984:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00018985:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (17) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00021988:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00021988:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00021988:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00021998:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=24)
+----------------------------------------
+timeLevel=00021999:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=25)
+----------------------------------------
+timeLevel=00021999:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=26)
+----------------------------------------
+timeLevel=00021999:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=27)
+----------------------------------------
+timeLevel=00022000:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=28)
+----------------------------------------
+timeLevel=00022000:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=29)
+----------------------------------------
+timeLevel=00022000:INFO
+logger=cpu-spike-repro
+threadName=Thread-ReproPublish
+Published: Wooooo! The claaaaaw! (index=30)
+----------------------------------------
+timeLevel=00022112:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher+++
+gRPC Publish took 0.06311297416687012 seconds.
+----------------------------------------
+timeLevel=00022605:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-ConsumeBidirectionalStream
+Received response:
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZfndrOTJpVF13B1cMGXF8YXdpWBEpiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=24)"
+    message_id: "181206103102322"
+    publish_time {
+      seconds: 1513017235
+      nanos: 621000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZf3drOTJpVF13B1cMGXF8YXdpWBApiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=25)"
+    message_id: "181206103102323"
+    publish_time {
+      seconds: 1513017235
+      nanos: 621000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZfHdrOTJpVF13B1cMGXF8YXdpWBcpiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=26)"
+    message_id: "181206103102324"
+    publish_time {
+      seconds: 1513017235
+      nanos: 621000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZfXdrOTJpVF13B1cMGXF8YXdpWBYpiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=27)"
+    message_id: "181206103102325"
+    publish_time {
+      seconds: 1513017235
+      nanos: 621000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZendrOTJpVF13B1cMGXF8YXdpWBUpiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=28)"
+    message_id: "181206103102326"
+    publish_time {
+      seconds: 1513017235
+      nanos: 621000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZe3drOTJpVF13B1cMGXF8YXdpWBQpiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=29)"
+    message_id: "181206103102327"
+    publish_time {
+      seconds: 1513017235
+      nanos: 621000000
+    }
+  }
+}
+received_messages {
+  ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZeHdrOTJpVF13B1cMGXF8YXdpWBspiISQ0IA2Zh89WxJLLD4"
+  message {
+    data: "Wooooo! The claaaaaw! (index=30)"
+    message_id: "181206103102328"
+    publish_time {
+      seconds: 1513017235
+      nanos: 621000000
+    }
+  }
+}
+
+----------------------------------------
+timeLevel=00022605:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZfndrOTJpVF13B1cMGXF8YXdpWBEpiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=24)"
+  message_id: "181206103102322"
+  publish_time {
+    seconds: 1513017235
+    nanos: 621000000
+  }
+}
+
+----------------------------------------
+timeLevel=00022605:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00022606:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZf3drOTJpVF13B1cMGXF8YXdpWBApiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=25)"
+  message_id: "181206103102323"
+  publish_time {
+    seconds: 1513017235
+    nanos: 621000000
+  }
+}
+
+----------------------------------------
+timeLevel=00022606:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00022606:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZfHdrOTJpVF13B1cMGXF8YXdpWBcpiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=26)"
+  message_id: "181206103102324"
+  publish_time {
+    seconds: 1513017235
+    nanos: 621000000
+  }
+}
+
+----------------------------------------
+timeLevel=00022606:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00022607:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZfXdrOTJpVF13B1cMGXF8YXdpWBYpiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=27)"
+  message_id: "181206103102325"
+  publish_time {
+    seconds: 1513017235
+    nanos: 621000000
+  }
+}
+
+----------------------------------------
+timeLevel=00022607:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00022607:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZendrOTJpVF13B1cMGXF8YXdpWBUpiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=28)"
+  message_id: "181206103102326"
+  publish_time {
+    seconds: 1513017235
+    nanos: 621000000
+  }
+}
+
+----------------------------------------
+timeLevel=00022607:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00022607:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZe3drOTJpVF13B1cMGXF8YXdpWBQpiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=29)"
+  message_id: "181206103102327"
+  publish_time {
+    seconds: 1513017235
+    nanos: 621000000
+  }
+}
+
+----------------------------------------
+timeLevel=00022608:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00022608:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+New message received from Pub/Sub:
+ack_id: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZeHdrOTJpVF13B1cMGXF8YXdpWBspiISQ0IA2Zh89WxJLLD4"
+message {
+  data: "Wooooo! The claaaaaw! (index=30)"
+  message_id: "181206103102328"
+  publish_time {
+    seconds: 1513017235
+    nanos: 621000000
+  }
+}
+
+----------------------------------------
+timeLevel=00022608:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+<utils.AckCallback object at 0x7f0e5927d1d0>
+----------------------------------------
+timeLevel=00022608:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+ Received: Wooooo! The claaaaaw! (index=24)
+----------------------------------------
+timeLevel=00022609:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=24)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581df8a0>
+}
+----------------------------------------
+timeLevel=00022609:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+ Received: Wooooo! The claaaaaw! (index=25)
+----------------------------------------
+timeLevel=00022609:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=25)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581f19e0>
+}
+----------------------------------------
+timeLevel=00022609:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+ Received: Wooooo! The claaaaaw! (index=26)
+----------------------------------------
+timeLevel=00022610:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=26)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581dad50>
+}
+----------------------------------------
+timeLevel=00022610:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+ Received: Wooooo! The claaaaaw! (index=27)
+----------------------------------------
+timeLevel=00022610:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=27)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581daf80>
+}
+----------------------------------------
+timeLevel=00022610:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+ Received: Wooooo! The claaaaaw! (index=28)
+----------------------------------------
+timeLevel=00022610:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=28)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581df8f0>
+}
+----------------------------------------
+timeLevel=00022610:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+ Received: Wooooo! The claaaaaw! (index=29)
+----------------------------------------
+timeLevel=00022610:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=29)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581df7b0>
+}
+----------------------------------------
+timeLevel=00022610:INFO
+logger=cpu-spike-repro
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+ Received: Wooooo! The claaaaaw! (index=30)
+----------------------------------------
+timeLevel=00022610:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=ThreadPoolExecutor-SubscriberPolicy++
+Result: Message {
+    data: b'Wooooo! The claaaaaw! (index=30)'
+    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f0e581df760>
+}
+----------------------------------------
+timeLevel=00022611:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZfndrOTJpVF13B1cMGXF8YXdpWBEpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022611:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZfndrOTJpVF13B1cMGXF8YXdpWBEpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022611:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZf3drOTJpVF13B1cMGXF8YXdpWBApiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022612:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZf3drOTJpVF13B1cMGXF8YXdpWBApiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022612:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZfHdrOTJpVF13B1cMGXF8YXdpWBcpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022612:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZfHdrOTJpVF13B1cMGXF8YXdpWBcpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022612:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZfXdrOTJpVF13B1cMGXF8YXdpWBYpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022613:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZfXdrOTJpVF13B1cMGXF8YXdpWBYpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022613:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZendrOTJpVF13B1cMGXF8YXdpWBUpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022613:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZendrOTJpVF13B1cMGXF8YXdpWBUpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022613:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZe3drOTJpVF13B1cMGXF8YXdpWBQpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022613:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZe3drOTJpVF13B1cMGXF8YXdpWBQpiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022613:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Sending request:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZeHdrOTJpVF13B1cMGXF8YXdpWBspiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00022614:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() sent:
+ack_ids: "fjUwRUFeQBJMPgVESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREAIG8TJEJZGmJoXFx1B1ALGXZ7NSQ-UhpXCEVZeHdrOTJpVF13B1cMGXF8YXdpWBspiISQ0IA2Zh89WxJLLD4"
+
+----------------------------------------
+timeLevel=00023990:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (17) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-ReproPublish
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00024991:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00024992:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00024992:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00027995:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00027996:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00027996:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00028996:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00030999:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00030999:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00030999:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00034001:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00034003:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00034003:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00034003:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00037006:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00037007:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00037007:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00039007:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00040010:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00040011:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00040011:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00043014:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00043014:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00043014:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00044012:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00046018:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00046018:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00046018:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00049018:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00049022:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00049022:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00049022:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00052023:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00052024:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00052024:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00054021:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00055027:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00055028:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00055028:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00058031:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00058031:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00058031:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00059022:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00061035:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00061035:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00061035:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00064027:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00064038:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00064039:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00064039:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00067042:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00067043:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00067043:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00069033:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00070045:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00070045:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00070045:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00073048:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00073049:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00073049:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00074038:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00076052:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00076052:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00076052:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00079044:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00079056:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00079056:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00079056:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00082056:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00082057:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00082057:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00084049:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00085060:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00085061:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00085061:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00088064:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00088064:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00088065:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00089055:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00091068:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00091068:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00091069:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00094060:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00094072:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00094072:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00094072:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00097076:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00097076:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00097076:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00099066:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00100080:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00100080:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00100080:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00103083:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00103084:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00103084:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00104072:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00106087:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00106088:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00106088:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00109077:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00109091:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00109091:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00109092:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00112095:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00112095:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00112095:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00114082:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00115099:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00115099:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00115099:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00118103:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00118103:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00118103:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00119088:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00121106:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00121107:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00121107:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00124093:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00124110:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00124110:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00124111:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00127114:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00127114:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00127114:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00129099:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - Thread-gRPC-StopChannelSpin
+  - Thread-gRPC-ConsumeRequestIterator
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+exception=None
+----------------------------------------
+timeLevel=00130113:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+on_exception(ServiceUnavailable('The service was unable to fulfill your request. Please try again. [code=8a75]',))
+----------------------------------------
+timeLevel=00130114:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-ConsumeBidirectionalStream
+Waiting for active request generator to receive STOP
+----------------------------------------
+timeLevel=00130120:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00130120:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00130120:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00130131:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator
+Request generator signaled to stop.
+----------------------------------------
+timeLevel=00130131:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() encountered StopIteration
+----------------------------------------
+timeLevel=00130131:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator
+consume_request_iterator() exiting in error (<StatusCode.UNAVAILABLE: (14, 'unavailable')>) after a request iterator is exhausted
+----------------------------------------
+timeLevel=00130132:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-ConsumeBidirectionalStream
+Successfully closed request generator.
+----------------------------------------
+timeLevel=00130134:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator+
+Sending initial request:
+subscription: "projects/precise-truck-742/subscriptions/s-repro-1513017213651"
+stream_ack_deadline_seconds: 10
+
+----------------------------------------
+timeLevel=00130136:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator+
+consume_request_iterator() sent:
+subscription: "projects/precise-truck-742/subscriptions/s-repro-1513017213651"
+stream_ack_deadline_seconds: 10
+
+----------------------------------------
+timeLevel=00133124:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00133124:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00133124:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00134104:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00136127:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00136128:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00136128:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00139110:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00139131:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00139132:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00139132:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00142135:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00142135:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00142136:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00144115:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00145139:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00145139:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00145139:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00148143:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00148143:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00148143:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00149121:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00151146:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00151147:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00151147:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00154126:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00154150:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00154151:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00154151:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00157154:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00157154:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00157155:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00159132:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00160158:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00160158:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00160158:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00163162:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00163162:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00163162:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00164138:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00166166:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00166166:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00166166:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00169143:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00169169:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00169170:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00169170:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00172172:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00172172:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00172172:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00174149:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00175175:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00175176:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00175176:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00178179:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00178180:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00178180:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00179153:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00181181:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00181181:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00181181:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00184158:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00184184:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00184185:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00184185:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00187188:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00187188:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00187189:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00189164:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00190192:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00190192:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00190192:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00193196:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00193196:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00193196:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00194168:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00196200:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00196200:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00196200:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00199173:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00199203:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00199204:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00199204:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00202207:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00202207:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00202208:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00204179:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00205211:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00205211:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00205211:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00208215:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00208215:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00208215:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00209184:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00211216:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00211216:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00211216:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00214188:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00214219:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00214220:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00214220:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00217223:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00217224:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00217224:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00219193:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00220227:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00220227:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00220228:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00223229:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00223229:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00223229:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00224198:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00226231:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00226231:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00226231:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00229203:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00229234:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00229235:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00229235:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00232238:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00232239:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00232239:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00234208:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin+
+  - Thread-gRPC-ConsumeRequestIterator+
+exception=None
+----------------------------------------
+timeLevel=00235242:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00235242:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00235243:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00237437:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.thread
+threadName=Thread-ConsumeBidirectionalStream
+on_exception(ServiceUnavailable('The service was unable to fulfill your request. Please try again. [code=8a75]',))
+----------------------------------------
+timeLevel=00237437:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-ConsumeBidirectionalStream
+Waiting for active request generator to receive STOP
+----------------------------------------
+timeLevel=00237443:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator+
+Request generator signaled to stop.
+----------------------------------------
+timeLevel=00237443:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator+
+consume_request_iterator() encountered StopIteration
+----------------------------------------
+timeLevel=00237443:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator+
+consume_request_iterator() exiting in error (<StatusCode.UNAVAILABLE: (14, 'unavailable')>) after a request iterator is exhausted
+----------------------------------------
+timeLevel=00237444:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-ConsumeBidirectionalStream
+Successfully closed request generator.
+----------------------------------------
+timeLevel=00237446:DEBUG
+logger=google.cloud.pubsub_v1.subscriber._consumer
+threadName=Thread-gRPC-ConsumeRequestIterator++
+Sending initial request:
+subscription: "projects/precise-truck-742/subscriptions/s-repro-1513017213651"
+stream_ack_deadline_seconds: 10
+
+----------------------------------------
+timeLevel=00237447:DEBUG
+logger=grpc._channel
+threadName=Thread-gRPC-ConsumeRequestIterator++
+consume_request_iterator() sent:
+subscription: "projects/precise-truck-742/subscriptions/s-repro-1513017213651"
+stream_ack_deadline_seconds: 10
+
+----------------------------------------
+timeLevel=00238245:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00238245:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00238245:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00239214:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00241248:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00241249:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00241249:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00244220:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00244252:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00244253:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00244253:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00247256:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00247256:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00247257:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00249225:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00250258:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00250258:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00250258:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00253262:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00253262:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00253262:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00254231:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00256263:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00256263:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00256263:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00259233:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00259266:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00259267:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00259267:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00262269:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00262269:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00262269:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00264238:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00265273:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00265273:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00265273:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00268276:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00268276:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00268276:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00269243:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00271277:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00271277:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00271277:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00274245:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00274279:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00274279:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00274279:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00277282:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00277283:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00277283:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00279250:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00280286:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00280286:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00280287:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00283290:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00283290:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00283290:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00284252:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00286294:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00286294:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00286294:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00289257:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00289298:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00289298:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00289298:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00292302:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00292302:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00292302:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00294263:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00295305:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00295305:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00295305:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00298306:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00298306:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00298306:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00299265:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00301309:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00301310:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00301310:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00304271:INFO
+logger=cpu-spike-repro
+threadName=MainThread
+Heartbeat:
+running=True
+done=False
+active threads (16) =
+  - MainThread
+  - Thread-Consumer-CallbackRequestsWorker
+  - Thread-ConsumeBidirectionalStream
+  - Thread-LeaseMaintenance
+  - ThreadPoolExecutor-SubscriberPolicy
+  - ThreadPoolExecutor-SubscriberPolicy+
+  - ThreadPoolExecutor-SubscriberPolicy++
+  - ThreadPoolExecutor-SubscriberPolicy+++
+  - ThreadPoolExecutor-SubscriberPolicy++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++
+  - ThreadPoolExecutor-SubscriberPolicy++++++++
+  - ThreadPoolExecutor-SubscriberPolicy+++++++++
+  - Thread-gRPC-StopChannelSpin++
+  - Thread-gRPC-ConsumeRequestIterator++
+exception=None
+----------------------------------------
+timeLevel=00304273:DEBUG
+logger=google.api_core.retry
+threadName=MainThread
+Retrying due to 503 Endpoint read failed, sleeping 0.2s ...
+----------------------------------------
+timeLevel=00304311:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+The current p99 value is 10 seconds.
+----------------------------------------
+timeLevel=00304311:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Renewing lease for 0 ack IDs.
+----------------------------------------
+timeLevel=00304311:DEBUG
+logger=google.cloud.pubsub_v1.subscriber.policy.base
+threadName=Thread-LeaseMaintenance
+Snoozing lease management for 3.000000 seconds.
+----------------------------------------
+timeLevel=00306559:DEBUG
+logger=cpu-spike-repro
+threadName=MainThread
+Thread / Parent relationships:
+MainThread -> Thread-gRPC-SubscribeMoot
+Thread-gRPC-SubscribeMoot -> Thread-gRPC-SpawnDelivery
+MainThread -> Thread-gRPC-SubscribeMoot+
+Thread-gRPC-SubscribeMoot+ -> Thread-gRPC-SpawnDelivery+
+MainThread -> Thread-gRPC-PluginGetMetadata
+MainThread -> Thread-gRPC-PluginGetMetadata+
+MainThread -> Thread-Consumer-CallbackRequestsWorker
+MainThread -> Thread-ConsumeBidirectionalStream
+MainThread -> Thread-LeaseMaintenance
+Thread-ConsumeBidirectionalStream -> Thread-gRPC-PluginGetMetadata++
+Thread-ConsumeBidirectionalStream -> Thread-gRPC-StopChannelSpin
+MainThread -> Thread-ReproPublish
+Thread-ReproPublish -> Thread-MonitorBatchPublisher
+Thread-ConsumeBidirectionalStream -> Thread-gRPC-ConsumeRequestIterator
+Thread-MonitorBatchPublisher -> Thread-gRPC-PluginGetMetadata+++
+Thread-ConsumeBidirectionalStream -> ThreadPoolExecutor-SubscriberPolicy
+Thread-ConsumeBidirectionalStream -> ThreadPoolExecutor-SubscriberPolicy+
+Thread-ConsumeBidirectionalStream -> ThreadPoolExecutor-SubscriberPolicy++
+Thread-ConsumeBidirectionalStream -> ThreadPoolExecutor-SubscriberPolicy+++
+Thread-ConsumeBidirectionalStream -> ThreadPoolExecutor-SubscriberPolicy++++
+Thread-ConsumeBidirectionalStream -> ThreadPoolExecutor-SubscriberPolicy+++++
+Thread-ConsumeBidirectionalStream -> ThreadPoolExecutor-SubscriberPolicy++++++
+Thread-ConsumeBidirectionalStream -> ThreadPoolExecutor-SubscriberPolicy+++++++
+Thread-ConsumeBidirectionalStream -> ThreadPoolExecutor-SubscriberPolicy++++++++
+Thread-ConsumeBidirectionalStream -> ThreadPoolExecutor-SubscriberPolicy+++++++++
+Thread-ReproPublish -> Thread-MonitorBatchPublisher+
+Thread-MonitorBatchPublisher+ -> Thread-gRPC-PluginGetMetadata++++
+Thread-ReproPublish -> Thread-MonitorBatchPublisher++
+Thread-MonitorBatchPublisher++ -> Thread-gRPC-PluginGetMetadata+++++
+Thread-ReproPublish -> Thread-MonitorBatchPublisher+++
+Thread-MonitorBatchPublisher+++ -> Thread-gRPC-PluginGetMetadata++++++
+Thread-ConsumeBidirectionalStream -> Thread-gRPC-PluginGetMetadata+++++++
+Thread-ConsumeBidirectionalStream -> Thread-gRPC-StopChannelSpin+
+Thread-ConsumeBidirectionalStream -> Thread-gRPC-ConsumeRequestIterator+
+Thread-ConsumeBidirectionalStream -> Thread-gRPC-PluginGetMetadata++++++++
+Thread-ConsumeBidirectionalStream -> Thread-gRPC-StopChannelSpin++
+Thread-ConsumeBidirectionalStream -> Thread-gRPC-ConsumeRequestIterator++
+MainThread -> Thread-gRPC-PluginGetMetadata+++++++++
+MainThread -> Thread-gRPC-PluginGetMetadata++++++++++
+MainThread -> Thread-gRPC-PluginGetMetadata+++++++++++
+----------------------------------------

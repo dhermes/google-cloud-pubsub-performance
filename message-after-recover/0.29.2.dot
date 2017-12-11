@@ -14,9 +14,6 @@ subgraph  {
 }
 
 subgraph  {
-}
-
-subgraph  {
 subgraph  {
 }
 
@@ -49,24 +46,22 @@ subgraph  {
 "Thread-ReproPublish" -> "Thread-MonitorBatchPublisher";
 }
 
-MainThread -> "Thread-gRPC-SubscribeMoot";
-MainThread -> "Thread-gRPC-SubscribeMoot+";
+MainThread -> "Thread-gRPC-SubscribeMoot"  [label=2];
 MainThread -> "Thread-gRPC-PluginGetMetadata"  [label=4];
 MainThread -> "Thread-ConsumerHelper-CallbackRequestsWorker";
 MainThread -> "Thread-ConsumerHelper-ConsumeBidirectionalStream";
 MainThread -> "Thread-LeaseMaintenance";
 MainThread -> "Thread-ReproPublish";
-"Thread-gRPC-SubscribeMoot" [label="gRPC-SubscribeMoot"];
-"Thread-gRPC-SpawnDelivery" [label="gRPC-SpawnDelivery"];
 "Thread-LeaseMaintenance" [label=LeaseMaintenance];
-"Thread-ReproPublish" [label=ReproPublish];
-"Thread-gRPC-PluginGetMetadata++" [label="gRPC-PluginGetMetadata"];
-"Thread-gRPC-PluginGetMetadata++++" [label="gRPC-PluginGetMetadata"];
-"Thread-gRPC-StopChannelSpin" [label="gRPC-StopChannelSpin"];
-"Thread-ConsumerHelper-CallbackRequestsWorker" [label="ConsumerHelper-CallbackRequestsWorker"];
-"Thread-gRPC-SubscribeMoot+" [label="gRPC-SubscribeMoot"];
 "Thread-gRPC-PluginGetMetadata" [label="gRPC-PluginGetMetadata"];
-"Thread-MonitorBatchPublisher" [label=MonitorBatchPublisher];
+"Thread-gRPC-PluginGetMetadata++" [label="gRPC-PluginGetMetadata"];
+"Thread-gRPC-SpawnDelivery" [label="gRPC-SpawnDelivery"];
+"Thread-gRPC-StopChannelSpin" [label="gRPC-StopChannelSpin"];
+"Thread-gRPC-PluginGetMetadata++++" [label="gRPC-PluginGetMetadata"];
+"Thread-ReproPublish" [label=ReproPublish];
+"Thread-ConsumerHelper-CallbackRequestsWorker" [label="ConsumerHelper-CallbackRequestsWorker"];
 "Thread-gRPC-ConsumeRequestIterator" [label="gRPC-ConsumeRequestIterator"];
+"Thread-MonitorBatchPublisher" [label=MonitorBatchPublisher];
+"Thread-gRPC-SubscribeMoot" [label="gRPC-SubscribeMoot"];
 "Thread-ConsumerHelper-ConsumeBidirectionalStream" [label="ConsumerHelper-ConsumeBidirectionalStream"];
 }
