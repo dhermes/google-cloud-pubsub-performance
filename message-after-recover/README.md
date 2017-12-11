@@ -1,4 +1,4 @@
-## Status: Fixed, but not released ([#4503][1])
+## Status: Fixed in `0.29.3/0.29.4` ([#4503][1])
 
 1. Creates a new topic
 1. Creates a subscription to the created topic
@@ -13,85 +13,85 @@
 This indicates an inherent problem, present in `0.29.2`:
 
 ```
-----------------------------------------
-timeLevel=00003890:DEBUG
-logger=google.cloud.pubsub_v1.subscriber._consumer
-threadName=Thread-gRPC-ConsumeRequestIterator
-Sending initial request:
-subscription: "projects/precise-truck-742/subscriptions/s-repro-1512434066551"
-stream_ack_deadline_seconds: 10
-
-----------------------------------------
-timeLevel=00115817:DEBUG
-logger=google.cloud.pubsub_v1.subscriber._consumer
-threadName=Thread-gRPC-ConsumeRequestIterator+
-Sending initial request:
-subscription: "projects/precise-truck-742/subscriptions/s-repro-1512434066551"
-stream_ack_deadline_seconds: 10
-
-----------------------------------------
-timeLevel=00123991:INFO
-logger=message-after-recover-repro
-threadName=Thread-ReproPublish
-Published: After the policy recovered from failure.
-----------------------------------------
-timeLevel=00124823:DEBUG
-logger=google.cloud.pubsub_v1.subscriber._consumer
+----------------------------------------                 +
+timeLevel=00003890:DEBUG                                 |
+logger=google.cloud.pubsub_v1.subscriber._consumer       |
+threadName=Thread-gRPC-ConsumeRequestIterator            |
+Sending initial request:                                 |
+subscription: "projects/${PROJECT}/subscriptions/${SUB}" |
+stream_ack_deadline_seconds: 10                          |
+                                                         |
+----------------------------------------                 +
+                                                         | timeLevel=00115817:DEBUG
+                                                         | logger=google.cloud.pubsub_v1.subscriber._consumer
+                                                         | threadName=Thread-gRPC-ConsumeRequestIterator+
+                                                         | Sending initial request:
+                                                         | subscription: "projects/${PROJECT}/subscriptions/${SUB}"
+                                                         | stream_ack_deadline_seconds: 10
+                                                         |
+----------------------------------------                 +
+timeLevel=00123991:INFO                                  |
+logger=message-after-recover-repro                       |
+threadName=Thread-ReproPublish                           |
+Published: After the policy recovered from failure.      |
+----------------------------------------                 +
+timeLevel=00124823:DEBUG                                 |
+logger=google.cloud.pubsub_v1.subscriber._consumer       |
 threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
-Received response:
-received_messages {
-  ack_id: "fjUyRUFeQBJMPgdESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREHIG8TJkJaHmJoXFx1B1ALGXB5YCRuUxZVCEVZfndrOTJpW1RzDlkNHXd9aXFoWBMptIbEx9BmZh89WxJLLD4"
-  message {
-    data: "After the policy recovered from failure."
-    message_id: "178698045084220"
-    publish_time {
-      seconds: 1512434190
-      nanos: 692000000
-    }
-  }
-}
-
-----------------------------------------
-timeLevel=00124825:DEBUG
-logger=google.cloud.pubsub_v1.subscriber.policy.thread
+Received response:                                       |
+received_messages {                                      |
+  ack_id: "${ACK_ID}"                                    |
+  message {                                              |
+    data: "After the policy recovered from failure."     |
+    message_id: "178698045084220"                        |
+    publish_time {                                       |
+      seconds: 1512434190                                |
+      nanos: 692000000                                   |
+    }                                                    |
+  }                                                      |
+}                                                        |
+                                                         |
+----------------------------------------                 +
+timeLevel=00124825:DEBUG                                 |
+logger=google.cloud.pubsub_v1.subscriber.policy.thread   |
 threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
-New message received from Pub/Sub:
-ack_id: "fjUyRUFeQBJMPgdESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREHIG8TJkJaHmJoXFx1B1ALGXB5YCRuUxZVCEVZfndrOTJpW1RzDlkNHXd9aXFoWBMptIbEx9BmZh89WxJLLD4"
-message {
-  data: "After the policy recovered from failure."
-  message_id: "178698045084220"
-  publish_time {
-    seconds: 1512434190
-    nanos: 692000000
-  }
-}
-
-----------------------------------------
-timeLevel=00124826:INFO
-logger=message-after-recover-repro
-threadName=ThreadPoolExecutor-SubscriberPolicy_0
- Received: After the policy recovered from failure.
-----------------------------------------
-timeLevel=00124827:DEBUG
-logger=google.cloud.pubsub_v1.subscriber.policy.thread
+New message received from Pub/Sub:                       |
+ack_id: "${ACK_ID}"                                      |
+message {                                                |
+  data: "After the policy recovered from failure."       |
+  message_id: "178698045084220"                          |
+  publish_time {                                         |
+    seconds: 1512434190                                  |
+    nanos: 692000000                                     |
+  }                                                      |
+}                                                        |
+                                                         |
+----------------------------------------                 +
+timeLevel=00124826:INFO                                  |
+logger=message-after-recover-repro                       |
+threadName=ThreadPoolExecutor-SubscriberPolicy_0         |
+ Received: After the policy recovered from failure.      |
+----------------------------------------                 +
+timeLevel=00124827:DEBUG                                 |
+logger=google.cloud.pubsub_v1.subscriber.policy.thread   |
 threadName=Thread-ConsumerHelper-ConsumeBidirectionalStream
-Result: Message {
-    data: b'After the policy recovered from failure.'
-    attributes: <google.protobuf.pyext._message.ScalarMapContainer object at 0x7f85f547f8f0>
-}
-----------------------------------------
-timeLevel=00124828:DEBUG
-logger=google.cloud.pubsub_v1.subscriber._consumer
-threadName=Thread-gRPC-ConsumeRequestIterator
-Sending request:
-ack_ids: "fjUyRUFeQBJMPgdESVMrQwsqWBFOBCEhPjA-RVNEUAYWLF1GSFE3GQhoUQ5PXiM_NSAoRREHIG8TJkJaHmJoXFx1B1ALGXB5YCRuUxZVCEVZfndrOTJpW1RzDlkNHXd9aXFoWBMptIbEx9BmZh89WxJLLD4"
-
-----------------------------------------
-timeLevel=00144011:DEBUG
-logger=google.cloud.pubsub_v1.subscriber._consumer
-threadName=Thread-gRPC-ConsumeRequestIterator+
-Request generator signaled to stop.
-----------------------------------------
+Result: Message {                                        |
+    data: b'After the policy recovered from failure.'    |
+    attributes: ...                                      |
+}                                                        |
+----------------------------------------                 +
+timeLevel=00124828:DEBUG                                 |
+logger=google.cloud.pubsub_v1.subscriber._consumer       |
+threadName=Thread-gRPC-ConsumeRequestIterator            |
+Sending request:                                         |
+ack_ids: "${ACK_ID}"                                     |
+                                                         |
+----------------------------------------                 +
+                                                         | timeLevel=00144011:DEBUG
+                                                         | logger=google.cloud.pubsub_v1.subscriber._consumer
+                                                         | threadName=Thread-gRPC-ConsumeRequestIterator+
+                                                         | Request generator signaled to stop.
+----------------------------------------                 +
 ```
 
 This is because both `Thread-gRPC-ConsumeRequestIterator` and

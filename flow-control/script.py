@@ -38,7 +38,7 @@ def publish_target(publisher, consumer, topic_path, logger):
     # Finish 10 seconds early.
     deadline = time.time() + MAX_TIME - 10.0
     while time.time() < deadline:
-        if not consumer.active:
+        if not utils.active(consumer):
             return
 
         for _ in six.moves.xrange(6):

@@ -96,12 +96,19 @@ def heartbeat(logger, future, done_count):
     return done_count
 
 
+def active(consumer):
+    if PUBSUB.version() in ('0.29.0', '0.29.1', '0.29.2'):
+        return consumer.active
+    else:
+        return not consumer.stopped.is_set()
+
+
 def done_count_extra(future, done_count):
     if PUBSUB.version() in ('0.29.0', '0.29.1'):
         if done_count < DONE_HEARTBEATS:
             return done_count
         # We don't allow an exit while the consumer is active.
-        if future._policy._consumer.active:
+        if active(future._policy._consumer):
             return done_count - 1
         else:
             return done_count
@@ -174,8 +181,9 @@ class Policy(policy.thread.Policy):
 
     def maintain_leases(self):
         result = super(Policy, self).maintain_leases()
-        LOGGER_BASE.debug(
-            'Consumer inactive, ending lease maintenance.')
+        if PUBSUB.version() in ('0.29.0', '0.29.1'):
+            LOGGER_BASE.debug(
+                'Consumer inactive, ending lease maintenance.')
         return result
 
 
