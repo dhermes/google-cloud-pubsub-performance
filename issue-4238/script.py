@@ -114,13 +114,19 @@ class NotRandom(object):
         return a + (b - a) * self.fraction
 
 
-class Heartbeat(object):
+class HeartbeatHelper(utils.HeartbeatHelper):
 
-    def __init__(self, callback, policy, template):
+    def __init__(self, callback, policy):
         self.callback = callback
         self.policy = policy
-        self.template = template
+        self.template = HEARTBEAT_ADDENDUM
         self.last_four = (None, None, None, None)
+
+    @property
+    def extra_args(self):
+        active_future = future is self.policy._future
+        rate, messages_processed, uniques = self.callback.info
+        return active_future, rate, messages_processed, uniques
 
     @property
     def done(self):
@@ -133,30 +139,10 @@ class Heartbeat(object):
             prev_last_four == (uniques, uniques, uniques, uniques)
         )
 
-    def __call__(self, logger, future, done_count):
-        active_future = future is self.policy._future
-        is_running = future.running()
-        is_done = future.done()
-        if is_done:
-            exception = future.exception()
-        else:
-            exception = None
-
+    def _base_inc(self, unused_future, done_count):
         # **ONLY** increment the done count if ``self.done`` is true.
         if self.done:
             done_count += 1
-
-        thread_count = threading.active_count()
-        parts = ['  - ' + thread.name for thread in threading.enumerate()]
-        assert thread_count == len(parts)
-        pretty_names = '\n'.join(parts)
-
-        rate, messages_processed, uniques = self.callback.info
-        logger.info(
-            self.template, is_running, is_done,
-            thread_count, pretty_names, exception,
-            active_future, rate, messages_processed, uniques)
-
         return done_count
 
 
@@ -170,7 +156,6 @@ def teardown_summary(policy, logger):
 
 def main():
     # Do set-up.
-    utils.MAX_TIME = 500  # Make sure it runs until finishing.
     logger = utils.setup_logging(CURR_DIR)
     thread_names.monkey_patch()
     random_mod = NotRandom(0.75)
@@ -209,9 +194,8 @@ def main():
 
     # The subscriber is non-blocking, so we must keep the main thread from
     # exiting to allow it to process messages in the background.
-    template = utils.HEARTBEAT_TEMPLATE + HEARTBEAT_ADDENDUM
-    heartbeat = Heartbeat(callback, subscription, template)
-    utils.heartbeats_block(logger, sub_future, heartbeat_func=heartbeat)
+    helper = HeartbeatHelper(callback, subscription)
+    utils.heartbeats_block(logger, sub_future, max_time=500, helper=helper)
 
     # Do clean-up.
     subscription.close()

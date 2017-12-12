@@ -75,23 +75,58 @@ def setup_logging(directory):
     return logging.getLogger(logger_name)
 
 
-def heartbeat(logger, future, done_count):
+class HeartbeatHelper(object):
+
+    def __init__(self):
+        self.template = ''
+        self.extra_args = ()
+
+    @staticmethod
+    def _base_inc(future, done_count):
+        if future.done():
+            done_count += 1
+        return done_count
+
+    def increment_done(self, future, done_count):
+        done_count = self._base_inc(future, done_count)
+
+        if PUBSUB.version() in ('0.29.0', '0.29.1'):
+            if done_count < DONE_HEARTBEATS:
+                return done_count
+            # We don't allow an exit while the consumer is active.
+            if active(future._policy._consumer):
+                return done_count - 1
+            else:
+                return done_count
+        else:
+            return done_count
+
+
+def heartbeat(logger, future, done_count, helper):
     is_running = future.running()
     is_done = future.done()
     if is_done:
-        done_count += 1
         exception = future.exception()
     else:
         exception = None
+    done_count = helper.increment_done(future, done_count)
 
     thread_count = threading.active_count()
     parts = ['  - ' + thread.name for thread in threading.enumerate()]
     assert thread_count == len(parts)
     pretty_names = '\n'.join(parts)
 
-    logger.info(
-        HEARTBEAT_TEMPLATE, is_running, is_done,
-        thread_count, pretty_names, exception)
+    template = HEARTBEAT_TEMPLATE + helper.template
+    args = (
+        template,
+        is_running,
+        is_done,
+        thread_count,
+        pretty_names,
+        exception,
+    )
+    args += helper.extra_args
+    logger.info(*args)
 
     return done_count
 
@@ -103,30 +138,17 @@ def active(consumer):
         return not consumer.stopped.is_set()
 
 
-def done_count_extra(future, done_count):
-    if PUBSUB.version() in ('0.29.0', '0.29.1'):
-        if done_count < DONE_HEARTBEATS:
-            return done_count
-        # We don't allow an exit while the consumer is active.
-        if active(future._policy._consumer):
-            return done_count - 1
-        else:
-            return done_count
-    else:
-        return done_count
-
-
-def heartbeats_block(logger, future, heartbeat_func=heartbeat):
-    deadline = time.time() + MAX_TIME
+def heartbeats_block(
+        logger, future, max_time=MAX_TIME, helper=HeartbeatHelper()):
+    deadline = time.time() + max_time
     done_count = 0
     while time.time() < deadline and done_count < DONE_HEARTBEATS:
-        done_count = heartbeat_func(logger, future, done_count)
-        done_count = done_count_extra(future, done_count)
+        done_count = heartbeat(logger, future, done_count, helper)
         time.sleep(5)
 
     # If we exited due to the deadline, do one more heartbeat.
     if done_count < DONE_HEARTBEATS:
-        heartbeat_func(logger, future, done_count)
+        heartbeat(logger, future, done_count, helper)
 
 
 def make_lease_deterministic(random_mod=None):

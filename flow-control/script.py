@@ -59,7 +59,6 @@ def publish_async(publisher, consumer, topic_path, logger):
 
 def main():
     # Do set-up.
-    utils.MAX_TIME = MAX_TIME
     logger = utils.setup_logging(CURR_DIR)
     thread_names.monkey_patch()
     utils.make_lease_deterministic()
@@ -89,7 +88,7 @@ def main():
 
     # The subscriber is non-blocking, so we must keep the main thread from
     # exiting to allow it to process messages in the background.
-    utils.heartbeats_block(logger, sub_future)
+    utils.heartbeats_block(logger, sub_future, max_time=MAX_TIME)
 
     # Do clean-up.
     subscription.close()
