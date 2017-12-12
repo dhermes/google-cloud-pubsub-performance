@@ -1,10 +1,13 @@
 digraph G {
 rankdir=LR;
 subgraph  {
+}
+
+subgraph  {
 subgraph  {
 }
 
-"Thread-gRPC-SubscribeMoot" -> "Thread-gRPC-SpawnDelivery";
+"Thread-gRPC-SubscribeMoot+" -> "Thread-gRPC-SpawnDelivery";
 }
 
 subgraph  {
@@ -42,21 +45,23 @@ subgraph  {
 subgraph  {
 }
 
-MainThread -> "Thread-gRPC-SubscribeMoot"  [label=2];
+MainThread -> "Thread-gRPC-SubscribeMoot";
+MainThread -> "Thread-gRPC-SubscribeMoot+";
 MainThread -> "Thread-gRPC-PluginGetMetadata"  [label=4];
 MainThread -> "Thread-MonitorBatchPublisher"  [label=16];
 MainThread -> "Thread-ConsumerHelper-CallbackRequestsWorker";
 MainThread -> "Thread-ConsumerHelper-ConsumeBidirectionalStream";
 MainThread -> "Thread-LeaseMaintenance";
-"Thread-gRPC-PluginGetMetadata++" [label="gRPC-PluginGetMetadata"];
-"Thread-ConsumerHelper-ConsumeBidirectionalStream" [label="ConsumerHelper-ConsumeBidirectionalStream"];
+"Thread-gRPC-SubscribeMoot+" [label="gRPC-SubscribeMoot"];
+"Thread-ConsumerHelper-CallbackRequestsWorker" [label="ConsumerHelper-CallbackRequestsWorker"];
+"Thread-gRPC-PluginGetMetadata" [label="gRPC-PluginGetMetadata"];
+"Thread-LeaseMaintenance" [label=LeaseMaintenance];
+"Thread-gRPC-SubscribeMoot" [label="gRPC-SubscribeMoot"];
+"Thread-MonitorBatchPublisher" [label=MonitorBatchPublisher];
 "Thread-gRPC-SpawnDelivery" [label="gRPC-SpawnDelivery"];
 "Thread-gRPC-PluginGetMetadata++++++++++++++++++" [label="gRPC-PluginGetMetadata"];
-"Thread-MonitorBatchPublisher" [label=MonitorBatchPublisher];
-"Thread-LeaseMaintenance" [label=LeaseMaintenance];
+"Thread-gRPC-PluginGetMetadata++" [label="gRPC-PluginGetMetadata"];
 "Thread-gRPC-StopChannelSpin" [label="gRPC-StopChannelSpin"];
-"Thread-ConsumerHelper-CallbackRequestsWorker" [label="ConsumerHelper-CallbackRequestsWorker"];
-"Thread-gRPC-SubscribeMoot" [label="gRPC-SubscribeMoot"];
-"Thread-gRPC-PluginGetMetadata" [label="gRPC-PluginGetMetadata"];
 "Thread-gRPC-ConsumeRequestIterator" [label="gRPC-ConsumeRequestIterator"];
+"Thread-ConsumerHelper-ConsumeBidirectionalStream" [label="ConsumerHelper-ConsumeBidirectionalStream"];
 }

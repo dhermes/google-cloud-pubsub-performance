@@ -32,9 +32,15 @@ ONLY_DATA = b'Kir Issue 4238'
 SLEEP_TIME = 0.5  # 500ms
 MAX_MESSAGES = 100
 HEARTBEAT_ADDENDUM = """
+    Fut. is Policy's fut?=%s
  Message ack rate (msg/s)=%.5f
  Total messages processed=%d
 Unique messages processed=%d"""
+TEARDOWN_SUMMARY_TEMPLATE = """\
+Consumer Request Queue Size=%d
+  Policy Request Queue Size=%d
+  Policy Num. Ack On Resume=%d
+Policy Num. Managed Ack IDs=%d"""
 
 
 def publish_sync(publisher, topic_path, logger):
@@ -110,24 +116,35 @@ class NotRandom(object):
 
 class Heartbeat(object):
 
-    def __init__(self, callback, template):
+    def __init__(self, callback, policy, template):
         self.callback = callback
+        self.policy = policy
         self.template = template
+        self.last_four = (None, None, None, None)
 
     @property
     def done(self):
-        return self.callback.uniques == NUM_PUBLISH_BATCHES * BATCH_SIZE
+        uniques = self.callback.uniques
+        prev_last_four = self.last_four
+        self.last_four = prev_last_four[1:] + (uniques,)
+
+        return (
+            uniques == NUM_PUBLISH_BATCHES * BATCH_SIZE or
+            prev_last_four == (uniques, uniques, uniques, uniques)
+        )
 
     def __call__(self, logger, future, done_count):
+        active_future = future is self.policy._future
         is_running = future.running()
         is_done = future.done()
         if is_done:
-            done_count += 1
             exception = future.exception()
         else:
-            if self.done:
-                done_count += 1
             exception = None
+
+        # **ONLY** increment the done count if ``self.done`` is true.
+        if self.done:
+            done_count += 1
 
         thread_count = threading.active_count()
         parts = ['  - ' + thread.name for thread in threading.enumerate()]
@@ -138,9 +155,17 @@ class Heartbeat(object):
         logger.info(
             self.template, is_running, is_done,
             thread_count, pretty_names, exception,
-            rate, messages_processed, uniques)
+            active_future, rate, messages_processed, uniques)
 
         return done_count
+
+
+def teardown_summary(policy, logger):
+    consumer = policy._consumer
+    logger.info(
+        TEARDOWN_SUMMARY_TEMPLATE, consumer._request_queue.qsize(),
+        policy._request_queue.qsize(), len(policy._ack_on_resume),
+        len(policy._managed_ack_ids))
 
 
 def main():
@@ -185,13 +210,15 @@ def main():
     # The subscriber is non-blocking, so we must keep the main thread from
     # exiting to allow it to process messages in the background.
     template = utils.HEARTBEAT_TEMPLATE + HEARTBEAT_ADDENDUM
-    heartbeat = Heartbeat(callback, template)
+    heartbeat = Heartbeat(callback, subscription, template)
     utils.heartbeats_block(logger, sub_future, heartbeat_func=heartbeat)
 
     # Do clean-up.
     subscription.close()
+    subscription._executor.shutdown()  # Idempotent, but needed for 0.29.2.
     publisher.delete_topic(topic_path)
     subscriber.delete_subscription(subscription_path)
+    teardown_summary(subscription, logger)
     thread_names.save_tree(CURR_DIR, logger)
     thread_names.restore()
     utils.restore()
