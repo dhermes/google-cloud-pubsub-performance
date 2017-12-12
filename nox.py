@@ -57,6 +57,12 @@ def flow_control(session, version):
 
 @nox.session
 @nox.parametrize('version', ('0.29.2', '0.29.4'))
+def issue_4238(session, version):
+    _run('issue-4238', session, version)
+
+
+@nox.session
+@nox.parametrize('version', ('0.29.2', '0.29.4'))
 def message_after_recover(session, version):
     _run('message-after-recover', session, version)
 

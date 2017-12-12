@@ -116,21 +116,23 @@ def done_count_extra(future, done_count):
         return done_count
 
 
-def heartbeats_block(logger, future):
+def heartbeats_block(logger, future, heartbeat_func=heartbeat):
     deadline = time.time() + MAX_TIME
     done_count = 0
     while time.time() < deadline and done_count < DONE_HEARTBEATS:
-        done_count = heartbeat(logger, future, done_count)
+        done_count = heartbeat_func(logger, future, done_count)
         done_count = done_count_extra(future, done_count)
         time.sleep(5)
 
     # If we exited due to the deadline, do one more heartbeat.
     if done_count < DONE_HEARTBEATS:
-        heartbeat(logger, future, done_count)
+        heartbeat_func(logger, future, done_count)
 
 
-def make_lease_deterministic():
-    policy.base.random = NotRandom(3.0)
+def make_lease_deterministic(random_mod=None):
+    if random_mod is None:
+        random_mod = NotRandom(3.0)
+    policy.base.random = random_mod
 
 
 def get_client_info(topic_name, subscription_name, policy_class=None):
