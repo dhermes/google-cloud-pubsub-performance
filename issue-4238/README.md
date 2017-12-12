@@ -12,7 +12,7 @@ This example does the following:
 1. Uses a custom `Policy` that logs information about the load on the
    subscription every time `Policy._load >= 1.0` is checked
 
-This is a flow control issue [reported][1] by [@kir-titievsky] (the
+This is a flow control issue [reported][1] by [@kir-titievsky][2] (the
 Product Manager for Pub / Sub):
 
 > When ran as it is against a subscription with a large backlog, it
