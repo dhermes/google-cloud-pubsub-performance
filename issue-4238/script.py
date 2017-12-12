@@ -154,7 +154,8 @@ def main():
     # Get clients and resource paths.
     topic_name = 't-repro-{}'.format(int(1000 * time.time()))
     subscription_name = 's-repro-{}'.format(int(1000 * time.time()))
-    client_info = utils.get_client_info(topic_name, subscription_name)
+    client_info = utils.get_client_info(
+        topic_name, subscription_name, policy_class=utils.FlowControlPolicy)
     publisher, topic_path, subscriber, subscription_path = client_info
 
     # Create a topic and subscription (subscription must exist when

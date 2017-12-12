@@ -189,6 +189,39 @@ class Policy(policy.thread.Policy):
         return result
 
 
+class FlowControlPolicy(Policy):
+
+    POLICY_INFO_TEMPLATE = (
+        '  num_messages = {:d}\n'
+        '  max_messages = {}\n'
+        '  num_bytes = {:d}\n'
+        '  max_bytes = {}')
+
+    def _get_policy_info(self):
+        return self.POLICY_INFO_TEMPLATE.format(
+            len(self.managed_ack_ids),
+            self.flow_control.max_messages,
+            self._bytes,
+            self.flow_control.max_bytes,
+        )
+
+    def close(self):
+        LOGGER_THREAD.debug('Closing policy %r.', self)
+        return super(FlowControlPolicy, self).close()
+
+    def open(self, callback):
+        LOGGER_THREAD.debug('Opening policy %r with %r.', self, callback)
+        return super(FlowControlPolicy, self).open(callback)
+
+    @property
+    def _load(self):
+        policy_info = self._get_policy_info()
+        result = super(FlowControlPolicy, self)._load
+        LOGGER_BASE.debug(
+            'Policy._load: %s\ninfo =\n%s', result, policy_info)
+        return result
+
+
 class StdErrLogger(object):
 
     HOME = os.path.expanduser('~')

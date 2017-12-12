@@ -26,11 +26,6 @@ import utils
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
 MAX_TIME = 80
-POLICY_INFO_TEMPLATE = """\
-  num_messages = {:d}
-  max_messages = {}
-  num_bytes = {:d}
-  max_bytes = {}"""
 
 
 def publish_target(publisher, consumer, topic_path, logger):
@@ -62,33 +57,6 @@ def publish_async(publisher, consumer, topic_path, logger):
     thread.start()
 
 
-class Policy(utils.Policy):
-
-    def _get_policy_info(self):
-        return POLICY_INFO_TEMPLATE.format(
-            len(self.managed_ack_ids),
-            self.flow_control.max_messages,
-            self._bytes,
-            self.flow_control.max_bytes,
-        )
-
-    def close(self):
-        utils.LOGGER_THREAD.debug('Closing policy %r.', self)
-        return super(Policy, self).close()
-
-    def open(self, callback):
-        utils.LOGGER_THREAD.debug('Opening policy %r with %r.', self, callback)
-        return super(Policy, self).open(callback)
-
-    @property
-    def _load(self):
-        policy_info = self._get_policy_info()
-        result = super(Policy, self)._load
-        utils.LOGGER_BASE.debug(
-            'Policy._load: %s\ninfo =\n%s', result, policy_info)
-        return result
-
-
 def main():
     # Do set-up.
     utils.MAX_TIME = MAX_TIME
@@ -100,7 +68,7 @@ def main():
     topic_name = 't-repro-{}'.format(int(1000 * time.time()))
     subscription_name = 's-repro-{}'.format(int(1000 * time.time()))
     client_info = utils.get_client_info(
-        topic_name, subscription_name, policy_class=Policy)
+        topic_name, subscription_name, policy_class=utils.FlowControlPolicy)
     publisher, topic_path, subscriber, subscription_path = client_info
 
     # Create a topic.
