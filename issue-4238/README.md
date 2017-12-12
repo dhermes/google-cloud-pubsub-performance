@@ -103,7 +103,7 @@ Consumer Request Queue Size=0
 Policy Num. Managed Ack IDs=0
 ```
 
-The actual gRPC logging added in `grpc_hacks` shows that we all 4000
+The actual gRPC logging added in `grpc_hacks` shows that all 4000
 messages were acked:
 
 ```
