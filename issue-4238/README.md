@@ -9,6 +9,8 @@ This example does the following:
 1. Sleeps 10s, and then opens a subscription to the topic, attempting
    to ack all 4000 messages while using flow control to make sure at
    most 100 messages are active
+1. Uses a custom `Policy` that logs information about the load on the
+   subscription every time `Policy._load >= 1.0` is checked
 
 This is a flow control issue [reported][1] by [@kir-titievsky] (the
 Product Manager for Pub / Sub):
@@ -130,5 +132,3 @@ Acks sent: 4000
 [2]: https://github.com/kir-titievsky
 [3]: https://github.com/GoogleCloudPlatform/google-cloud-python/pull/4558
 [4]: https://github.com/GoogleCloudPlatform/google-cloud-python/pull/4564
-
-consume_request_iterator()
