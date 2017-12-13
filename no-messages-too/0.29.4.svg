@@ -24,18 +24,18 @@
 <path fill="none" stroke="black" d="M376.807,-271.896C418.143,-274.824 468.233,-278.372 510.865,-281.392"/>
 <polygon fill="black" stroke="black" points="510.743,-284.892 520.966,-282.107 511.238,-277.909 510.743,-284.892"/>
 </g>
-<!-- Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++++++++++++ -->
-<g id="node3" class="node"><title>Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++++++++++++</title>
+<!-- Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++ -->
+<g id="node3" class="node"><title>Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++</title>
 <ellipse fill="none" stroke="black" cx="605.155" cy="-234" rx="96.3833" ry="18"/>
 <text text-anchor="middle" x="605.155" y="-230.3" font-family="Times,serif" font-size="14.00">gRPC&#45;StopChannelSpin</text>
 </g>
-<!-- Thread&#45;gRPC&#45;PluginGetMetadata+++++++++++++++++++++++++++++++++++++++++++ -->
-<g id="node4" class="node"><title>Thread&#45;gRPC&#45;PluginGetMetadata+++++++++++++++++++++++++++++++++++++++++++</title>
+<!-- Thread&#45;gRPC&#45;PluginGetMetadata+++++++++++++++++++++++++++++++++ -->
+<g id="node4" class="node"><title>Thread&#45;gRPC&#45;PluginGetMetadata+++++++++++++++++++++++++++++++++</title>
 <ellipse fill="none" stroke="black" cx="867.685" cy="-234" rx="103.182" ry="18"/>
 <text text-anchor="middle" x="867.685" y="-230.3" font-family="Times,serif" font-size="14.00">gRPC&#45;PluginGetMetadata</text>
 </g>
-<!-- Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++++++++++++&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata+++++++++++++++++++++++++++++++++++++++++++ -->
-<g id="edge2" class="edge"><title>Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++++++++++++&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata+++++++++++++++++++++++++++++++++++++++++++</title>
+<!-- Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata+++++++++++++++++++++++++++++++++ -->
+<g id="edge2" class="edge"><title>Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata+++++++++++++++++++++++++++++++++</title>
 <path fill="none" stroke="black" d="M701.687,-234C718.683,-234 736.53,-234 753.95,-234"/>
 <polygon fill="black" stroke="black" points="754.149,-237.5 764.149,-234 754.149,-230.5 754.149,-237.5"/>
 </g>
@@ -44,8 +44,8 @@
 <ellipse fill="none" stroke="black" cx="292.578" cy="-180" rx="115.88" ry="18"/>
 <text text-anchor="middle" x="292.578" y="-176.3" font-family="Times,serif" font-size="14.00">ConsumeBidirectionalStream</text>
 </g>
-<!-- Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++++++++++++ -->
-<g id="edge6" class="edge"><title>Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++++++++++++</title>
+<!-- Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++ -->
+<g id="edge6" class="edge"><title>Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++</title>
 <path fill="none" stroke="black" d="M370.35,-193.348C417.138,-201.483 476.832,-211.862 524.192,-220.097"/>
 <polygon fill="black" stroke="black" points="523.649,-223.555 534.101,-221.82 524.849,-216.658 523.649,-223.555"/>
 </g>
@@ -58,7 +58,7 @@
 <g id="edge3" class="edge"><title>Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata++</title>
 <path fill="none" stroke="black" d="M408.343,-180C435.463,-180 464.356,-180 491.387,-180"/>
 <polygon fill="black" stroke="black" points="491.648,-183.5 501.648,-180 491.648,-176.5 491.648,-183.5"/>
-<text text-anchor="middle" x="457.965" y="-183.8" font-family="Times,serif" font-size="14.00">54</text>
+<text text-anchor="middle" x="457.965" y="-183.8" font-family="Times,serif" font-size="14.00">53</text>
 </g>
 <!-- Thread&#45;gRPC&#45;StopChannelSpin -->
 <g id="node7" class="node"><title>Thread&#45;gRPC&#45;StopChannelSpin</title>
@@ -69,7 +69,7 @@
 <g id="edge4" class="edge"><title>Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;StopChannelSpin</title>
 <path fill="none" stroke="black" d="M370.35,-166.652C417.138,-158.517 476.832,-148.138 524.192,-139.903"/>
 <polygon fill="black" stroke="black" points="524.849,-143.342 534.101,-138.18 523.649,-136.445 524.849,-143.342"/>
-<text text-anchor="middle" x="457.965" y="-155.8" font-family="Times,serif" font-size="14.00">54</text>
+<text text-anchor="middle" x="457.965" y="-155.8" font-family="Times,serif" font-size="14.00">53</text>
 </g>
 <!-- Thread&#45;gRPC&#45;ConsumeRequestIterator -->
 <g id="node8" class="node"><title>Thread&#45;gRPC&#45;ConsumeRequestIterator</title>
@@ -80,7 +80,7 @@
 <g id="edge5" class="edge"><title>Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;ConsumeRequestIterator</title>
 <path fill="none" stroke="black" d="M389.113,-170.04C404.385,-166.073 419.555,-160.583 432.965,-153 443.375,-147.113 442.867,-141.799 450.965,-133 465.018,-117.731 464.931,-109.265 482.965,-99 490.656,-94.6228 498.996,-90.9552 507.58,-87.882"/>
 <polygon fill="black" stroke="black" points="508.952,-91.1148 517.353,-84.6589 506.76,-84.467 508.952,-91.1148"/>
-<text text-anchor="middle" x="457.965" y="-136.8" font-family="Times,serif" font-size="14.00">55</text>
+<text text-anchor="middle" x="457.965" y="-136.8" font-family="Times,serif" font-size="14.00">54</text>
 </g>
 <!-- MainThread -->
 <g id="node9" class="node"><title>MainThread</title>
@@ -107,7 +107,7 @@
 <g id="edge8" class="edge"><title>MainThread&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata</title>
 <path fill="none" stroke="black" d="M109.439,-126C130.242,-126 154.867,-126 179.176,-126"/>
 <polygon fill="black" stroke="black" points="179.194,-129.5 189.194,-126 179.194,-122.5 179.194,-129.5"/>
-<text text-anchor="middle" x="130.69" y="-129.8" font-family="Times,serif" font-size="14.00">4</text>
+<text text-anchor="middle" x="130.69" y="-129.8" font-family="Times,serif" font-size="14.00">5</text>
 </g>
 <!-- Thread&#45;Consumer&#45;CallbackRequestsWorker -->
 <g id="node11" class="node"><title>Thread&#45;Consumer&#45;CallbackRequestsWorker</title>

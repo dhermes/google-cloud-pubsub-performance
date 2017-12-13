@@ -43,8 +43,8 @@ class AuthMetadataPlugin(ORIGINAL_PLUGIN):
         '  now          =%s\n'
         '  skewed_expiry=%s\n'
         '  expiry       =%s\n'
-        '  valid=%s\n'
-        '  stack=\n\n%s')
+        '  expired      =%s\n'
+        '  stack        =\n\n%s')
 
     def __init__(self, credentials, request):
         # NOTE: We have to hack around the original constructor since
@@ -60,14 +60,14 @@ class AuthMetadataPlugin(ORIGINAL_PLUGIN):
         if expiry is None:
             now = None
             skewed_expiry = None
-            valid = False
+            expired = False
         else:
             now = datetime.datetime.utcnow()
             skewed_expiry = expiry - self.CLOCK_SKEW
-            valid = now >= skewed_expiry
+            expired = now >= skewed_expiry
 
         self.LOGGER.debug(
-            self.TEMPLATE, now, skewed_expiry, expiry, valid, stack_info)
+            self.TEMPLATE, now, skewed_expiry, expiry, expired, stack_info)
 
         return ORIGINAL_PLUGIN._get_authorization_headers(self, context)
 
