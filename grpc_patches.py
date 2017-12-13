@@ -22,7 +22,6 @@ from grpc._cython import cygrpc
 
 
 LOGGER = logging.getLogger('grpc._channel')
-EMPTY_FLAGS = grpc._channel._EMPTY_FLAGS
 DONT_EXIT = 'channel_spin() has managed_calls remaining (iteration=%d)\n%r'
 DO_EXIT = 'channel_spin() exiting (iteration=%d, duration=%g)'
 
@@ -31,7 +30,7 @@ def _consume_request_iterator(
         request_iterator, state, call, request_serializer):
     """Consume a request iterator.
 
-    This is borrowed from ``grpcio==1.7.0``.
+    This is borrowed from ``grpcio==1.7.3``.
     """
     event_handler = grpc._channel._event_handler(state, call, None)
 
@@ -64,7 +63,7 @@ def _consume_request_iterator(
                         operations = (
                             cygrpc.operation_send_message(
                                 serialized_request,
-                                EMPTY_FLAGS,
+                                grpc._channel._EMPTY_FLAGS,
                             ),
                         )
                         call.start_client_batch(
@@ -94,7 +93,9 @@ def _consume_request_iterator(
         with state.condition:
             if state.code is None:
                 operations = (
-                    cygrpc.operation_send_close_from_client(EMPTY_FLAGS),
+                    cygrpc.operation_send_close_from_client(
+                        grpc._channel._EMPTY_FLAGS,
+                    ),
                 )
                 call.start_client_batch(
                     cygrpc.Operations(operations), event_handler)
@@ -124,7 +125,7 @@ def _run_channel_spin_thread(state):
     Used by ``_channel_managed_call_management`` in cases where
     a ``state`` has no ``managed_calls`` attached.
 
-    This is borrowed from ``grpcio==1.8.0``.
+    This is borrowed from ``grpcio==1.7.3``.
     """
 
     def channel_spin():

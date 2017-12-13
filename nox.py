@@ -26,8 +26,6 @@ LOCAL = 'local'
 
 def _run(directory, session, version, *extra_deps):
     session.interpreter = 'python3.6'
-    all_deps = PINNED_DEPS + extra_deps
-    session.install(*all_deps)
     if version == LOCAL:
         # NOTE: This assumes, but does not check, that google-cloud-python
         #       is cloned and the desired branch is checked out.
@@ -36,6 +34,12 @@ def _run(directory, session, version, *extra_deps):
     else:
         pubsub_dep = 'google-cloud-pubsub=={}'.format(version)
         session.install(pubsub_dep)
+
+    # NOTE: We install pinned dependencies **after** ``google-cloud-pubsub``
+    #       since some of them may override dependencies of
+    #       ``google-cloud-pubsub``.
+    all_deps = PINNED_DEPS + extra_deps
+    session.install(*all_deps)
 
     # Add current directory to PYTHONPATH so that ``thread_names.py`` and
     # ``utils.py`` can be imported.
