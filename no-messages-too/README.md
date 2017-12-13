@@ -113,6 +113,12 @@ CPU Usage spikes to 100%:
 Every single `Thread-gRPC-StopChannelSpin` goes through four iterations
 before exiting except for the very last one (there are 55 such threads).
 
+**Exactly** one of the spin workers (`Thread-gRPC-StopChannelSpin+41`)
+actually checks the credentials metadata (`Thread-gRPC-PluginGetMetadata+43`).
+This corresponds **exactly** with the spin worker where CPU usage goes to
+100%. It also perfectly explains why the problem manifests after an hour
+(with some potential wiggle room).
+
 ### Debunked Hypothesis 1
 
 When running this, there are three `pthread`-s unknown to Python, and
