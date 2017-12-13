@@ -112,6 +112,9 @@ CPU Usage spikes to 100%:
 
 Every single `Thread-gRPC-StopChannelSpin` goes through four iterations
 before exiting except for the very last one (there are 55 such threads).
+Each of them also takes somewhere between 60 and 120 seconds, which
+matches the expected amount of time before gRPC throws an `UNAVAILABLE`
+due to inactivity.
 
 **Exactly** one of the spin workers (`Thread-gRPC-StopChannelSpin+41`)
 actually checks the credentials metadata (`Thread-gRPC-PluginGetMetadata+43`).

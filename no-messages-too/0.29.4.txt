@@ -1216,7 +1216,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c2e8>
 timeLevel=00114577:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=110.793)
 ----------------------------------------
 timeLevel=00114577:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -2480,7 +2480,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c630>
 timeLevel=00234691:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=120.104)
 ----------------------------------------
 timeLevel=00234691:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -3346,7 +3346,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c668>
 timeLevel=00323272:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=88.574)
 ----------------------------------------
 timeLevel=00323273:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -4580,7 +4580,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c4a8>
 timeLevel=00443367:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=120.087)
 ----------------------------------------
 timeLevel=00443367:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -5814,7 +5814,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c550>
 timeLevel=00561553:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=118.18)
 ----------------------------------------
 timeLevel=00561553:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -6489,7 +6489,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c978>
 timeLevel=00627089:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=65.527)
 ----------------------------------------
 timeLevel=00627090:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -7326,7 +7326,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c828>
 timeLevel=00707366:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=80.267)
 ----------------------------------------
 timeLevel=00707367:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -8223,7 +8223,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c860>
 timeLevel=00791301:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=83.931)
 ----------------------------------------
 timeLevel=00791301:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -8986,7 +8986,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c358>
 timeLevel=00863022:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=71.704)
 ----------------------------------------
 timeLevel=00863022:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -9647,7 +9647,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016ca58>
 timeLevel=00925076:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=62.047)
 ----------------------------------------
 timeLevel=00925077:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -10617,7 +10617,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c8d0>
 timeLevel=01015285:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=90.204)
 ----------------------------------------
 timeLevel=01015286:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -11592,7 +11592,7 @@ on_exception(ServiceUnavailable('The service was unable to fulfill your request.
 timeLevel=01103394:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=88.099)
 ----------------------------------------
 timeLevel=01103395:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
@@ -12572,7 +12572,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c518>
 timeLevel=01194997:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=91.594)
 ----------------------------------------
 timeLevel=01194997:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -13218,7 +13218,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c390>
 timeLevel=01256863:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=61.862)
 ----------------------------------------
 timeLevel=01256863:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -14174,7 +14174,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016cd30>
 timeLevel=01340814:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=83.941)
 ----------------------------------------
 timeLevel=01340814:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -15085,7 +15085,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016cc18>
 timeLevel=01429673:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=88.85)
 ----------------------------------------
 timeLevel=01429673:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -16039,7 +16039,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601992b0>
 timeLevel=01523597:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=93.914)
 ----------------------------------------
 timeLevel=01523597:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -16993,7 +16993,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016ce48>
 timeLevel=01616679:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=93.073)
 ----------------------------------------
 timeLevel=01616679:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -18258,7 +18258,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199080>
 timeLevel=01734848:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=118.159)
 ----------------------------------------
 timeLevel=01734849:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -19138,7 +19138,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199320>
 timeLevel=01825472:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=90.614)
 ----------------------------------------
 timeLevel=01825472:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -20357,7 +20357,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601996a0>
 timeLevel=01944387:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=118.906)
 ----------------------------------------
 timeLevel=01944387:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -21033,7 +21033,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199668>
 timeLevel=02006311:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=61.915)
 ----------------------------------------
 timeLevel=02006311:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -22267,7 +22267,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199160>
 timeLevel=02123558:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=117.238)
 ----------------------------------------
 timeLevel=02123559:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -23316,7 +23316,7 @@ on_exception(ServiceUnavailable('The service was unable to fulfill your request.
 timeLevel=02220178:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=96.608)
 ----------------------------------------
 timeLevel=02220178:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
@@ -24325,7 +24325,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199c88>
 timeLevel=02316112:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=95.925)
 ----------------------------------------
 timeLevel=02316112:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -25163,7 +25163,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199a58>
 timeLevel=02393075:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=76.954)
 ----------------------------------------
 timeLevel=02393076:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -26382,7 +26382,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199748>
 timeLevel=02512371:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=119.289)
 ----------------------------------------
 timeLevel=02512371:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -27176,7 +27176,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199f28>
 timeLevel=02580979:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=68.599)
 ----------------------------------------
 timeLevel=02580980:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -28131,7 +28131,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199b70>
 timeLevel=02671506:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=90.517)
 ----------------------------------------
 timeLevel=02671506:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -28968,7 +28968,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601997b8>
 timeLevel=02752301:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=80.785)
 ----------------------------------------
 timeLevel=02752301:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -29908,7 +29908,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601996d8>
 timeLevel=02842835:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=90.525)
 ----------------------------------------
 timeLevel=02842835:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -30554,7 +30554,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199ac8>
 timeLevel=02903759:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=60.915)
 ----------------------------------------
 timeLevel=02903760:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -31424,7 +31424,7 @@ on_exception(ServiceUnavailable('The service was unable to fulfill your request.
 timeLevel=02993674:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=89.905)
 ----------------------------------------
 timeLevel=02993674:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
@@ -32050,7 +32050,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199438>
 timeLevel=03056246:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=62.562)
 ----------------------------------------
 timeLevel=03056246:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -32961,7 +32961,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199ba8>
 timeLevel=03140832:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=84.577)
 ----------------------------------------
 timeLevel=03140833:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -33681,7 +33681,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199d30>
 timeLevel=03208562:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=67.72)
 ----------------------------------------
 timeLevel=03208562:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -34856,7 +34856,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016cd30>
 timeLevel=03320451:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=111.879)
 ----------------------------------------
 timeLevel=03320452:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -35606,7 +35606,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc860199828>
 timeLevel=03389984:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=69.524)
 ----------------------------------------
 timeLevel=03389985:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -36517,7 +36517,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c7b8>
 timeLevel=03471240:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=81.246)
 ----------------------------------------
 timeLevel=03471240:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -37447,7 +37447,7 @@ on_exception(ServiceUnavailable('The service was unable to fulfill your request.
 timeLevel=03565813:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=94.564)
 ----------------------------------------
 timeLevel=03565813:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer
@@ -38542,7 +38542,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c0b8>
 timeLevel=03679583:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=113.76)
 ----------------------------------------
 timeLevel=03679583:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -39837,7 +39837,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016c940>
 timeLevel=03796224:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=116.633)
 ----------------------------------------
 timeLevel=03796224:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -40776,7 +40776,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016cda0>
 timeLevel=03887426:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=91.195)
 ----------------------------------------
 timeLevel=03887426:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -41451,7 +41451,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601a0438>
 timeLevel=03956684:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=69.251)
 ----------------------------------------
 timeLevel=03956685:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -42494,7 +42494,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601a05c0>
 timeLevel=04056220:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=99.534)
 ----------------------------------------
 timeLevel=04056220:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -43347,7 +43347,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc86016ce10>
 timeLevel=04132305:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=76.078)
 ----------------------------------------
 timeLevel=04132306:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -44521,7 +44521,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601a04a8>
 timeLevel=04252506:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=120.194)
 ----------------------------------------
 timeLevel=04252506:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -45240,7 +45240,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601a0668>
 timeLevel=04318883:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=66.37)
 ----------------------------------------
 timeLevel=04318883:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -46136,7 +46136,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601a0470>
 timeLevel=04405822:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=86.932)
 ----------------------------------------
 timeLevel=04405822:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -46928,7 +46928,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601a0b00>
 timeLevel=04486412:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=80.583)
 ----------------------------------------
 timeLevel=04486412:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -47750,7 +47750,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601a0748>
 timeLevel=04564347:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=77.928)
 ----------------------------------------
 timeLevel=04564347:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -48573,7 +48573,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601a0dd8>
 timeLevel=04643094:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=78.745)
 ----------------------------------------
 timeLevel=04643094:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -49498,7 +49498,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601a0748>
 timeLevel=04733713:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=90.618)
 ----------------------------------------
 timeLevel=04733713:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -50158,7 +50158,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601a0eb8>
 timeLevel=04794937:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=4)
+channel_spin() exiting (iteration=4, duration=61.217)
 ----------------------------------------
 timeLevel=04794937:DEBUG
 logger=google.cloud.pubsub_v1.subscriber.policy.thread
@@ -50417,7 +50417,7 @@ completed_call=<grpc._cython.cygrpc.Call object at 0x7fc8601a0470>
 timeLevel=04804380:DEBUG
 logger=grpc._channel
 threadName=Thread-gRPC-StopChannelSpin++++++++++++++++++++++++++++++++++++++++++++++++++++++
-channel_spin() exiting (iteration=5)
+channel_spin() exiting (iteration=5, duration=9.441)
 ----------------------------------------
 timeLevel=04804380:DEBUG
 logger=google.cloud.pubsub_v1.subscriber._consumer

@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import logging
+import time
 
 import grpc
 import grpc._channel
@@ -22,6 +23,8 @@ from grpc._cython import cygrpc
 
 LOGGER = logging.getLogger('grpc._channel')
 EMPTY_FLAGS = grpc._channel._EMPTY_FLAGS
+DONT_EXIT = 'channel_spin() has managed_calls remaining (iteration=%d)\n%r'
+DO_EXIT = 'channel_spin() exiting (iteration=%d, duration=%g)'
 
 
 def _consume_request_iterator(
@@ -122,8 +125,7 @@ def _run_channel_spin_thread(state):
 
     def channel_spin():
         count = 0
-        dont_exit = (
-            'channel_spin() has managed_calls remaining (iteration=%d)\n%r')
+        start = time.time()
         while True:
             count += 1
             LOGGER.debug('Polling in channel_spin() (iteration=%d)', count)
@@ -137,11 +139,11 @@ def _run_channel_spin_thread(state):
                     state.managed_calls.remove(completed_call)
                     if not state.managed_calls:
                         state.managed_calls = None
-                        LOGGER.debug(
-                            'channel_spin() exiting (iteration=%d)', count)
+                        duration = time.time() - start
+                        LOGGER.debug(DO_EXIT, count, duration)
                         return
                     else:
-                        LOGGER.debug(dont_exit, count, state.managed_calls)
+                        LOGGER.debug(DONT_EXIT, count, state.managed_calls)
 
     def stop_channel_spin(timeout):
         with state.lock:
