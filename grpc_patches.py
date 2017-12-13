@@ -121,24 +121,27 @@ def _run_channel_spin_thread(state):
     """
 
     def channel_spin():
+        count = 0
+        dont_exit = (
+            'channel_spin() has managed_calls remaining (iteration=%d)\n%r')
         while True:
-            LOGGER.debug('Polling in channel_spin()')
+            count += 1
+            LOGGER.debug('Polling in channel_spin() (iteration=%d)', count)
             event = state.completion_queue.poll()
             completed_call = event.tag(event)
             LOGGER.debug(
-                'channel_spin():\nevent=%r\ncompleted_call=%r',
-                event, completed_call)
+                'channel_spin():\niteration=%d\nevent=%r\ncompleted_call=%r',
+                count, event, completed_call)
             if completed_call is not None:
                 with state.lock:
                     state.managed_calls.remove(completed_call)
                     if not state.managed_calls:
                         state.managed_calls = None
-                        LOGGER.debug('channel_spin() exiting')
+                        LOGGER.debug(
+                            'channel_spin() exiting (iteration=%d)', count)
                         return
                     else:
-                        LOGGER.debug(
-                            'channel_spin() has managed_calls remaining\n%r',
-                            state.managed_calls)
+                        LOGGER.debug(dont_exit, count, state.managed_calls)
 
     def stop_channel_spin(timeout):
         with state.lock:
