@@ -111,5 +111,52 @@ def _consume_request_iterator(
     consumption_thread.start()
 
 
-def patch():
+def _run_channel_spin_thread(state):
+    """Spin a channel until all managed calls are resolved.
+
+    Used by ``_channel_managed_call_management`` in cases where
+    a ``state`` has no ``managed_calls`` attached.
+
+    This is borrowed from ``grpcio==1.8.0``.
+    """
+
+    def channel_spin():
+        while True:
+            LOGGER.debug('Polling in channel_spin()')
+            event = state.completion_queue.poll()
+            completed_call = event.tag(event)
+            LOGGER.debug(
+                'channel_spin():\nevent=%r\ncompleted_call=%r',
+                event, completed_call)
+            if completed_call is not None:
+                with state.lock:
+                    state.managed_calls.remove(completed_call)
+                    if not state.managed_calls:
+                        state.managed_calls = None
+                        LOGGER.debug('channel_spin() exiting')
+                        return
+                    else:
+                        LOGGER.debug(
+                            'channel_spin() has managed_calls remaining\n%r',
+                            state.managed_calls)
+
+    def stop_channel_spin(timeout):
+        with state.lock:
+            if state.managed_calls is not None:
+                LOGGER.debug(
+                    'stop_channel_spin() has managed_calls\n%r',
+                    state.managed_calls)
+                for call in state.managed_calls:
+                    call.cancel()
+            else:
+                LOGGER.debug('stop_channel_spin() has no managed_calls')
+
+    channel_spin_thread = grpc._common.CleanupThread(
+        stop_channel_spin, target=channel_spin)
+    channel_spin_thread.start()
+
+
+def patch(spin_also=False):
     grpc._channel._consume_request_iterator = _consume_request_iterator
+    if spin_also:
+        grpc._channel._run_channel_spin_thread = _run_channel_spin_thread
