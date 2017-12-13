@@ -24,9 +24,10 @@ PINNED_DEPS = (
 LOCAL = 'local'
 
 
-def _run(directory, session, version):
+def _run(directory, session, version, *extra_deps):
     session.interpreter = 'python3.6'
-    session.install(*PINNED_DEPS)
+    all_deps = PINNED_DEPS + extra_deps
+    session.install(*all_deps)
     if version == LOCAL:
         # NOTE: This assumes, but does not check, that google-cloud-python
         #       is cloned and the desired branch is checked out.
@@ -71,6 +72,12 @@ def message_after_recover(session, version):
 @nox.parametrize('version', ('0.29.0', '0.29.1'))
 def no_messages(session, version):
     _run('no-messages', session, version)
+
+
+@nox.session
+@nox.parametrize('version', ('0.29.4',))
+def no_messages_too(session, version):
+    _run('no-messages-too', session, version, 'psutil')
 
 
 @nox.session

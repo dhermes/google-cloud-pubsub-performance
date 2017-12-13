@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import ctypes
+import logging
 import os
 import threading
 
@@ -24,6 +26,7 @@ import graph_theory
 import utils
 
 
+LIBC = ctypes.cdll.LoadLibrary('libc.so.6')
 ORIGINAL_THREAD = threading.Thread
 ORIGINAL_CLEANUP_THREAD_CONSTRUCTOR = grpc._common.CleanupThread.__init__
 PLUGIN_GET_METADATA_REPR = (
@@ -35,6 +38,18 @@ CONSUME_REQUEST_REPR = (
     'consume_request_iterator at 0x')
 THREAD_PARENTS = []
 THREAD_NAMES = []
+TID_LOCK = threading.Lock()
+TID_MAP = {}
+
+
+def get_thread_id():
+    # System dependent, see e.g.
+    # /usr/include/x86_64-linux-gnu/asm/unistd_64.h
+    # SYS_gettid = 186
+    # e.g. https://stackoverflow.com/a/9410056/1068170
+    # Maybe use pthread_self()
+    # https://github.com/giampaolo/psutil/issues/418
+    return LIBC.syscall(186)
 
 
 def executor_name_rewrite(name):
@@ -54,16 +69,43 @@ def executor_name_rewrite(name):
         return name
 
 
+class LogCreationTarget(object):
+
+    ADD_LOGGING = False
+
+    def __init__(self, to_call):
+        self.to_call = to_call
+
+    @staticmethod
+    def _log_current():
+        tid = get_thread_id()
+        name = threading.current_thread().name
+        with TID_LOCK:
+            if tid in TID_MAP:
+                logging.error('TID %s already named %s', tid, TID_MAP[tid])
+            TID_MAP[tid] = name
+
+        return tid
+
+    def __call__(self, *args, **kwargs):
+        if self.ADD_LOGGING:
+            tid = self._log_current()
+            logging.debug('Created TID: %s', tid)
+
+        return self.to_call(*args, **kwargs)
+
+
 def update_thread_kwargs(args, kwargs):
+    if 'target' not in kwargs:
+        raise KeyError(
+            'Thread has no target', args, kwargs)
+
+    target = kwargs['target']
+    kwargs['target'] = LogCreationTarget(target)
+
     if 'name' in kwargs:
         kwargs['name'] = executor_name_rewrite(kwargs['name'])
         return
-
-    if 'target' not in kwargs:
-        raise KeyError(
-            'Thread has no name or target', args, kwargs)
-
-    target = kwargs['target']
 
     # Expected case 1: Spawned in ``grpc._channel._spawn_delivery()``.
     if target is grpc._channel._deliver:
