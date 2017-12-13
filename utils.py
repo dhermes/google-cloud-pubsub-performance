@@ -24,11 +24,12 @@ import google.auth
 from google.cloud.pubsub_v1.subscriber import policy
 from google.cloud import pubsub_v1
 import pkg_resources
+import six
 
 import grpc_patches
 
 
-SCOPE = 'https://www.googleapis.com/auth/pubsub'
+SCOPES = ('https://www.googleapis.com/auth/pubsub',)
 HERE = os.path.dirname(os.path.abspath(__file__))
 LOG_FORMAT = """\
 timeLevel=%(relativeCreated)08d:%(levelname)s
@@ -157,8 +158,12 @@ def make_lease_deterministic(random_mod=None):
     policy.base.random = random_mod
 
 
-def get_client_info(topic_name, subscription_name, policy_class=None):
-    credentials, project = google.auth.default(scopes=(SCOPE,))
+def get_client_info(
+        topic_name, subscription_name, policy_class=None, credentials=None):
+    if credentials is None:
+        credentials, project = google.auth.default(scopes=SCOPES)
+    else:
+        _, project = google.auth.default()
 
     publisher = pubsub_v1.PublisherClient(credentials=credentials)
     topic_path = publisher.topic_path(project, topic_name)
@@ -171,6 +176,23 @@ def get_client_info(topic_name, subscription_name, policy_class=None):
         project, subscription_name)
 
     return publisher, topic_path, subscriber, subscription_path
+
+
+def get_stack(num_frames):
+    # NOTE: Import at **runtime** since ``boltons`` is an optional
+    #       dependency.
+    from boltons import tbutils
+
+    parts = []
+    for level in six.moves.xrange(num_frames + 2, 2, -1):
+        try:
+            callpoint = tbutils.Callpoint.from_current(level)
+            parts.append(callpoint.tb_frame_str())
+        except ValueError as exc:
+            assert exc.args == ('call stack is not deep enough',)
+
+    stack_text = ''.join(parts)
+    return StdErrLogger.sanitize(stack_text)
 
 
 def restore():
@@ -249,16 +271,20 @@ class StdErrLogger(object):
     HOME = os.path.expanduser('~')
     SITE_PACKAGES = distutils.sysconfig.get_python_lib()
 
+    @classmethod
+    def sanitize(cls, value):
+        # NOTE: Must first replace ${SITE_PACKAGES} since it **may** contain
+        #       ${HOME} and ${HERE}.
+        value = value.replace(cls.SITE_PACKAGES, '${SITE_PACKAGES}')
+        # NOTE: Must first replace ${HERE} since it **may** contain ${HOME}.
+        value = value.replace(HERE, '${HERE}')
+        return value.replace(cls.HOME, '${HOME}')
+
     def write(self, error_msg):
         if error_msg == '\n':
             return
 
-        # NOTE: Must first replace ${SITE_PACKAGES} since it **may** contain
-        #       ${HOME} and ${HERE}.
-        error_msg = error_msg.replace(self.SITE_PACKAGES, '${SITE_PACKAGES}')
-        # NOTE: Must first replace ${HERE} since it **may** contain ${HOME}.
-        error_msg = error_msg.replace(HERE, '${HERE}')
-        error_msg = error_msg.replace(self.HOME, '${HOME}')
+        error_msg = self.sanitize(error_msg)
         logging.error(error_msg)
 
 

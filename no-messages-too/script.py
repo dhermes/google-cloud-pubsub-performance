@@ -12,15 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import datetime
 import os
 import time
 
+import google.auth
+import google.auth.transport.grpc as auth_grpc
+import grpc
 import psutil
 
 import thread_names
 import utils
 
 
+ORIGINAL_PLUGIN = auth_grpc.AuthMetadataPlugin
+ORIGINAL_UPDATE_THREAD_KWARGS = thread_names.update_thread_kwargs
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
 UNKNOWN = '<name-unknown>'
 HEARTBEAT_ADDENDUM = """
@@ -28,11 +34,55 @@ psutil info=
 %s"""
 
 
+class AuthMetadataPlugin(ORIGINAL_PLUGIN):
+
+    LOGGER = None
+    CLOCK_SKEW = datetime.timedelta(seconds=300)
+    TEMPLATE = (
+        '_get_authorization_headers()\n'
+        '  now          =%s\n'
+        '  skewed_expiry=%s\n'
+        '  expiry       =%s\n'
+        '  valid=%s\n'
+        '  stack=\n\n%s')
+
+    def __init__(self, credentials, request):
+        # NOTE: We have to hack around the original constructor since
+        #       it refers to the ``AuthMetadataPlugin`` name at runtime.
+        grpc.AuthMetadataPlugin.__init__(self)
+        self._credentials = credentials
+        self._request = request
+
+    def _get_authorization_headers(self, context):
+        stack_info = utils.get_stack(15)
+
+        expiry = self._credentials.expiry
+        if expiry is None:
+            now = None
+            skewed_expiry = None
+            valid = False
+        else:
+            now = datetime.datetime.utcnow()
+            skewed_expiry = expiry - self.CLOCK_SKEW
+            valid = now >= skewed_expiry
+
+        self.LOGGER.debug(
+            self.TEMPLATE, now, skewed_expiry, expiry, valid, stack_info)
+
+        return ORIGINAL_PLUGIN._get_authorization_headers(self, context)
+
+
 class HeartbeatHelper(utils.HeartbeatHelper):
 
     def __init__(self):
+        self.num_heartbeats = 0
         self.process = psutil.Process()
         self.template = HEARTBEAT_ADDENDUM
+
+    def increment_done(self, future, done_count):
+        self.num_heartbeats += 1
+        return super(HeartbeatHelper, self).increment_done(
+            future, done_count)
 
     @property
     def psutil_info(self):
@@ -42,6 +92,7 @@ class HeartbeatHelper(utils.HeartbeatHelper):
         threads = self.process.threads()
 
         parts = [
+            '  Heartbeats={}'.format(self.num_heartbeats),
             '  CPU usage={}%'.format(cpu_usage),
             '  pid={}'.format(pid),
         ]
@@ -64,17 +115,51 @@ class HeartbeatHelper(utils.HeartbeatHelper):
         return self.psutil_info,
 
 
-def main():
-    # Do set-up.
+class UpdateThreadKwargs(object):
+
+    def __init__(self, logger):
+        self.logger = logger
+
+    def __call__(self, args, kwargs):
+        result = ORIGINAL_UPDATE_THREAD_KWARGS(args, kwargs)
+
+        if kwargs['name'] == thread_names.PLUGIN_THREAD_NAME:
+            stack_info = utils.get_stack(15)
+            self.logger.debug(
+                'When spawning %s, stack:\n\n%s',
+                thread_names.PLUGIN_THREAD_NAME, stack_info)
+
+        return result
+
+
+def patch_stage1():
+    # We can patch this since the **name** is used at **runtime** by
+    # ``auth_grpc.secure_authorized_channel``, which is used by:
+    # - ``google.cloud._helpers.make_secure_channel``
+    # - ``google.api_core.grpc_helpers.create_channel``
+    auth_grpc.AuthMetadataPlugin = AuthMetadataPlugin
     thread_names.LogCreationTarget.ADD_LOGGING = True
     thread_names.LogCreationTarget._log_current()
+
+
+def patch_stage2(logger):
+    thread_names.update_thread_kwargs = UpdateThreadKwargs(logger)
+    AuthMetadataPlugin.LOGGER = logger
+
+
+def main():
+    # Do set-up.
+    patch_stage1()
     logger = utils.setup_logging(CURR_DIR, spin_also=True)
+    patch_stage2(logger)
     thread_names.monkey_patch()
 
     # Get clients and resource paths.
+    credentials, _ = google.auth.default(scopes=utils.SCOPES)
     topic_name = 't-repro-{}'.format(int(1000 * time.time()))
     subscription_name = 's-repro-{}'.format(int(1000 * time.time()))
-    client_info = utils.get_client_info(topic_name, subscription_name)
+    client_info = utils.get_client_info(
+        topic_name, subscription_name, credentials=credentials)
     publisher, topic_path, subscriber, subscription_path = client_info
 
     # Create a topic, though we won't push messages to it.

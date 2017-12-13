@@ -31,6 +31,7 @@ ORIGINAL_THREAD = threading.Thread
 ORIGINAL_CLEANUP_THREAD_CONSTRUCTOR = grpc._common.CleanupThread.__init__
 PLUGIN_GET_METADATA_REPR = (
     '<cyfunction plugin_get_metadata.<locals>.async_callback at 0x')
+PLUGIN_THREAD_NAME = 'Thread-gRPC-PluginGetMetadata'
 CHANNEL_SPIN_REPR = (
     '<function _run_channel_spin_thread.<locals>.channel_spin at 0x')
 CONSUME_REQUEST_REPR = (
@@ -121,7 +122,7 @@ def update_thread_kwargs(args, kwargs):
     # file ``grpc/_cython/_cygrpc/credentials.pyx.pxi``.
     target_repr = repr(target)
     if target_repr.startswith(PLUGIN_GET_METADATA_REPR):
-        kwargs['name'] = 'Thread-gRPC-PluginGetMetadata'
+        kwargs['name'] = PLUGIN_THREAD_NAME
         return
 
     # Expected case 4: Spawned in ``grpc._channel._run_channel_spin_thread()``.

@@ -81,7 +81,7 @@ def no_messages(session, version):
 @nox.session
 @nox.parametrize('version', ('0.29.4',))
 def no_messages_too(session, version):
-    _run('no-messages-too', session, version, 'psutil')
+    _run('no-messages-too', session, version, 'psutil', 'boltons')
 
 
 @nox.session
