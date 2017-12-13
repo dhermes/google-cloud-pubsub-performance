@@ -52,8 +52,8 @@ LOGGER_THREAD = logging.getLogger(
     'google.cloud.pubsub_v1.subscriber.policy.thread')
 
 
-def setup_logging(directory):
-    grpc_patches.patch()
+def setup_logging(directory, spin_also=False):
+    grpc_patches.patch(spin_also)
     # NOTE: Must set the logging level on the "root" logger since
     #       the orchestration across threads is funky (I still do
     #       not **fully** understand it).

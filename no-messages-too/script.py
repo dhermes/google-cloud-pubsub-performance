@@ -68,7 +68,7 @@ def main():
     # Do set-up.
     thread_names.LogCreationTarget.ADD_LOGGING = True
     thread_names.LogCreationTarget._log_current()
-    logger = utils.setup_logging(CURR_DIR)
+    logger = utils.setup_logging(CURR_DIR, spin_also=True)
     thread_names.monkey_patch()
 
     # Get clients and resource paths.

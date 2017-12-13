@@ -156,7 +156,7 @@ def _run_channel_spin_thread(state):
     channel_spin_thread.start()
 
 
-def patch(spin_also=False):
+def patch(spin_also):
     grpc._channel._consume_request_iterator = _consume_request_iterator
     if spin_also:
         grpc._channel._run_channel_spin_thread = _run_channel_spin_thread
