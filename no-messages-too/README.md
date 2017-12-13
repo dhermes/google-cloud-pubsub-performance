@@ -110,30 +110,6 @@ It's likely we can hook into this by [using `LD_PRELOAD`][2] to replace
 `gpr_thd_new` at the ABI level:
 
 ```
-$ git clone https://github.com/grpc/grpc/ --depth=1
-$ cd grpc/
-$ git log -1 --pretty=%H
-69e8ab400dadb2843e9a1927cf579bdec94d729b
-$ git grep -n gpr_thd_new -- include/ src/
-include/grpc/support/thd.h:49:GPRAPI int gpr_thd_new(gpr_thd_id* t, const char* thd_name,
-src/core/lib/iomgr/ev_poll_posix.cc:1362:  GPR_ASSERT(gpr_thd_new(&t_id, "grpc_poller", &run_poll, pargs, &opt));
-src/core/lib/iomgr/executor.cc:107:    gpr_thd_new(&g_thread_state[0].id, "grpc_executor", executor_thread,
-src/core/lib/iomgr/executor.cc:264:        gpr_thd_new(&g_thread_state[cur_thread_count].id, "gpr_executor",
-src/core/lib/iomgr/timer_manager.cc:90:  // The call to gpr_thd_new() has to be under the same lock used by
-src/core/lib/iomgr/timer_manager.cc:92:  // (internally by gpr_thd_new) and read there. Otherwise it's possible for ct
-src/core/lib/iomgr/timer_manager.cc:96:  gpr_thd_new(&ct->t, "grpc_global_timer", timer_thread, ct, &opt);
-src/core/lib/profiling/basic_timers.cc:206:  GPR_ASSERT(gpr_thd_new(&g_writing_thread, "timer_output_thread",
-src/core/lib/support/thd_posix.cc:50:/* Body of every thread started via gpr_thd_new. */
-src/core/lib/support/thd_posix.cc:72:int gpr_thd_new(gpr_thd_id* t, const char* thd_name,
-src/core/lib/support/thd_windows.cc:55:/* Body of every thread started via gpr_thd_new. */
-src/core/lib/support/thd_windows.cc:68:int gpr_thd_new(gpr_thd_id* t, const char* thd_name,
-src/ruby/ext/grpc/rb_grpc_imports.generated.c:266:gpr_thd_new_type gpr_thd_new_import;
-src/ruby/ext/grpc/rb_grpc_imports.generated.c:538:  gpr_thd_new_import = (gpr_thd_new_type) GetProcAddress(library, "gpr_thd_new");
-src/ruby/ext/grpc/rb_grpc_imports.generated.h:771:typedef int(*gpr_thd_new_type)(gpr_thd_id* t, const char* thd_name, void (*thd_body)(void* arg), void* arg, const gpr_thd_options* options);
-src/ruby/ext/grpc/rb_grpc_imports.generated.h:772:extern gpr_thd_new_type gpr_thd_new_import;
-src/ruby/ext/grpc/rb_grpc_imports.generated.h:773:#define gpr_thd_new gpr_thd_new_import
-$
-$
 $ strings .../grpc/_cython/cygrpc.cpython-36m-x86_64-linux-gnu.so \
 > | grep gpr_thd_new
 gpr_thd_new(&t_id, &run_poll, pargs, &opt)
