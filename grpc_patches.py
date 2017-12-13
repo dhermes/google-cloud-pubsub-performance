@@ -28,7 +28,7 @@ def _consume_request_iterator(
         request_iterator, state, call, request_serializer):
     """Consume a request iterator.
 
-    This is borrowed from ``grpcio==1.7.0``.
+    This is borrowed from ``grpcio==1.8.0``.
     """
     event_handler = grpc._channel._event_handler(state, call, None)
 
@@ -64,10 +64,7 @@ def _consume_request_iterator(
                                 EMPTY_FLAGS,
                             ),
                         )
-                        call.start_client_batch(
-                            cygrpc.Operations(operations),
-                            event_handler,
-                        )
+                        call.start_client_batch(operations, event_handler)
                         state.due.add(cygrpc.OperationType.send_message)
                         while True:
                             state.condition.wait()
@@ -93,8 +90,7 @@ def _consume_request_iterator(
                 operations = (
                     cygrpc.operation_send_close_from_client(EMPTY_FLAGS),
                 )
-                call.start_client_batch(
-                    cygrpc.Operations(operations), event_handler)
+                call.start_client_batch(operations, event_handler)
                 state.due.add(cygrpc.OperationType.send_close_from_client)
             else:
                 LOGGER.debug(
