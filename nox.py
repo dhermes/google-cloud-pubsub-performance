@@ -18,7 +18,7 @@ import nox
 
 
 PINNED_DEPS = (
-    'grpcio==1.7.0',
+    'grpcio==1.7.3',
     'pydot==1.2.3',
 )
 LOCAL = 'local'
