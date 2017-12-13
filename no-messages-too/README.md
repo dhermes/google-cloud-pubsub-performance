@@ -14,7 +14,7 @@ stop doing this until exiting at 80 minutes.
 Adds a "thread creation interceptor" that wraps the `target` in a given
 thread. Before running the target, the interceptor tracks a map of the
 `pthread` ID to the thread name (i.e. the name given by Python). During each
-"heartbeat", this mapping is used to verify that the active `pthreads`
+"heartbeat", this mapping is used to verify that the active `pthread`-s
 according to the operating system are the same as the active threads
 according to Python.
 
