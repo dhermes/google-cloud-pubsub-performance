@@ -145,5 +145,5 @@ or just build gRPC from source with extra logging.
 
 [1]: https://github.com/GoogleCloudPlatform/google-cloud-python/issues/4563
 [2]: https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/
-[3]: https://github.com/grpc/grpc/blob/v1.8.0/src/python/grpcio/grpc/_channel.py#L710-L711
-[4]: https://github.com/grpc/grpc/blob/v1.8.0/src/core/lib/support/thd_posix.cc#L58
+[3]: https://github.com/grpc/grpc/blob/v1.7.0/src/python/grpcio/grpc/_channel.py#L730-L731
+[4]: https://github.com/grpc/grpc/blob/v1.7.0/src/core/lib/support/thd_posix.c#L58
