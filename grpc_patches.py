@@ -24,6 +24,17 @@ from grpc._cython import cygrpc
 LOGGER = logging.getLogger('grpc._channel')
 DONT_EXIT = 'channel_spin() has managed_calls remaining (iteration=%d)\n%r'
 DO_EXIT = 'channel_spin() exiting (iteration=%d, duration=%g)'
+EVENT_REPR_TEMPLATE = """\
+Event(
+  type={event.type}
+  success={event.success}
+  tag={event.tag}
+  operation_call={event.operation_call}
+  request_call_details={event.request_call_details}
+  request_metadata={event.request_metadata}
+  batch_operations={event.batch_operations}
+  is_new_request={event.is_new_request}
+)"""
 
 
 def _consume_request_iterator(
@@ -119,6 +130,14 @@ def _consume_request_iterator(
     consumption_thread.start()
 
 
+def event_repr(event):
+    # grpc._cython.cygrpc.Event
+    try:
+        return EVENT_REPR_TEMPLATE.format(event=event)
+    except:
+        return repr(event)
+
+
 def _run_channel_spin_thread(state):
     """Spin a channel until all managed calls are resolved.
 
@@ -137,8 +156,8 @@ def _run_channel_spin_thread(state):
             event = state.completion_queue.poll()
             completed_call = event.tag(event)
             LOGGER.debug(
-                'channel_spin():\niteration=%d\nevent=%r\ncompleted_call=%r',
-                count, event, completed_call)
+                'channel_spin():\niteration=%d\nevent=%s\ncompleted_call=%r',
+                count, event_repr(event), completed_call)
             if completed_call is not None:
                 with state.lock:
                     state.managed_calls.remove(completed_call)
