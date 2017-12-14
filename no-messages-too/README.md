@@ -207,9 +207,9 @@ i.e. they obey the `200ms` timeout that is set. In one of the unhealthy
 `pthread`-s (`5033`), the four poll operations timeout at
 
 - `1513230431.254451018`
-- `1513230431.254563047` (+112.029&#956;s)
-- `1513230431.254708226` (+145.179&#956;s)
-- `1513230431.254828449` (+120.223&#956;s)
+- `1513230431.254563047` (+112.0&#956;s)
+- `1513230431.254708226` (+145.2&#956;s)
+- `1513230431.254828449` (+120.2&#956;s)
 
 i.e. they come nowhere near the `190ms` timeout that is set. In the other
 unhealthy `pthread` (`3610`), the five operations timeout in a similar
