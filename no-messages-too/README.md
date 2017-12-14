@@ -70,12 +70,12 @@ calls to `threading.Thread` to give custom names):
 ----------------------------------------
 timeLevel=03852345:DEBUG
 logger=root
-threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++++++++++++
+threadName=Thread-gRPC-StopChannelSpin+43
 Created TID: 3610
 ----------------------------------------
 timeLevel=04576010:DEBUG
 logger=root
-threadName=Thread-gRPC-StopChannelSpin+++++++++++++++++++++++++++++++++++++++++++++++++++
+threadName=Thread-gRPC-StopChannelSpin+51
 Created TID: 5033
 ----------------------------------------
 ```
@@ -200,26 +200,26 @@ clock_gettime(CLOCK_MONOTONIC, {594641, 222831870}) = 0
 In the healthy `pthread` (`659`), the three poll operations timeout at
 
 - `1513228764.700198592`
-- `1513228764.901367968` (`+201.2ms`)
-- `1513228765.102717770` (`+201.3ms`)
+- `1513228764.901367968` (+201.2ms)
+- `1513228765.102717770` (+201.3ms)
 
 i.e. they obey the `200ms` timeout that is set. In one of the unhealthy
 `pthread`-s (`5033`), the four poll operations timeout at
 
 - `1513230431.254451018`
-- `1513230431.254563047` (`+112.029&#956;s`)
-- `1513230431.254708226` (`+145.179&#956;s`)
-- `1513230431.254828449` (`+120.223&#956;s`)
+- `1513230431.254563047` (+112.029&#956;s)
+- `1513230431.254708226` (+145.179&#956;s)
+- `1513230431.254828449` (+120.223&#956;s)
 
 i.e. they come nowhere near the `190ms` timeout that is set. In the other
 unhealthy `pthread` (`3610`), the five operations timeout in a similar
 fashion:
 
 - `1513229731.320975350`
-- `1513229731.321105382` (`+130.0&#956;s`)
-- `1513229731.321219667` (`+114.3&#956;s`)
-- `1513229731.321359132` (`+139.5&#956;s`)
-- `1513229731.321475654` (`+116.5&#956;s`)
+- `1513229731.321105382` (+130.0&#956;s)
+- `1513229731.321219667` (+114.3&#956;s)
+- `1513229731.321359132` (+139.5&#956;s)
+- `1513229731.321475654` (+116.5&#956;s)
 
 which is nowhere near the `182ms` timeout that is set.
 
