@@ -17,20 +17,30 @@ import os
 import nox
 
 
+GRPC = 'grpcio==1.7.3'
+GRPC_CUSTOM = os.path.abspath(
+    'grpcio-1.7.4.dev1-cp36-cp36m-manylinux1_x86_64.whl')
 PINNED_DEPS = (
-    'grpcio==1.7.3',
+    GRPC,
     'pydot==1.2.3',
 )
 LOCAL = 'local'
+CUSTOM = 'custom'
 
 
 def _run(directory, session, version, *extra_deps):
     session.interpreter = 'python3.6'
+    all_deps = PINNED_DEPS + extra_deps
+
     if version == LOCAL:
         # NOTE: This assumes, but does not check, that google-cloud-python
         #       is cloned and the desired branch is checked out.
         path = os.path.join('google-cloud-python', 'pubsub')
         session.install(path)
+    elif version == CUSTOM:
+        all_deps = tuple(dep for dep in all_deps if dep != GRPC)
+        all_deps += (GRPC_CUSTOM,)
+        session.install('google-cloud-pubsub==0.29.4')
     else:
         pubsub_dep = 'google-cloud-pubsub=={}'.format(version)
         session.install(pubsub_dep)
@@ -38,7 +48,6 @@ def _run(directory, session, version, *extra_deps):
     # NOTE: We install pinned dependencies **after** ``google-cloud-pubsub``
     #       since some of them may override dependencies of
     #       ``google-cloud-pubsub``.
-    all_deps = PINNED_DEPS + extra_deps
     session.install(*all_deps)
 
     # Add current directory to PYTHONPATH so that ``thread_names.py`` and
@@ -79,7 +88,7 @@ def no_messages(session, version):
 
 
 @nox.session
-@nox.parametrize('version', ('0.29.4',))
+@nox.parametrize('version', ('0.29.4', CUSTOM))
 def no_messages_too(session, version):
     _run('no-messages-too', session, version, 'psutil', 'boltons')
 
