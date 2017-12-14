@@ -234,11 +234,11 @@ The `channel_spin() ...` messages when the CPU usage spikes to 100% don't
 seem to be different than those messages before.
 
 CPU Usage spikes to 100%:
-- `1h 1m 16.808s` (0.4%, `Thread-gRPC-StopChannelSpin+40`)
-- `1h 1m 21.820s` (45.5%, `Thread-gRPC-StopChannelSpin+41`)
-- `1h 1m 26.831s` (100.2%, `Thread-gRPC-StopChannelSpin+41`)
+- `1h 1m 14.391s` (1.0%, `Thread-gRPC-StopChannelSpin+40`)
+- `1h 1m 19.400s` (88.0%, `Thread-gRPC-StopChannelSpin+41`)
+- `1h 1m 24.411s` (99.3%, `Thread-gRPC-StopChannelSpin+41`)
 - ...
-- `1h 3m 17.074s` (100.0%, `Thread-gRPC-StopChannelSpin+42`)
+- `1h 2m 29.585s` (100.0%, `Thread-gRPC-StopChannelSpin+42`)
 
 Every single `Thread-gRPC-StopChannelSpin` goes through four iterations
 before exiting except for the very last one (there are 54 such threads).
