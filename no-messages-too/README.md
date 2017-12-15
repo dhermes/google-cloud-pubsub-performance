@@ -223,6 +223,40 @@ fashion:
 
 which is nowhere near the `182ms` timeout that is set.
 
+Running `nox -s no_messages_too(version='custom')` (which uses a backport
+of the [fix][6] onto `grpcio==1.7.3`) confirms that the spinlock is what
+is causing the CPU thrashing:
+
+```
+$ cat 0.29.4-custom-grpcio-1.7.4.dev1.txt | \
+>   grep 'CPU usage' | sort | uniq
+  CPU usage=0.0%
+  CPU usage=0.2%
+  CPU usage=0.4%
+  CPU usage=0.6%
+  CPU usage=0.8%
+  CPU usage=1.0%
+  CPU usage=1.2%
+  CPU usage=1.8%
+  CPU usage=2.0%
+  CPU usage=3.2%
+```
+
+Even with the spinlock addressed, the root cause is still present, i.e.
+**exactly** one of the spin workers checks the credentials metadata:
+
+```
+$ cat 0.29.4-custom-grpcio-1.7.4.dev1.txt | \
+>   grep 'Spin.* -> .*Plugin'
+Thread-gRPC-StopChannelSpin+41 -> Thread-gRPC-PluginGetMetadata+43
+$
+$
+$ cat 0.29.4-custom-grpcio-1.7.4.dev1.txt | \
+>   grep 'threadName=Thread-gRPC-StopChannelSpin' | \
+>   sort | uniq | wc -l
+54
+```
+
 ### Miscellaneous Notes
 
 There are still three unknown `pthread`-s that are alive throughout
