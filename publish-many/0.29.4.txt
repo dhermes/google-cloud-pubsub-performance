@@ -1,0 +1,95 @@
+timeLevel=00000441:DEBUG
+logger=google.auth.transport.requests
+threadName=Thread-gRPC-PluginGetMetadata
+Making request: POST https://accounts.google.com/o/oauth2/token
+----------------------------------------
+timeLevel=00000443:DEBUG
+logger=urllib3.connectionpool
+threadName=Thread-gRPC-PluginGetMetadata
+Starting new HTTPS connection (1): accounts.google.com
+----------------------------------------
+timeLevel=00000601:DEBUG
+logger=urllib3.connectionpool
+threadName=Thread-gRPC-PluginGetMetadata
+https://accounts.google.com:443 "POST /o/oauth2/token HTTP/1.1" 200 None
+----------------------------------------
+timeLevel=00001482:INFO
+logger=publish-many-repro
+threadName=MainThread
+Finished 2000
+----------------------------------------
+timeLevel=00001483:INFO
+logger=publish-many-repro
+threadName=MainThread
+Heartbeat:
+running=None
+done=None
+active threads (2) =
+  - MainThread
+  - Thread-MonitorBatchPublisher+
+exception=None
+Heartbeats=1
+Publish Futures Done=0 / 2000
+----------------------------------------
+timeLevel=00006491:INFO
+logger=publish-many-repro
+threadName=MainThread
+Heartbeat:
+running=None
+done=None
+active threads (1) =
+  - MainThread
+exception=None
+Heartbeats=2
+Publish Futures Done=0 / 2000
+----------------------------------------
+timeLevel=00011499:INFO
+logger=publish-many-repro
+threadName=MainThread
+Heartbeat:
+running=None
+done=None
+active threads (1) =
+  - MainThread
+exception=None
+Heartbeats=3
+Publish Futures Done=0 / 2000
+----------------------------------------
+timeLevel=00016507:INFO
+logger=publish-many-repro
+threadName=MainThread
+Heartbeat:
+running=None
+done=None
+active threads (1) =
+  - MainThread
+exception=None
+Heartbeats=4
+Publish Futures Done=0 / 2000
+----------------------------------------
+timeLevel=00021515:INFO
+logger=publish-many-repro
+threadName=MainThread
+Heartbeat:
+running=None
+done=None
+active threads (1) =
+  - MainThread
+exception=None
+Heartbeats=5
+Publish Futures Done=0 / 2000
+----------------------------------------
+timeLevel=00022095:DEBUG
+logger=publish-many-repro
+threadName=MainThread
+Thread / Parent relationships:
+MainThread -> Thread-gRPC-SubscribeMoot
+MainThread -> Thread-gRPC-SubscribeMoot+
+Thread-gRPC-SubscribeMoot+ -> Thread-gRPC-SpawnDelivery
+MainThread -> Thread-gRPC-PluginGetMetadata
+MainThread -> Thread-MonitorBatchPublisher
+MainThread -> Thread-CommitBatchPublisher
+MainThread -> Thread-MonitorBatchPublisher+
+MainThread -> Thread-CommitBatchPublisher+
+MainThread -> Thread-gRPC-PluginGetMetadata+
+----------------------------------------

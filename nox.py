@@ -97,3 +97,9 @@ def no_messages_too(session, version):
 @nox.parametrize('version', ('0.29.0', '0.29.1', '0.29.2'))
 def not_found(session, version):
     _run('not-found', session, version)
+
+
+@nox.session
+@nox.parametrize('version', ('0.29.4',))
+def publish_many(session, version):
+    _run('publish-many', session, version)
