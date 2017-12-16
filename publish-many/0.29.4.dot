@@ -1,33 +1,38 @@
 digraph G {
 rankdir=LR;
 subgraph  {
-}
-
-subgraph  {
 subgraph  {
 }
 
-"Thread-gRPC-SubscribeMoot+" -> "Thread-gRPC-SpawnDelivery";
+"Thread-gRPC-SubscribeMoot" -> "Thread-gRPC-SpawnDelivery";
 }
 
 subgraph  {
 }
 
 subgraph  {
+subgraph  {
+}
+
+"Thread-MonitorBatchPublisher" -> "Thread-gRPC-PluginGetMetadata+";
 }
 
 subgraph  {
 }
 
-MainThread -> "Thread-gRPC-SubscribeMoot";
-MainThread -> "Thread-gRPC-SubscribeMoot+";
+subgraph  {
+}
+
+MainThread -> "Thread-gRPC-SubscribeMoot"  [label=2];
 MainThread -> "Thread-gRPC-PluginGetMetadata"  [label=2];
-MainThread -> "Thread-MonitorBatchPublisher"  [label=2];
+MainThread -> "Thread-MonitorBatchPublisher";
+MainThread -> "Thread-MonitorBatchPublisher+"  [label=2];
 MainThread -> "Thread-CommitBatchPublisher"  [label=2];
-"Thread-gRPC-PluginGetMetadata" [label="gRPC-PluginGetMetadata"];
-"Thread-gRPC-SpawnDelivery" [label="gRPC-SpawnDelivery"];
-"Thread-MonitorBatchPublisher" [label=MonitorBatchPublisher];
-"Thread-CommitBatchPublisher" [label=CommitBatchPublisher];
-"Thread-gRPC-SubscribeMoot+" [label="gRPC-SubscribeMoot"];
 "Thread-gRPC-SubscribeMoot" [label="gRPC-SubscribeMoot"];
+"Thread-CommitBatchPublisher" [label=CommitBatchPublisher];
+"Thread-MonitorBatchPublisher" [label=MonitorBatchPublisher];
+"Thread-MonitorBatchPublisher+" [label=MonitorBatchPublisher];
+"Thread-gRPC-SpawnDelivery" [label="gRPC-SpawnDelivery"];
+"Thread-gRPC-PluginGetMetadata" [label="gRPC-PluginGetMetadata"];
+"Thread-gRPC-PluginGetMetadata+" [label="gRPC-PluginGetMetadata"];
 }

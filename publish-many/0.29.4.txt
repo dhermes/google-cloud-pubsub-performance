@@ -1,24 +1,24 @@
-timeLevel=00000441:DEBUG
+timeLevel=00000484:DEBUG
 logger=google.auth.transport.requests
 threadName=Thread-gRPC-PluginGetMetadata
 Making request: POST https://accounts.google.com/o/oauth2/token
 ----------------------------------------
-timeLevel=00000443:DEBUG
+timeLevel=00000487:DEBUG
 logger=urllib3.connectionpool
 threadName=Thread-gRPC-PluginGetMetadata
 Starting new HTTPS connection (1): accounts.google.com
 ----------------------------------------
-timeLevel=00000601:DEBUG
+timeLevel=00000692:DEBUG
 logger=urllib3.connectionpool
 threadName=Thread-gRPC-PluginGetMetadata
 https://accounts.google.com:443 "POST /o/oauth2/token HTTP/1.1" 200 None
 ----------------------------------------
-timeLevel=00001482:INFO
+timeLevel=00001374:INFO
 logger=publish-many-repro
 threadName=MainThread
-Finished 2000
+Finished creating 500 publish futures
 ----------------------------------------
-timeLevel=00001483:INFO
+timeLevel=00001375:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -26,12 +26,59 @@ running=None
 done=None
 active threads (2) =
   - MainThread
-  - Thread-MonitorBatchPublisher+
+  - Thread-MonitorBatchPublisher
+exception=None
+Heartbeats=1
+Publish Futures Done=0 / 500
+----------------------------------------
+timeLevel=00001564:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher
+gRPC Publish took 0.15490126609802246 seconds.
+----------------------------------------
+timeLevel=00006381:INFO
+logger=publish-many-repro
+threadName=MainThread
+Heartbeat:
+running=None
+done=None
+active threads (1) =
+  - MainThread
+exception=None
+Heartbeats=2
+Publish Futures Done=500 / 500
+----------------------------------------
+timeLevel=00011387:INFO
+logger=publish-many-repro
+threadName=MainThread
+Heartbeat:
+running=None
+done=None
+active threads (1) =
+  - MainThread
+exception=None
+Heartbeats=3
+Publish Futures Done=500 / 500
+----------------------------------------
+timeLevel=00011443:INFO
+logger=publish-many-repro
+threadName=MainThread
+Finished creating 2000 publish futures
+----------------------------------------
+timeLevel=00011444:INFO
+logger=publish-many-repro
+threadName=MainThread
+Heartbeat:
+running=None
+done=None
+active threads (2) =
+  - MainThread
+  - Thread-MonitorBatchPublisher++
 exception=None
 Heartbeats=1
 Publish Futures Done=0 / 2000
 ----------------------------------------
-timeLevel=00006491:INFO
+timeLevel=00016452:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -43,7 +90,7 @@ exception=None
 Heartbeats=2
 Publish Futures Done=0 / 2000
 ----------------------------------------
-timeLevel=00011499:INFO
+timeLevel=00021460:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -55,7 +102,7 @@ exception=None
 Heartbeats=3
 Publish Futures Done=0 / 2000
 ----------------------------------------
-timeLevel=00016507:INFO
+timeLevel=00026464:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -67,7 +114,7 @@ exception=None
 Heartbeats=4
 Publish Futures Done=0 / 2000
 ----------------------------------------
-timeLevel=00021515:INFO
+timeLevel=00031472:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -79,17 +126,20 @@ exception=None
 Heartbeats=5
 Publish Futures Done=0 / 2000
 ----------------------------------------
-timeLevel=00022095:DEBUG
+timeLevel=00031972:DEBUG
 logger=publish-many-repro
 threadName=MainThread
 Thread / Parent relationships:
 MainThread -> Thread-gRPC-SubscribeMoot
+Thread-gRPC-SubscribeMoot -> Thread-gRPC-SpawnDelivery
 MainThread -> Thread-gRPC-SubscribeMoot+
-Thread-gRPC-SubscribeMoot+ -> Thread-gRPC-SpawnDelivery
+Thread-gRPC-SubscribeMoot+ -> Thread-gRPC-SpawnDelivery+
 MainThread -> Thread-gRPC-PluginGetMetadata
 MainThread -> Thread-MonitorBatchPublisher
-MainThread -> Thread-CommitBatchPublisher
+Thread-MonitorBatchPublisher -> Thread-gRPC-PluginGetMetadata+
 MainThread -> Thread-MonitorBatchPublisher+
+MainThread -> Thread-CommitBatchPublisher
+MainThread -> Thread-MonitorBatchPublisher++
 MainThread -> Thread-CommitBatchPublisher+
-MainThread -> Thread-gRPC-PluginGetMetadata+
+MainThread -> Thread-gRPC-PluginGetMetadata++
 ----------------------------------------

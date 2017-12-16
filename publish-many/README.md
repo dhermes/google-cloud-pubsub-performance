@@ -10,7 +10,9 @@ and was [reported][1] shortly after.
 
 The publisher client simply stalls without finishing.
 
-From `0.29.4.svg`, we see that two `MonitorBatchPublisher` threads are
-spawned when only one is expected.
+From `0.29.4.svg`, we see that three `MonitorBatchPublisher` threads are
+spawned when only two are expected (one for each batch). This is because
+the second batch gets split into two and then a race condition keeps it
+from finishing.
 
 [1]: https://github.com/GoogleCloudPlatform/google-cloud-python/issues/4575

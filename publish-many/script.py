@@ -22,16 +22,17 @@ import utils
 
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
-NUM_PUBLISH = 2000
+NUM_PUBLISH_SUCCEED = 500
+NUM_PUBLISH_FAIL = 2000
 ONLY_DATA = b'Issue 4575'
 HEARTBEAT_ADDENDUM = """
 Heartbeats=%d
 Publish Futures Done=%s"""
 
 
-def publish_sync(publisher, topic_path, logger):
+def publish_sync(publisher, topic_path, num_publish, logger):
     futures = []
-    for index in six.moves.xrange(NUM_PUBLISH):
+    for index in six.moves.xrange(num_publish):
         index_str = '{:d}'.format(index)
         future = publisher.publish(
             topic_path,
@@ -40,7 +41,7 @@ def publish_sync(publisher, topic_path, logger):
         )
         futures.append(future)
 
-    logger.info('Finished %d', NUM_PUBLISH)
+    logger.info('Finished creating %d publish futures', num_publish)
 
     return futures
 
@@ -89,13 +90,25 @@ def main():
     # Create a topic.
     publisher.create_topic(topic_path)
 
-    # Set off sync job to publish some messages.
-    futures = publish_sync(publisher, topic_path, logger)
+    # Set off sync job to publish some messages (won't fail).
+    futures_succeed = publish_sync(
+        publisher, topic_path, NUM_PUBLISH_SUCCEED, logger)
 
     # The publisher is non-blocking, so we watch it from the main thread.
-    helper = HeartbeatHelper(futures)
+    helper_succeed = HeartbeatHelper(futures_succeed)
     sub_future = NotFuture()
-    utils.heartbeats_block(logger, sub_future, max_time=20, helper=helper)
+    utils.heartbeats_block(
+        logger, sub_future, max_time=10, helper=helper_succeed)
+
+    # Set off sync job to publish some messages (will fail, at least
+    # in `0.29.4`).
+    futures_fail = publish_sync(
+        publisher, topic_path, NUM_PUBLISH_FAIL, logger)
+
+    # The publisher is non-blocking, so we watch it from the main thread.
+    helper_fail = HeartbeatHelper(futures_fail)
+    utils.heartbeats_block(
+        logger, sub_future, max_time=20, helper=helper_fail)
 
     # Do clean-up.
     publisher.delete_topic(topic_path)
