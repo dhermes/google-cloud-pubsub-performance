@@ -17,6 +17,8 @@ import time
 
 import six
 
+from google.cloud.pubsub_v1.publisher.batch import thread
+
 import thread_names
 import utils
 
@@ -28,6 +30,33 @@ ONLY_DATA = b'Issue 4575'
 HEARTBEAT_ADDENDUM = """
 Heartbeats=%d
 Publish Futures Done=%d, Failed=%d, Total=%d"""
+BATCH_COMMIT = """\
+_commit(%r):
+caller = %s
+topic = %s
+status = %s
+len(messages) = %d
+len(futures) = %d"""
+
+
+class CustomBatch(thread.Batch):
+
+    LOGGER = None
+
+    def _commit(self, caller='commit'):
+        self.LOGGER.debug(
+            BATCH_COMMIT, self, caller, self._topic, self._status,
+            len(self._messages), len(self._futures))
+        return super(CustomBatch, self)._commit()
+
+    def monitor(self):
+        # NOTE: This is **mostly** copied from the `0.30.0` source,
+        #       but is done so that the logging statement can be
+        #       added for `0.29.4` and so that we can pass a custom
+        #       caller to ``_commit``.
+        time.sleep(self._settings.max_latency)
+        self.LOGGER.debug('Monitor is waking up')
+        return self._commit(caller='monitor')
 
 
 def publish_sync(publisher, topic_path, num_publish, logger):
@@ -87,11 +116,13 @@ class NotFuture(object):
 def main():
     # Do set-up.
     logger = utils.setup_logging(CURR_DIR)
+    CustomBatch.LOGGER = logger
     thread_names.monkey_patch()
 
     # Get clients and resource paths.
     topic_name = 't-repro-{}'.format(int(1000 * time.time()))
-    client_info = utils.get_client_info(topic_name, 's-unused')
+    client_info = utils.get_client_info(
+        topic_name, 's-unused', batch_class=CustomBatch)
     publisher, topic_path, _, _ = client_info
 
     # Create a topic.

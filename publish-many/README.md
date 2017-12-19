@@ -17,7 +17,9 @@ This issue had two components, most explained in the
 > seconds, a failure can occur if a new message is added to the batch
 > **during** the commit.
 
-In `0.29.4.txt`:
+### Failure Case (`0.29.4`):
+
+From our heartbeats:
 
 ```
 $ cat 0.29.4.txt | grep -n 'Done='
@@ -35,7 +37,71 @@ we see that **none** of the batches of `2000` messages get published. This
 is because a [bug in `commit()`][6] made it so that `_commit()` was
 [always a no-op][7] when called from `commit()`.
 
-However, in `0.30.0.txt` all messages are published:
+To see this:
+
+```
+----------------------------------------
+timeLevel=00001541:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher
+_commit(<__main__.CustomBatch object at 0x7fa55344a978>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705130612
+status = accepting messages
+len(messages) = 500
+len(futures) = 500
+----------------------------------------
+timeLevel=00011581:DEBUG
+logger=publish-many-repro
+threadName=Thread-CommitBatchPublisher
+_commit(<__main__.CustomBatch object at 0x7fa55344aa20>):
+caller = commit
+topic = projects/precise-truck-742/topics/t-repro-1513705130612
+status = in-flight
+len(messages) = 1000
+len(futures) = 999
+----------------------------------------
+timeLevel=00011588:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher+
+_commit(<__main__.CustomBatch object at 0x7fa55344aa20>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705130612
+status = in-flight
+len(messages) = 1000
+len(futures) = 1000
+----------------------------------------
+timeLevel=00011609:DEBUG
+logger=publish-many-repro
+threadName=Thread-CommitBatchPublisher+
+_commit(<__main__.CustomBatch object at 0x7fa5511be908>):
+caller = commit
+topic = projects/precise-truck-742/topics/t-repro-1513705130612
+status = in-flight
+len(messages) = 1000
+len(futures) = 999
+----------------------------------------
+timeLevel=00011631:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher++
+_commit(<__main__.CustomBatch object at 0x7fa5511be908>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705130612
+status = in-flight
+len(messages) = 1000
+len(futures) = 1000
+----------------------------------------
+```
+
+We see that `status` is already set to "in-flight" when `_commit`
+is called (but `_commit` is a no-op unless `status` is "accepting messages").
+
+We **also** see that in one of the cases, `len(messages)` is not equal
+to `len(futures)`, which is **another** sort of concurrency problem.
+
+### Success Case (`0.30.0`):
+
+All messages are published:
 
 ```
 $ cat 0.30.0.txt | grep -n 'Done='
@@ -47,7 +113,66 @@ $ cat 0.30.0.txt | grep -n 'Done='
 139:Publish Futures Done=2000, Failed=0, Total=2000
 151:Publish Futures Done=2000, Failed=0, Total=2000
 163:Publish Futures Done=2000, Failed=0, Total=2000
-``
+```
+
+To see the actual batches that get published:
+
+```
+----------------------------------------
+timeLevel=00001342:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher
+_commit(<__main__.CustomBatch object at 0x7f4f00c6a9b0>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705091078
+status = accepting messages
+len(messages) = 500
+len(futures) = 500
+----------------------------------------
+timeLevel=00011394:DEBUG
+logger=publish-many-repro
+threadName=Thread-CommitBatchPublisher
+_commit(<__main__.CustomBatch object at 0x7f4f00c6aa58>):
+caller = commit
+topic = projects/precise-truck-742/topics/t-repro-1513705091078
+status = starting
+len(messages) = 1000
+len(futures) = 1000
+----------------------------------------
+timeLevel=00011398:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher+
+_commit(<__main__.CustomBatch object at 0x7f4f00c6aa58>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705091078
+status = in progress
+len(messages) = 1000
+len(futures) = 1000
+----------------------------------------
+timeLevel=00011657:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher++
+_commit(<__main__.CustomBatch object at 0x7f4ef29b9a20>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705091078
+status = accepting messages
+len(messages) = 991
+len(futures) = 991
+----------------------------------------
+timeLevel=00011890:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher+++
+_commit(<__main__.CustomBatch object at 0x7f4ef29b9a58>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705091078
+status = accepting messages
+len(messages) = 9
+len(futures) = 9
+----------------------------------------
+```
+
+**NOTE**: The **size** of each batch be dependent on how much the system
+can accomplish in `0.05s`, hence is not deterministic.
 
 [1]: https://github.com/GoogleCloudPlatform/google-cloud-python/issues/4612
 [2]: https://github.com/GoogleCloudPlatform/google-cloud-python/issues/4613

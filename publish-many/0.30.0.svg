@@ -9,8 +9,8 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 310)">
 <title>G</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-310 606.554,-310 606.554,4 -4,4"/>
-<!-- Thread&#45;gRPC&#45;SubscribeMoot -->
-<g id="node1" class="node"><title>Thread&#45;gRPC&#45;SubscribeMoot</title>
+<!-- Thread&#45;gRPC&#45;SubscribeMoot+ -->
+<g id="node1" class="node"><title>Thread&#45;gRPC&#45;SubscribeMoot+</title>
 <ellipse fill="none" stroke="black" cx="255.531" cy="-288" rx="89.0842" ry="18"/>
 <text text-anchor="middle" x="255.531" y="-284.3" font-family="Times,serif" font-size="14.00">gRPC&#45;SubscribeMoot</text>
 </g>
@@ -19,8 +19,8 @@
 <ellipse fill="none" stroke="black" cx="499.213" cy="-288" rx="89.0842" ry="18"/>
 <text text-anchor="middle" x="499.213" y="-284.3" font-family="Times,serif" font-size="14.00">gRPC&#45;SpawnDelivery</text>
 </g>
-<!-- Thread&#45;gRPC&#45;SubscribeMoot&#45;&gt;Thread&#45;gRPC&#45;SpawnDelivery -->
-<g id="edge1" class="edge"><title>Thread&#45;gRPC&#45;SubscribeMoot&#45;&gt;Thread&#45;gRPC&#45;SpawnDelivery</title>
+<!-- Thread&#45;gRPC&#45;SubscribeMoot+&#45;&gt;Thread&#45;gRPC&#45;SpawnDelivery -->
+<g id="edge1" class="edge"><title>Thread&#45;gRPC&#45;SubscribeMoot+&#45;&gt;Thread&#45;gRPC&#45;SpawnDelivery</title>
 <path fill="none" stroke="black" d="M344.81,-288C362.672,-288 381.56,-288 399.748,-288"/>
 <polygon fill="black" stroke="black" points="399.769,-291.5 409.769,-288 399.769,-284.5 399.769,-291.5"/>
 </g>
@@ -39,73 +39,72 @@
 <path fill="none" stroke="black" d="M349.28,-234C361.136,-234 373.374,-234 385.501,-234"/>
 <polygon fill="black" stroke="black" points="385.652,-237.5 395.652,-234 385.652,-230.5 385.652,-237.5"/>
 </g>
-<!-- Thread&#45;CommitBatchPublisher+ -->
-<g id="node5" class="node"><title>Thread&#45;CommitBatchPublisher+</title>
+<!-- Thread&#45;CommitBatchPublisher -->
+<g id="node5" class="node"><title>Thread&#45;CommitBatchPublisher</title>
 <ellipse fill="none" stroke="black" cx="255.531" cy="-180" rx="94.4839" ry="18"/>
 <text text-anchor="middle" x="255.531" y="-176.3" font-family="Times,serif" font-size="14.00">CommitBatchPublisher</text>
 </g>
-<!-- Thread&#45;gRPC&#45;PluginGetMetadata+++ -->
-<g id="node6" class="node"><title>Thread&#45;gRPC&#45;PluginGetMetadata+++</title>
+<!-- Thread&#45;gRPC&#45;PluginGetMetadata++ -->
+<g id="node6" class="node"><title>Thread&#45;gRPC&#45;PluginGetMetadata++</title>
 <ellipse fill="none" stroke="black" cx="499.213" cy="-180" rx="103.182" ry="18"/>
 <text text-anchor="middle" x="499.213" y="-176.3" font-family="Times,serif" font-size="14.00">gRPC&#45;PluginGetMetadata</text>
 </g>
-<!-- Thread&#45;CommitBatchPublisher+&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata+++ -->
-<g id="edge3" class="edge"><title>Thread&#45;CommitBatchPublisher+&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata+++</title>
+<!-- Thread&#45;CommitBatchPublisher&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata++ -->
+<g id="edge3" class="edge"><title>Thread&#45;CommitBatchPublisher&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata++</title>
 <path fill="none" stroke="black" d="M349.972,-180C361.698,-180 373.788,-180 385.767,-180"/>
 <polygon fill="black" stroke="black" points="385.793,-183.5 395.793,-180 385.793,-176.5 385.793,-183.5"/>
 </g>
 <!-- MainThread -->
 <g id="node7" class="node"><title>MainThread</title>
-<ellipse fill="none" stroke="black" cx="54.5952" cy="-147" rx="54.6905" ry="18"/>
-<text text-anchor="middle" x="54.5952" y="-143.3" font-family="Times,serif" font-size="14.00">MainThread</text>
+<ellipse fill="none" stroke="black" cx="54.5952" cy="-145" rx="54.6905" ry="18"/>
+<text text-anchor="middle" x="54.5952" y="-141.3" font-family="Times,serif" font-size="14.00">MainThread</text>
+</g>
+<!-- MainThread&#45;&gt;Thread&#45;gRPC&#45;SubscribeMoot+ -->
+<g id="edge5" class="edge"><title>MainThread&#45;&gt;Thread&#45;gRPC&#45;SubscribeMoot+</title>
+<path fill="none" stroke="black" d="M65.5609,-162.9C80.8121,-188.603 112.404,-235.656 152.19,-261 159.873,-265.894 168.417,-269.905 177.202,-273.191"/>
+<polygon fill="black" stroke="black" points="176.204,-276.549 186.799,-276.48 178.474,-269.927 176.204,-276.549"/>
+</g>
+<!-- MainThread&#45;&gt;Thread&#45;MonitorBatchPublisher -->
+<g id="edge7" class="edge"><title>MainThread&#45;&gt;Thread&#45;MonitorBatchPublisher</title>
+<path fill="none" stroke="black" d="M77.1138,-161.622C95.9882,-175.493 124.646,-194.888 152.19,-207 161.623,-211.148 171.834,-214.774 182.03,-217.908"/>
+<polygon fill="black" stroke="black" points="181.194,-221.311 191.775,-220.764 183.162,-214.593 181.194,-221.311"/>
+<text text-anchor="middle" x="130.69" y="-200.8" font-family="Times,serif" font-size="14.00">3</text>
+</g>
+<!-- MainThread&#45;&gt;Thread&#45;CommitBatchPublisher -->
+<g id="edge9" class="edge"><title>MainThread&#45;&gt;Thread&#45;CommitBatchPublisher</title>
+<path fill="none" stroke="black" d="M102.993,-153.339C124.709,-157.16 151.037,-161.792 175.615,-166.116"/>
+<polygon fill="black" stroke="black" points="175.203,-169.597 185.658,-167.883 176.416,-162.703 175.203,-169.597"/>
+</g>
+<!-- Thread&#45;gRPC&#45;SubscribeMoot -->
+<g id="node8" class="node"><title>Thread&#45;gRPC&#45;SubscribeMoot</title>
+<ellipse fill="none" stroke="black" cx="255.531" cy="-126" rx="89.0842" ry="18"/>
+<text text-anchor="middle" x="255.531" y="-122.3" font-family="Times,serif" font-size="14.00">gRPC&#45;SubscribeMoot</text>
 </g>
 <!-- MainThread&#45;&gt;Thread&#45;gRPC&#45;SubscribeMoot -->
 <g id="edge4" class="edge"><title>MainThread&#45;&gt;Thread&#45;gRPC&#45;SubscribeMoot</title>
-<path fill="none" stroke="black" d="M65.8966,-165.011C81.3408,-190.358 112.92,-236.221 152.19,-261 159.894,-265.861 168.451,-269.852 177.243,-273.127"/>
-<polygon fill="black" stroke="black" points="176.251,-276.487 186.845,-276.408 178.514,-269.862 176.251,-276.487"/>
-<text text-anchor="middle" x="130.69" y="-249.8" font-family="Times,serif" font-size="14.00">2</text>
-</g>
-<!-- MainThread&#45;&gt;Thread&#45;MonitorBatchPublisher -->
-<g id="edge6" class="edge"><title>MainThread&#45;&gt;Thread&#45;MonitorBatchPublisher</title>
-<path fill="none" stroke="black" d="M77.9559,-163.582C96.8859,-176.943 125.177,-195.359 152.19,-207 161.718,-211.106 172.02,-214.714 182.292,-217.844"/>
-<polygon fill="black" stroke="black" points="181.526,-221.266 192.106,-220.699 183.482,-214.544 181.526,-221.266"/>
-<text text-anchor="middle" x="130.69" y="-200.8" font-family="Times,serif" font-size="14.00">2</text>
-</g>
-<!-- MainThread&#45;&gt;Thread&#45;CommitBatchPublisher+ -->
-<g id="edge9" class="edge"><title>MainThread&#45;&gt;Thread&#45;CommitBatchPublisher+</title>
-<path fill="none" stroke="black" d="M103.752,-154.988C124.781,-158.477 150.024,-162.664 173.787,-166.606"/>
-<polygon fill="black" stroke="black" points="173.426,-170.094 183.864,-168.278 174.572,-163.188 173.426,-170.094"/>
+<path fill="none" stroke="black" d="M107.344,-140.058C124.794,-138.391 144.813,-136.479 164.349,-134.613"/>
+<polygon fill="black" stroke="black" points="164.883,-138.078 174.505,-133.643 164.218,-131.11 164.883,-138.078"/>
 </g>
 <!-- Thread&#45;gRPC&#45;PluginGetMetadata -->
-<g id="node8" class="node"><title>Thread&#45;gRPC&#45;PluginGetMetadata</title>
-<ellipse fill="none" stroke="black" cx="255.531" cy="-126" rx="103.182" ry="18"/>
-<text text-anchor="middle" x="255.531" y="-122.3" font-family="Times,serif" font-size="14.00">gRPC&#45;PluginGetMetadata</text>
+<g id="node9" class="node"><title>Thread&#45;gRPC&#45;PluginGetMetadata</title>
+<ellipse fill="none" stroke="black" cx="255.531" cy="-72" rx="103.182" ry="18"/>
+<text text-anchor="middle" x="255.531" y="-68.3" font-family="Times,serif" font-size="14.00">gRPC&#45;PluginGetMetadata</text>
 </g>
 <!-- MainThread&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata -->
-<g id="edge5" class="edge"><title>MainThread&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata</title>
-<path fill="none" stroke="black" d="M106.434,-141.259C113.407,-140.489 120.475,-139.718 127.19,-139 136.456,-138.009 146.103,-136.994 155.758,-135.99"/>
-<polygon fill="black" stroke="black" points="156.221,-139.461 165.807,-134.948 155.499,-132.498 156.221,-139.461"/>
-<text text-anchor="middle" x="130.69" y="-142.8" font-family="Times,serif" font-size="14.00">2</text>
+<g id="edge6" class="edge"><title>MainThread&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata</title>
+<path fill="none" stroke="black" d="M84.1546,-129.666C103.071,-119.947 128.645,-107.626 152.19,-99 161.931,-95.4311 172.353,-92.1231 182.682,-89.1346"/>
+<polygon fill="black" stroke="black" points="183.85,-92.4422 192.531,-86.3692 181.957,-85.7029 183.85,-92.4422"/>
+<text text-anchor="middle" x="130.69" y="-112.8" font-family="Times,serif" font-size="14.00">2</text>
 </g>
-<!-- Thread&#45;CommitBatchPublisher -->
-<g id="node9" class="node"><title>Thread&#45;CommitBatchPublisher</title>
-<ellipse fill="none" stroke="black" cx="255.531" cy="-72" rx="94.4839" ry="18"/>
-<text text-anchor="middle" x="255.531" y="-68.3" font-family="Times,serif" font-size="14.00">CommitBatchPublisher</text>
-</g>
-<!-- MainThread&#45;&gt;Thread&#45;CommitBatchPublisher -->
-<g id="edge7" class="edge"><title>MainThread&#45;&gt;Thread&#45;CommitBatchPublisher</title>
-<path fill="none" stroke="black" d="M83.2401,-131.379C102.2,-121.139 128.176,-108.027 152.19,-99 162.462,-95.1388 173.511,-91.6097 184.415,-88.468"/>
-<polygon fill="black" stroke="black" points="185.67,-91.7516 194.362,-85.6932 183.789,-85.009 185.67,-91.7516"/>
-</g>
-<!-- Thread&#45;MonitorBatchPublisher++ -->
-<g id="node10" class="node"><title>Thread&#45;MonitorBatchPublisher++</title>
+<!-- Thread&#45;MonitorBatchPublisher+ -->
+<g id="node10" class="node"><title>Thread&#45;MonitorBatchPublisher+</title>
 <ellipse fill="none" stroke="black" cx="255.531" cy="-18" rx="93.6835" ry="18"/>
 <text text-anchor="middle" x="255.531" y="-14.3" font-family="Times,serif" font-size="14.00">MonitorBatchPublisher</text>
 </g>
-<!-- MainThread&#45;&gt;Thread&#45;MonitorBatchPublisher++ -->
-<g id="edge8" class="edge"><title>MainThread&#45;&gt;Thread&#45;MonitorBatchPublisher++</title>
-<path fill="none" stroke="black" d="M67.4612,-129.366C83.8204,-106.441 115.48,-66.7705 152.19,-45 159.909,-40.4226 168.407,-36.6091 177.106,-33.4346"/>
-<polygon fill="black" stroke="black" points="178.24,-36.7461 186.597,-30.2347 176.003,-30.1129 178.24,-36.7461"/>
+<!-- MainThread&#45;&gt;Thread&#45;MonitorBatchPublisher+ -->
+<g id="edge8" class="edge"><title>MainThread&#45;&gt;Thread&#45;MonitorBatchPublisher+</title>
+<path fill="none" stroke="black" d="M67.8263,-127.332C84.3553,-104.807 115.959,-66.2444 152.19,-45 159.931,-40.4609 168.443,-36.671 177.151,-33.5097"/>
+<polygon fill="black" stroke="black" points="178.282,-36.8218 186.648,-30.3203 176.054,-30.1859 178.282,-36.8218"/>
 </g>
 </g>
 </svg>

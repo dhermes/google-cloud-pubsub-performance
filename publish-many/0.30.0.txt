@@ -1,24 +1,24 @@
-timeLevel=00000558:DEBUG
+timeLevel=00000410:DEBUG
 logger=google.auth.transport.requests
 threadName=Thread-gRPC-PluginGetMetadata
 Making request: POST https://accounts.google.com/o/oauth2/token
 ----------------------------------------
-timeLevel=00000560:DEBUG
+timeLevel=00000413:DEBUG
 logger=urllib3.connectionpool
 threadName=Thread-gRPC-PluginGetMetadata
 Starting new HTTPS connection (1): accounts.google.com
 ----------------------------------------
-timeLevel=00000758:DEBUG
+timeLevel=00000598:DEBUG
 logger=urllib3.connectionpool
 threadName=Thread-gRPC-PluginGetMetadata
 https://accounts.google.com:443 "POST /o/oauth2/token HTTP/1.1" 200 None
 ----------------------------------------
-timeLevel=00001391:INFO
+timeLevel=00001332:INFO
 logger=publish-many-repro
 threadName=MainThread
 Finished creating 500 publish futures
 ----------------------------------------
-timeLevel=00001392:INFO
+timeLevel=00001333:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -31,17 +31,27 @@ exception=None
 Heartbeats=1
 Publish Futures Done=0, Failed=0, Total=500
 ----------------------------------------
-timeLevel=00001405:DEBUG
-logger=google.cloud.pubsub_v1.publisher.batch.thread
+timeLevel=00001342:DEBUG
+logger=publish-many-repro
 threadName=Thread-MonitorBatchPublisher
 Monitor is waking up
 ----------------------------------------
-timeLevel=00001582:DEBUG
+timeLevel=00001342:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher
+_commit(<__main__.CustomBatch object at 0x7f4f00c6a9b0>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705091078
+status = accepting messages
+len(messages) = 500
+len(futures) = 500
+----------------------------------------
+timeLevel=00001502:DEBUG
 logger=google.cloud.pubsub_v1.publisher.batch.thread
 threadName=Thread-MonitorBatchPublisher
-gRPC Publish took 0.17681336402893066 seconds.
+gRPC Publish took 0.15988850593566895 seconds.
 ----------------------------------------
-timeLevel=00006398:INFO
+timeLevel=00006338:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -53,7 +63,7 @@ exception=None
 Heartbeats=2
 Publish Futures Done=500, Failed=0, Total=500
 ----------------------------------------
-timeLevel=00011399:INFO
+timeLevel=00011344:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -65,56 +75,100 @@ exception=None
 Heartbeats=3
 Publish Futures Done=500, Failed=0, Total=500
 ----------------------------------------
-timeLevel=00011455:DEBUG
-logger=google.cloud.pubsub_v1.publisher.batch.thread
+timeLevel=00011394:DEBUG
+logger=publish-many-repro
+threadName=Thread-CommitBatchPublisher
+_commit(<__main__.CustomBatch object at 0x7f4f00c6aa58>):
+caller = commit
+topic = projects/precise-truck-742/topics/t-repro-1513705091078
+status = starting
+len(messages) = 1000
+len(futures) = 1000
+----------------------------------------
+timeLevel=00011398:DEBUG
+logger=publish-many-repro
 threadName=Thread-MonitorBatchPublisher+
 Monitor is waking up
 ----------------------------------------
-timeLevel=00011904:DEBUG
-logger=google.cloud.pubsub_v1.publisher.batch.thread
+timeLevel=00011398:DEBUG
+logger=publish-many-repro
 threadName=Thread-MonitorBatchPublisher+
-gRPC Publish took 0.44875121116638184 seconds.
+_commit(<__main__.CustomBatch object at 0x7f4f00c6aa58>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705091078
+status = in progress
+len(messages) = 1000
+len(futures) = 1000
 ----------------------------------------
-timeLevel=00011919:DEBUG
+timeLevel=00011587:DEBUG
 logger=google.cloud.pubsub_v1.publisher.batch.thread
 threadName=Thread-CommitBatchPublisher
+gRPC Publish took 0.1936206817626953 seconds.
+----------------------------------------
+timeLevel=00011602:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher+
 Batch is already in progress, exiting commit
 ----------------------------------------
-timeLevel=00011975:DEBUG
-logger=google.cloud.pubsub_v1.publisher.batch.thread
+timeLevel=00011657:DEBUG
+logger=publish-many-repro
 threadName=Thread-MonitorBatchPublisher++
 Monitor is waking up
 ----------------------------------------
-timeLevel=00011980:INFO
+timeLevel=00011657:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher++
+_commit(<__main__.CustomBatch object at 0x7f4ef29b9a20>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705091078
+status = accepting messages
+len(messages) = 991
+len(futures) = 991
+----------------------------------------
+timeLevel=00011832:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher++
+gRPC Publish took 0.17448210716247559 seconds.
+----------------------------------------
+timeLevel=00011844:INFO
 logger=publish-many-repro
 threadName=MainThread
 Finished creating 2000 publish futures
 ----------------------------------------
-timeLevel=00011981:INFO
+timeLevel=00011844:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
 running=None
 done=None
-active threads (3) =
+active threads (2) =
   - MainThread
-  - Thread-MonitorBatchPublisher++
-  - Thread-CommitBatchPublisher+
+  - Thread-MonitorBatchPublisher+++
 exception=None
 Heartbeats=1
-Publish Futures Done=1000, Failed=0, Total=2000
+Publish Futures Done=1991, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00012421:DEBUG
+timeLevel=00011890:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher+++
+Monitor is waking up
+----------------------------------------
+timeLevel=00011890:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher+++
+_commit(<__main__.CustomBatch object at 0x7f4ef29b9a58>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705091078
+status = accepting messages
+len(messages) = 9
+len(futures) = 9
+----------------------------------------
+timeLevel=00011977:DEBUG
 logger=google.cloud.pubsub_v1.publisher.batch.thread
-threadName=Thread-CommitBatchPublisher+
-gRPC Publish took 0.4445953369140625 seconds.
+threadName=Thread-MonitorBatchPublisher+++
+gRPC Publish took 0.08598566055297852 seconds.
 ----------------------------------------
-timeLevel=00012433:DEBUG
-logger=google.cloud.pubsub_v1.publisher.batch.thread
-threadName=Thread-MonitorBatchPublisher++
-Batch is already in progress, exiting commit
-----------------------------------------
-timeLevel=00016988:INFO
+timeLevel=00016852:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -126,7 +180,7 @@ exception=None
 Heartbeats=2
 Publish Futures Done=2000, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00021995:INFO
+timeLevel=00021859:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -138,7 +192,7 @@ exception=None
 Heartbeats=3
 Publish Futures Done=2000, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00027002:INFO
+timeLevel=00026863:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -150,7 +204,7 @@ exception=None
 Heartbeats=4
 Publish Futures Done=2000, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00032010:INFO
+timeLevel=00031871:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -162,22 +216,22 @@ exception=None
 Heartbeats=5
 Publish Futures Done=2000, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00032688:DEBUG
+timeLevel=00032524:DEBUG
 logger=publish-many-repro
 threadName=MainThread
 Thread / Parent relationships:
 MainThread -> Thread-gRPC-SubscribeMoot
-Thread-gRPC-SubscribeMoot -> Thread-gRPC-SpawnDelivery
 MainThread -> Thread-gRPC-SubscribeMoot+
-Thread-gRPC-SubscribeMoot+ -> Thread-gRPC-SpawnDelivery+
+Thread-gRPC-SubscribeMoot+ -> Thread-gRPC-SpawnDelivery
 MainThread -> Thread-gRPC-PluginGetMetadata
 MainThread -> Thread-MonitorBatchPublisher
 Thread-MonitorBatchPublisher -> Thread-gRPC-PluginGetMetadata+
 MainThread -> Thread-MonitorBatchPublisher+
 MainThread -> Thread-CommitBatchPublisher
-Thread-MonitorBatchPublisher+ -> Thread-gRPC-PluginGetMetadata++
+Thread-CommitBatchPublisher -> Thread-gRPC-PluginGetMetadata++
 MainThread -> Thread-MonitorBatchPublisher++
-MainThread -> Thread-CommitBatchPublisher+
-Thread-CommitBatchPublisher+ -> Thread-gRPC-PluginGetMetadata+++
-MainThread -> Thread-gRPC-PluginGetMetadata++++
+Thread-MonitorBatchPublisher++ -> Thread-gRPC-PluginGetMetadata+++
+MainThread -> Thread-MonitorBatchPublisher+++
+Thread-MonitorBatchPublisher+++ -> Thread-gRPC-PluginGetMetadata++++
+MainThread -> Thread-gRPC-PluginGetMetadata+++++
 ----------------------------------------

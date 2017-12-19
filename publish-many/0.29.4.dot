@@ -29,10 +29,10 @@ MainThread -> "Thread-MonitorBatchPublisher";
 MainThread -> "Thread-MonitorBatchPublisher+"  [label=2];
 MainThread -> "Thread-CommitBatchPublisher"  [label=2];
 "Thread-gRPC-PluginGetMetadata" [label="gRPC-PluginGetMetadata"];
+"Thread-gRPC-SubscribeMoot" [label="gRPC-SubscribeMoot"];
 "Thread-MonitorBatchPublisher" [label=MonitorBatchPublisher];
-"Thread-gRPC-PluginGetMetadata+" [label="gRPC-PluginGetMetadata"];
 "Thread-MonitorBatchPublisher+" [label=MonitorBatchPublisher];
 "Thread-CommitBatchPublisher" [label=CommitBatchPublisher];
+"Thread-gRPC-PluginGetMetadata+" [label="gRPC-PluginGetMetadata"];
 "Thread-gRPC-SpawnDelivery" [label="gRPC-SpawnDelivery"];
-"Thread-gRPC-SubscribeMoot" [label="gRPC-SubscribeMoot"];
 }

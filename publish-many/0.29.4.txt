@@ -1,24 +1,24 @@
-timeLevel=00000548:DEBUG
+timeLevel=00000345:DEBUG
 logger=google.auth.transport.requests
 threadName=Thread-gRPC-PluginGetMetadata
 Making request: POST https://accounts.google.com/o/oauth2/token
 ----------------------------------------
-timeLevel=00000550:DEBUG
+timeLevel=00000348:DEBUG
 logger=urllib3.connectionpool
 threadName=Thread-gRPC-PluginGetMetadata
 Starting new HTTPS connection (1): accounts.google.com
 ----------------------------------------
-timeLevel=00000912:DEBUG
+timeLevel=00000518:DEBUG
 logger=urllib3.connectionpool
 threadName=Thread-gRPC-PluginGetMetadata
 https://accounts.google.com:443 "POST /o/oauth2/token HTTP/1.1" 200 None
 ----------------------------------------
-timeLevel=00001920:INFO
+timeLevel=00001520:INFO
 logger=publish-many-repro
 threadName=MainThread
 Finished creating 500 publish futures
 ----------------------------------------
-timeLevel=00001921:INFO
+timeLevel=00001521:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -31,12 +31,27 @@ exception=None
 Heartbeats=1
 Publish Futures Done=0, Failed=0, Total=500
 ----------------------------------------
-timeLevel=00002096:DEBUG
+timeLevel=00001541:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher
+Monitor is waking up
+----------------------------------------
+timeLevel=00001541:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher
+_commit(<__main__.CustomBatch object at 0x7fa55344a978>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705130612
+status = accepting messages
+len(messages) = 500
+len(futures) = 500
+----------------------------------------
+timeLevel=00001692:DEBUG
 logger=google.cloud.pubsub_v1.publisher.batch.thread
 threadName=Thread-MonitorBatchPublisher
-gRPC Publish took 0.15324950218200684 seconds.
+gRPC Publish took 0.15133309364318848 seconds.
 ----------------------------------------
-timeLevel=00006926:INFO
+timeLevel=00006526:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -48,7 +63,7 @@ exception=None
 Heartbeats=2
 Publish Futures Done=500, Failed=0, Total=500
 ----------------------------------------
-timeLevel=00011928:INFO
+timeLevel=00011532:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -60,12 +75,47 @@ exception=None
 Heartbeats=3
 Publish Futures Done=500, Failed=0, Total=500
 ----------------------------------------
-timeLevel=00012011:INFO
+timeLevel=00011581:DEBUG
+logger=publish-many-repro
+threadName=Thread-CommitBatchPublisher
+_commit(<__main__.CustomBatch object at 0x7fa55344aa20>):
+caller = commit
+topic = projects/precise-truck-742/topics/t-repro-1513705130612
+status = in-flight
+len(messages) = 1000
+len(futures) = 999
+----------------------------------------
+timeLevel=00011588:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher+
+Monitor is waking up
+----------------------------------------
+timeLevel=00011588:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher+
+_commit(<__main__.CustomBatch object at 0x7fa55344aa20>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705130612
+status = in-flight
+len(messages) = 1000
+len(futures) = 1000
+----------------------------------------
+timeLevel=00011609:DEBUG
+logger=publish-many-repro
+threadName=Thread-CommitBatchPublisher+
+_commit(<__main__.CustomBatch object at 0x7fa5511be908>):
+caller = commit
+topic = projects/precise-truck-742/topics/t-repro-1513705130612
+status = in-flight
+len(messages) = 1000
+len(futures) = 999
+----------------------------------------
+timeLevel=00011609:INFO
 logger=publish-many-repro
 threadName=MainThread
 Finished creating 2000 publish futures
 ----------------------------------------
-timeLevel=00012011:INFO
+timeLevel=00011609:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -78,7 +128,22 @@ exception=None
 Heartbeats=1
 Publish Futures Done=0, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00017018:INFO
+timeLevel=00011631:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher++
+Monitor is waking up
+----------------------------------------
+timeLevel=00011631:DEBUG
+logger=publish-many-repro
+threadName=Thread-MonitorBatchPublisher++
+_commit(<__main__.CustomBatch object at 0x7fa5511be908>):
+caller = monitor
+topic = projects/precise-truck-742/topics/t-repro-1513705130612
+status = in-flight
+len(messages) = 1000
+len(futures) = 1000
+----------------------------------------
+timeLevel=00016616:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -90,7 +155,7 @@ exception=None
 Heartbeats=2
 Publish Futures Done=0, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00022022:INFO
+timeLevel=00021623:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -102,7 +167,7 @@ exception=None
 Heartbeats=3
 Publish Futures Done=0, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00027029:INFO
+timeLevel=00026626:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -114,7 +179,7 @@ exception=None
 Heartbeats=4
 Publish Futures Done=0, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00032031:INFO
+timeLevel=00031632:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -126,7 +191,7 @@ exception=None
 Heartbeats=5
 Publish Futures Done=0, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00032590:DEBUG
+timeLevel=00032082:DEBUG
 logger=publish-many-repro
 threadName=MainThread
 Thread / Parent relationships:

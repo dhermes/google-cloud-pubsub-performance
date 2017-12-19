@@ -159,13 +159,17 @@ def make_lease_deterministic(random_mod=None):
 
 
 def get_client_info(
-        topic_name, subscription_name, policy_class=None, credentials=None):
+        topic_name, subscription_name, credentials=None,
+        policy_class=None, batch_class=None):
     if credentials is None:
         credentials, project = google.auth.default(scopes=SCOPES)
     else:
         _, project = google.auth.default()
 
-    publisher = pubsub_v1.PublisherClient(credentials=credentials)
+    publisher_kwargs = {'credentials': credentials}
+    if batch_class is not None:
+        publisher_kwargs['batch_class'] = batch_class
+    publisher = pubsub_v1.PublisherClient(**publisher_kwargs)
     topic_path = publisher.topic_path(project, topic_name)
 
     if policy_class is None:

@@ -1,10 +1,13 @@
 digraph G {
 rankdir=LR;
 subgraph  {
+}
+
+subgraph  {
 subgraph  {
 }
 
-"Thread-gRPC-SubscribeMoot" -> "Thread-gRPC-SpawnDelivery";
+"Thread-gRPC-SubscribeMoot+" -> "Thread-gRPC-SpawnDelivery";
 }
 
 subgraph  {
@@ -21,28 +24,25 @@ subgraph  {
 }
 
 subgraph  {
-}
-
-subgraph  {
 subgraph  {
 }
 
-"Thread-CommitBatchPublisher+" -> "Thread-gRPC-PluginGetMetadata+++";
+"Thread-CommitBatchPublisher" -> "Thread-gRPC-PluginGetMetadata++";
 }
 
-MainThread -> "Thread-gRPC-SubscribeMoot"  [label=2];
+MainThread -> "Thread-gRPC-SubscribeMoot";
+MainThread -> "Thread-gRPC-SubscribeMoot+";
 MainThread -> "Thread-gRPC-PluginGetMetadata"  [label=2];
-MainThread -> "Thread-MonitorBatchPublisher"  [label=2];
+MainThread -> "Thread-MonitorBatchPublisher"  [label=3];
+MainThread -> "Thread-MonitorBatchPublisher+";
 MainThread -> "Thread-CommitBatchPublisher";
-MainThread -> "Thread-MonitorBatchPublisher++";
-MainThread -> "Thread-CommitBatchPublisher+";
-"Thread-CommitBatchPublisher+" [label=CommitBatchPublisher];
-"Thread-gRPC-SubscribeMoot" [label="gRPC-SubscribeMoot"];
-"Thread-gRPC-SpawnDelivery" [label="gRPC-SpawnDelivery"];
-"Thread-gRPC-PluginGetMetadata+" [label="gRPC-PluginGetMetadata"];
-"Thread-gRPC-PluginGetMetadata+++" [label="gRPC-PluginGetMetadata"];
-"Thread-MonitorBatchPublisher++" [label=MonitorBatchPublisher];
+"Thread-gRPC-PluginGetMetadata++" [label="gRPC-PluginGetMetadata"];
 "Thread-MonitorBatchPublisher" [label=MonitorBatchPublisher];
-"Thread-gRPC-PluginGetMetadata" [label="gRPC-PluginGetMetadata"];
 "Thread-CommitBatchPublisher" [label=CommitBatchPublisher];
+"Thread-gRPC-SpawnDelivery" [label="gRPC-SpawnDelivery"];
+"Thread-gRPC-PluginGetMetadata" [label="gRPC-PluginGetMetadata"];
+"Thread-MonitorBatchPublisher+" [label=MonitorBatchPublisher];
+"Thread-gRPC-SubscribeMoot+" [label="gRPC-SubscribeMoot"];
+"Thread-gRPC-SubscribeMoot" [label="gRPC-SubscribeMoot"];
+"Thread-gRPC-PluginGetMetadata+" [label="gRPC-PluginGetMetadata"];
 }
