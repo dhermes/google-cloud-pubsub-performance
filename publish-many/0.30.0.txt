@@ -1,24 +1,24 @@
-timeLevel=00000548:DEBUG
+timeLevel=00000558:DEBUG
 logger=google.auth.transport.requests
 threadName=Thread-gRPC-PluginGetMetadata
 Making request: POST https://accounts.google.com/o/oauth2/token
 ----------------------------------------
-timeLevel=00000550:DEBUG
+timeLevel=00000560:DEBUG
 logger=urllib3.connectionpool
 threadName=Thread-gRPC-PluginGetMetadata
 Starting new HTTPS connection (1): accounts.google.com
 ----------------------------------------
-timeLevel=00000912:DEBUG
+timeLevel=00000758:DEBUG
 logger=urllib3.connectionpool
 threadName=Thread-gRPC-PluginGetMetadata
 https://accounts.google.com:443 "POST /o/oauth2/token HTTP/1.1" 200 None
 ----------------------------------------
-timeLevel=00001920:INFO
+timeLevel=00001391:INFO
 logger=publish-many-repro
 threadName=MainThread
 Finished creating 500 publish futures
 ----------------------------------------
-timeLevel=00001921:INFO
+timeLevel=00001392:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -31,12 +31,17 @@ exception=None
 Heartbeats=1
 Publish Futures Done=0, Failed=0, Total=500
 ----------------------------------------
-timeLevel=00002096:DEBUG
+timeLevel=00001405:DEBUG
 logger=google.cloud.pubsub_v1.publisher.batch.thread
 threadName=Thread-MonitorBatchPublisher
-gRPC Publish took 0.15324950218200684 seconds.
+Monitor is waking up
 ----------------------------------------
-timeLevel=00006926:INFO
+timeLevel=00001582:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher
+gRPC Publish took 0.17681336402893066 seconds.
+----------------------------------------
+timeLevel=00006398:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -48,7 +53,7 @@ exception=None
 Heartbeats=2
 Publish Futures Done=500, Failed=0, Total=500
 ----------------------------------------
-timeLevel=00011928:INFO
+timeLevel=00011399:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -60,25 +65,56 @@ exception=None
 Heartbeats=3
 Publish Futures Done=500, Failed=0, Total=500
 ----------------------------------------
-timeLevel=00012011:INFO
+timeLevel=00011455:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher+
+Monitor is waking up
+----------------------------------------
+timeLevel=00011904:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher+
+gRPC Publish took 0.44875121116638184 seconds.
+----------------------------------------
+timeLevel=00011919:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-CommitBatchPublisher
+Batch is already in progress, exiting commit
+----------------------------------------
+timeLevel=00011975:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher++
+Monitor is waking up
+----------------------------------------
+timeLevel=00011980:INFO
 logger=publish-many-repro
 threadName=MainThread
 Finished creating 2000 publish futures
 ----------------------------------------
-timeLevel=00012011:INFO
+timeLevel=00011981:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
 running=None
 done=None
-active threads (2) =
+active threads (3) =
   - MainThread
   - Thread-MonitorBatchPublisher++
+  - Thread-CommitBatchPublisher+
 exception=None
 Heartbeats=1
-Publish Futures Done=0, Failed=0, Total=2000
+Publish Futures Done=1000, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00017018:INFO
+timeLevel=00012421:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-CommitBatchPublisher+
+gRPC Publish took 0.4445953369140625 seconds.
+----------------------------------------
+timeLevel=00012433:DEBUG
+logger=google.cloud.pubsub_v1.publisher.batch.thread
+threadName=Thread-MonitorBatchPublisher++
+Batch is already in progress, exiting commit
+----------------------------------------
+timeLevel=00016988:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -88,9 +124,9 @@ active threads (1) =
   - MainThread
 exception=None
 Heartbeats=2
-Publish Futures Done=0, Failed=0, Total=2000
+Publish Futures Done=2000, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00022022:INFO
+timeLevel=00021995:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -100,9 +136,9 @@ active threads (1) =
   - MainThread
 exception=None
 Heartbeats=3
-Publish Futures Done=0, Failed=0, Total=2000
+Publish Futures Done=2000, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00027029:INFO
+timeLevel=00027002:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -112,9 +148,9 @@ active threads (1) =
   - MainThread
 exception=None
 Heartbeats=4
-Publish Futures Done=0, Failed=0, Total=2000
+Publish Futures Done=2000, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00032031:INFO
+timeLevel=00032010:INFO
 logger=publish-many-repro
 threadName=MainThread
 Heartbeat:
@@ -124,9 +160,9 @@ active threads (1) =
   - MainThread
 exception=None
 Heartbeats=5
-Publish Futures Done=0, Failed=0, Total=2000
+Publish Futures Done=2000, Failed=0, Total=2000
 ----------------------------------------
-timeLevel=00032590:DEBUG
+timeLevel=00032688:DEBUG
 logger=publish-many-repro
 threadName=MainThread
 Thread / Parent relationships:
@@ -139,7 +175,9 @@ MainThread -> Thread-MonitorBatchPublisher
 Thread-MonitorBatchPublisher -> Thread-gRPC-PluginGetMetadata+
 MainThread -> Thread-MonitorBatchPublisher+
 MainThread -> Thread-CommitBatchPublisher
+Thread-MonitorBatchPublisher+ -> Thread-gRPC-PluginGetMetadata++
 MainThread -> Thread-MonitorBatchPublisher++
 MainThread -> Thread-CommitBatchPublisher+
-MainThread -> Thread-gRPC-PluginGetMetadata++
+Thread-CommitBatchPublisher+ -> Thread-gRPC-PluginGetMetadata+++
+MainThread -> Thread-gRPC-PluginGetMetadata++++
 ----------------------------------------

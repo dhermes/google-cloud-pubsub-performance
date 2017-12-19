@@ -100,6 +100,6 @@ def not_found(session, version):
 
 
 @nox.session
-@nox.parametrize('version', ('0.29.4',))
+@nox.parametrize('version', ('0.29.4', '0.30.0'))
 def publish_many(session, version):
     _run('publish-many', session, version)

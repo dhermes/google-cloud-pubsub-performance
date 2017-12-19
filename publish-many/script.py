@@ -27,7 +27,7 @@ NUM_PUBLISH_FAIL = 2000
 ONLY_DATA = b'Issue 4575'
 HEARTBEAT_ADDENDUM = """
 Heartbeats=%d
-Publish Futures Done=%s"""
+Publish Futures Done=%d, Failed=%d, Total=%d"""
 
 
 def publish_sync(publisher, topic_path, num_publish, logger):
@@ -55,9 +55,16 @@ class HeartbeatHelper(utils.HeartbeatHelper):
         self.template = HEARTBEAT_ADDENDUM
 
     @property
-    def done_status(self):
-        done_count = sum(future.done() for future in self.futures)
-        return '{} / {}'.format(done_count, len(self.futures))
+    def done_info(self):
+        done_count = 0
+        fail_count = 0
+        for future in self.futures:
+            if future._exception is not future._SENTINEL:
+                fail_count += 1
+            elif future._result is not future._SENTINEL:
+                done_count += 1
+
+        return done_count, fail_count, len(self.futures)
 
     def increment_done(self, future, done_count):
         self.num_heartbeats += 1
@@ -65,7 +72,7 @@ class HeartbeatHelper(utils.HeartbeatHelper):
 
     @property
     def extra_args(self):
-        return self.num_heartbeats, self.done_status
+        return (self.num_heartbeats,) + self.done_info
 
 
 class NotFuture(object):
