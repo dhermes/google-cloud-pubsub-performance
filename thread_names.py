@@ -21,6 +21,7 @@ from google.cloud import pubsub_v1
 from google.cloud.pubsub_v1.subscriber import policy
 import grpc._channel
 import grpc._common
+import grpc._plugin_wrapping
 
 import graph_theory
 import utils
@@ -118,8 +119,16 @@ def update_thread_kwargs(args, kwargs):
         kwargs['name'] = 'Thread-gRPC-SubscribeMoot'
         return
 
-    # Expected case 3: Spawned in ``plugin_get_metadata()`` in the Cython
-    # file ``grpc/_cython/_cygrpc/credentials.pyx.pxi``.
+    # Expected case 3A: Spawned in ``plugin_get_metadata()`` in the Cython
+    # file ``grpc/_cython/_cygrpc/credentials.pyx.pxi``. (This is "3A" since
+    # it represents the same "thing" but in ``grpcio ~= 1.8``.)
+    if isinstance(target, grpc._plugin_wrapping._Plugin):
+        kwargs['name'] = PLUGIN_THREAD_NAME
+        return
+
+    # Expected case 3B: Spawned in ``plugin_get_metadata()`` in the Cython
+    # file ``grpc/_cython/_cygrpc/credentials.pyx.pxi``. (This is "3B" since
+    # it represents the same "thing" but in ``grpcio ~= 1.7``.)
     target_repr = repr(target)
     if target_repr.startswith(PLUGIN_GET_METADATA_REPR):
         kwargs['name'] = PLUGIN_THREAD_NAME

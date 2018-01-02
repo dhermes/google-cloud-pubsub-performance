@@ -17,12 +17,12 @@ import os
 import nox
 
 
-GRPC = 'grpcio==1.7.3'
+GRPC = 'grpcio >= 1.8.2'
 GRPC_CUSTOM = os.path.abspath(
     'grpcio-1.7.4.dev1-cp36-cp36m-manylinux1_x86_64.whl')
 PINNED_DEPS = (
     GRPC,
-    'pydot==1.2.3',
+    'pydot == 1.2.3',
 )
 LOCAL = 'local'
 CUSTOM = 'custom'
@@ -88,9 +88,12 @@ def no_messages(session, version):
 
 
 @nox.session
-@nox.parametrize('version', ('0.29.4', CUSTOM))
+@nox.parametrize('version', ('0.29.4', CUSTOM, '0.30.1'))
 def no_messages_too(session, version):
-    _run('no-messages-too', session, version, 'psutil', 'boltons')
+    extra_deps = ('psutil', 'boltons')
+    if version == '0.29.4':
+        extra_deps += ('grpcio==1.7.3',)
+    _run('no-messages-too', session, version, *extra_deps)
 
 
 @nox.session

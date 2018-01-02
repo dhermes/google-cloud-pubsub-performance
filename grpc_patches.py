@@ -19,6 +19,7 @@ import grpc
 import grpc._channel
 import grpc._common
 from grpc._cython import cygrpc
+import pkg_resources
 
 
 LOGGER = logging.getLogger('grpc._channel')
@@ -41,7 +42,7 @@ def _consume_request_iterator(
         request_iterator, state, call, request_serializer):
     """Consume a request iterator.
 
-    This is borrowed from ``grpcio==1.7.3``.
+    This is borrowed from ``grpcio==1.8.2``.
     """
     event_handler = grpc._channel._event_handler(state, call, None)
 
@@ -78,7 +79,7 @@ def _consume_request_iterator(
                             ),
                         )
                         call.start_client_batch(
-                            cygrpc.Operations(operations),
+                            make_ops(operations),
                             event_handler,
                         )
                         state.due.add(cygrpc.OperationType.send_message)
@@ -109,7 +110,7 @@ def _consume_request_iterator(
                     ),
                 )
                 call.start_client_batch(
-                    cygrpc.Operations(operations), event_handler)
+                    make_ops(operations), event_handler)
                 state.due.add(cygrpc.OperationType.send_close_from_client)
             else:
                 LOGGER.debug(
@@ -131,7 +132,7 @@ def _consume_request_iterator(
 
 
 def event_repr(event):
-    # grpc._cython.cygrpc.Event
+    # event: grpc._cython.cygrpc.Event
     try:
         return EVENT_REPR_TEMPLATE.format(event=event)
     except:
@@ -144,7 +145,7 @@ def _run_channel_spin_thread(state):
     Used by ``_channel_managed_call_management`` in cases where
     a ``state`` has no ``managed_calls`` attached.
 
-    This is borrowed from ``grpcio==1.7.3``.
+    This is borrowed from ``grpcio==1.8.2``.
     """
 
     def channel_spin():
@@ -189,3 +190,10 @@ def patch(spin_also):
     grpc._channel._consume_request_iterator = _consume_request_iterator
     if spin_also:
         grpc._channel._run_channel_spin_thread = _run_channel_spin_thread
+
+
+try:
+    pkg_resources.require('grpcio >= 1.8.2')
+    make_ops = lambda operations: operations
+except pkg_resources.ResolutionError:
+    make_ops = cygrpc.Operations

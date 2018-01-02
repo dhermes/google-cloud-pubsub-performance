@@ -1,4 +1,4 @@
-## Status: Broken in `0.29.4` (confirmed in Ubuntu 16.04)
+## Status: Still Broken in `0.30.1` ([#4642][7] and [#4644][8])
 
 This example does the following:
 
@@ -330,7 +330,9 @@ that kicks off the thrashing (i.e. where CPU usage goes to 100%).
 
 [1]: https://github.com/GoogleCloudPlatform/google-cloud-python/issues/4563
 [2]: https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/
-[3]: https://github.com/grpc/grpc/blob/v1.8.0/src/python/grpcio/grpc/_channel.py#L710-L711
-[4]: https://github.com/grpc/grpc/blob/v1.8.0/src/core/lib/support/thd_posix.cc#L58
+[3]: https://github.com/grpc/grpc/blob/v1.8.2/src/python/grpcio/grpc/_channel.py#L710-L711
+[4]: https://github.com/grpc/grpc/blob/v1.8.2/src/core/lib/support/thd_posix.cc#L58
 [5]: https://github.com/grpc/grpc/issues/9688
 [6]: https://github.com/grpc/grpc/pull/13665
+[7]: https://github.com/GoogleCloudPlatform/google-cloud-python/pull/4642
+[8]: https://github.com/GoogleCloudPlatform/google-cloud-python/pull/4644
