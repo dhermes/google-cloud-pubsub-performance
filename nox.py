@@ -65,11 +65,9 @@ def _run(directory, session, version, *extra_deps):
     session.install(*all_deps)
 
     if no_binary:
-        # NOTE: I have no idea why I must include ``grpcio`` twice in this
-        #       command but it fails silently without.
         session.run(
             'pip', 'install', GRPC,
-            '--ignore-installed', '--no-binary', 'grpcio')
+            '--ignore-installed', '--no-binary=grpcio')
 
     # Add current directory to PYTHONPATH so that ``thread_names.py`` and
     # ``utils.py`` can be imported.
