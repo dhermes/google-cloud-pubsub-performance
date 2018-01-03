@@ -1,4 +1,4 @@
-## Status: Still Broken in `0.30.1` ([#4642][7] and [#4644][8])
+## Status: Partially Fixed in `0.30.1` ([#4642][7] and [#4644][8])
 
 This example does the following:
 

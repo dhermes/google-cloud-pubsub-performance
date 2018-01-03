@@ -9,8 +9,8 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 364)">
 <title>G</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-364 975.025,-364 975.025,4 -4,4"/>
-<!-- Thread&#45;gRPC&#45;SubscribeMoot+ -->
-<g id="node1" class="node"><title>Thread&#45;gRPC&#45;SubscribeMoot+</title>
+<!-- Thread&#45;gRPC&#45;SubscribeMoot -->
+<g id="node1" class="node"><title>Thread&#45;gRPC&#45;SubscribeMoot</title>
 <ellipse fill="none" stroke="black" cx="292.578" cy="-318" rx="89.0842" ry="18"/>
 <text text-anchor="middle" x="292.578" y="-314.3" font-family="Times,serif" font-size="14.00">gRPC&#45;SubscribeMoot</text>
 </g>
@@ -19,23 +19,23 @@
 <ellipse fill="none" stroke="black" cx="605.155" cy="-342" rx="89.0842" ry="18"/>
 <text text-anchor="middle" x="605.155" y="-338.3" font-family="Times,serif" font-size="14.00">gRPC&#45;SpawnDelivery</text>
 </g>
-<!-- Thread&#45;gRPC&#45;SubscribeMoot+&#45;&gt;Thread&#45;gRPC&#45;SpawnDelivery -->
-<g id="edge1" class="edge"><title>Thread&#45;gRPC&#45;SubscribeMoot+&#45;&gt;Thread&#45;gRPC&#45;SpawnDelivery</title>
+<!-- Thread&#45;gRPC&#45;SubscribeMoot&#45;&gt;Thread&#45;gRPC&#45;SpawnDelivery -->
+<g id="edge1" class="edge"><title>Thread&#45;gRPC&#45;SubscribeMoot&#45;&gt;Thread&#45;gRPC&#45;SpawnDelivery</title>
 <path fill="none" stroke="black" d="M375.991,-324.369C417.667,-327.589 468.399,-331.509 511.433,-334.835"/>
 <polygon fill="black" stroke="black" points="511.386,-338.342 521.626,-335.623 511.925,-331.362 511.386,-338.342"/>
 </g>
-<!-- Thread&#45;gRPC&#45;StopChannelSpin++++++++++++++++++++++++++++++++++++++ -->
-<g id="node3" class="node"><title>Thread&#45;gRPC&#45;StopChannelSpin++++++++++++++++++++++++++++++++++++++</title>
+<!-- Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++++++++++++ -->
+<g id="node3" class="node"><title>Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++++++++++++</title>
 <ellipse fill="none" stroke="black" cx="605.155" cy="-288" rx="96.3833" ry="18"/>
 <text text-anchor="middle" x="605.155" y="-284.3" font-family="Times,serif" font-size="14.00">gRPC&#45;StopChannelSpin</text>
 </g>
-<!-- Thread&#45;gRPC&#45;PluginGetMetadata++++++++++++++++++++++++++++++++++++++++ -->
-<g id="node4" class="node"><title>Thread&#45;gRPC&#45;PluginGetMetadata++++++++++++++++++++++++++++++++++++++++</title>
+<!-- Thread&#45;gRPC&#45;PluginGetMetadata+++++++++++++++++++++++++++++++++++++++++++ -->
+<g id="node4" class="node"><title>Thread&#45;gRPC&#45;PluginGetMetadata+++++++++++++++++++++++++++++++++++++++++++</title>
 <ellipse fill="none" stroke="black" cx="867.685" cy="-288" rx="103.182" ry="18"/>
 <text text-anchor="middle" x="867.685" y="-284.3" font-family="Times,serif" font-size="14.00">gRPC&#45;PluginGetMetadata</text>
 </g>
-<!-- Thread&#45;gRPC&#45;StopChannelSpin++++++++++++++++++++++++++++++++++++++&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata++++++++++++++++++++++++++++++++++++++++ -->
-<g id="edge2" class="edge"><title>Thread&#45;gRPC&#45;StopChannelSpin++++++++++++++++++++++++++++++++++++++&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata++++++++++++++++++++++++++++++++++++++++</title>
+<!-- Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++++++++++++&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata+++++++++++++++++++++++++++++++++++++++++++ -->
+<g id="edge2" class="edge"><title>Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++++++++++++&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata+++++++++++++++++++++++++++++++++++++++++++</title>
 <path fill="none" stroke="black" d="M701.687,-288C718.683,-288 736.53,-288 753.95,-288"/>
 <polygon fill="black" stroke="black" points="754.149,-291.5 764.149,-288 754.149,-284.5 754.149,-291.5"/>
 </g>
@@ -44,8 +44,8 @@
 <ellipse fill="none" stroke="black" cx="292.578" cy="-234" rx="115.88" ry="18"/>
 <text text-anchor="middle" x="292.578" y="-230.3" font-family="Times,serif" font-size="14.00">ConsumeBidirectionalStream</text>
 </g>
-<!-- Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;StopChannelSpin++++++++++++++++++++++++++++++++++++++ -->
-<g id="edge6" class="edge"><title>Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;StopChannelSpin++++++++++++++++++++++++++++++++++++++</title>
+<!-- Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++++++++++++ -->
+<g id="edge6" class="edge"><title>Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;StopChannelSpin+++++++++++++++++++++++++++++++++++++++++</title>
 <path fill="none" stroke="black" d="M370.35,-247.348C417.138,-255.483 476.832,-265.862 524.192,-274.097"/>
 <polygon fill="black" stroke="black" points="523.649,-277.555 534.101,-275.82 524.849,-270.658 523.649,-277.555"/>
 </g>
@@ -58,7 +58,7 @@
 <g id="edge3" class="edge"><title>Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;PluginGetMetadata++</title>
 <path fill="none" stroke="black" d="M408.343,-234C435.463,-234 464.356,-234 491.387,-234"/>
 <polygon fill="black" stroke="black" points="491.648,-237.5 501.648,-234 491.648,-230.5 491.648,-237.5"/>
-<text text-anchor="middle" x="457.965" y="-237.8" font-family="Times,serif" font-size="14.00">50</text>
+<text text-anchor="middle" x="457.965" y="-237.8" font-family="Times,serif" font-size="14.00">55</text>
 </g>
 <!-- Thread&#45;gRPC&#45;StopChannelSpin -->
 <g id="node7" class="node"><title>Thread&#45;gRPC&#45;StopChannelSpin</title>
@@ -69,7 +69,7 @@
 <g id="edge4" class="edge"><title>Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;StopChannelSpin</title>
 <path fill="none" stroke="black" d="M370.35,-220.652C417.138,-212.517 476.832,-202.138 524.192,-193.903"/>
 <polygon fill="black" stroke="black" points="524.849,-197.342 534.101,-192.18 523.649,-190.445 524.849,-197.342"/>
-<text text-anchor="middle" x="457.965" y="-209.8" font-family="Times,serif" font-size="14.00">50</text>
+<text text-anchor="middle" x="457.965" y="-209.8" font-family="Times,serif" font-size="14.00">55</text>
 </g>
 <!-- Thread&#45;gRPC&#45;ConsumeRequestIterator -->
 <g id="node8" class="node"><title>Thread&#45;gRPC&#45;ConsumeRequestIterator</title>
@@ -80,15 +80,15 @@
 <g id="edge5" class="edge"><title>Thread&#45;ConsumeBidirectionalStream&#45;&gt;Thread&#45;gRPC&#45;ConsumeRequestIterator</title>
 <path fill="none" stroke="black" d="M389.113,-224.04C404.385,-220.073 419.555,-214.583 432.965,-207 443.375,-201.113 442.867,-195.799 450.965,-187 465.018,-171.731 464.931,-163.265 482.965,-153 490.656,-148.623 498.996,-144.955 507.58,-141.882"/>
 <polygon fill="black" stroke="black" points="508.952,-145.115 517.353,-138.659 506.76,-138.467 508.952,-145.115"/>
-<text text-anchor="middle" x="457.965" y="-190.8" font-family="Times,serif" font-size="14.00">51</text>
+<text text-anchor="middle" x="457.965" y="-190.8" font-family="Times,serif" font-size="14.00">56</text>
 </g>
 <!-- MainThread -->
 <g id="node9" class="node"><title>MainThread</title>
 <ellipse fill="none" stroke="black" cx="54.5952" cy="-153" rx="54.6905" ry="18"/>
 <text text-anchor="middle" x="54.5952" y="-149.3" font-family="Times,serif" font-size="14.00">MainThread</text>
 </g>
-<!-- MainThread&#45;&gt;Thread&#45;gRPC&#45;SubscribeMoot+ -->
-<g id="edge8" class="edge"><title>MainThread&#45;&gt;Thread&#45;gRPC&#45;SubscribeMoot+</title>
+<!-- MainThread&#45;&gt;Thread&#45;gRPC&#45;SubscribeMoot -->
+<g id="edge7" class="edge"><title>MainThread&#45;&gt;Thread&#45;gRPC&#45;SubscribeMoot</title>
 <path fill="none" stroke="black" d="M67.4019,-170.569C83.9272,-193.996 116.019,-235.469 152.19,-261 175.865,-277.711 205.169,-290.636 230.789,-299.922"/>
 <polygon fill="black" stroke="black" points="229.814,-303.289 240.409,-303.303 232.135,-296.685 229.814,-303.289"/>
 </g>
@@ -97,13 +97,13 @@
 <path fill="none" stroke="black" d="M79.5707,-169.257C98.5119,-181.38 126.026,-197.433 152.19,-207 166.243,-212.138 181.469,-216.358 196.521,-219.806"/>
 <polygon fill="black" stroke="black" points="195.856,-223.243 206.373,-221.962 197.353,-216.405 195.856,-223.243"/>
 </g>
-<!-- Thread&#45;gRPC&#45;SubscribeMoot -->
-<g id="node10" class="node"><title>Thread&#45;gRPC&#45;SubscribeMoot</title>
+<!-- Thread&#45;gRPC&#45;SubscribeMoot+ -->
+<g id="node10" class="node"><title>Thread&#45;gRPC&#45;SubscribeMoot+</title>
 <ellipse fill="none" stroke="black" cx="292.578" cy="-180" rx="89.0842" ry="18"/>
 <text text-anchor="middle" x="292.578" y="-176.3" font-family="Times,serif" font-size="14.00">gRPC&#45;SubscribeMoot</text>
 </g>
-<!-- MainThread&#45;&gt;Thread&#45;gRPC&#45;SubscribeMoot -->
-<g id="edge7" class="edge"><title>MainThread&#45;&gt;Thread&#45;gRPC&#45;SubscribeMoot</title>
+<!-- MainThread&#45;&gt;Thread&#45;gRPC&#45;SubscribeMoot+ -->
+<g id="edge8" class="edge"><title>MainThread&#45;&gt;Thread&#45;gRPC&#45;SubscribeMoot+</title>
 <path fill="none" stroke="black" d="M106.509,-158.825C135.12,-162.099 171.609,-166.274 204.612,-170.05"/>
 <polygon fill="black" stroke="black" points="204.397,-173.548 214.73,-171.207 205.192,-166.593 204.397,-173.548"/>
 </g>

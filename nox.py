@@ -18,6 +18,8 @@ import nox
 
 
 GRPC = 'grpcio >= 1.8.2'
+GRPC_OLD = 'grpcio == 1.7.3'
+GRPC_NO_BINARY = object()
 GRPC_CUSTOM = os.path.abspath(
     'grpcio-1.7.4.dev1-cp36-cp36m-manylinux1_x86_64.whl')
 PINNED_DEPS = (
@@ -40,15 +42,34 @@ def _run(directory, session, version, *extra_deps):
     elif version == CUSTOM:
         all_deps = tuple(dep for dep in all_deps if dep != GRPC)
         all_deps += (GRPC_CUSTOM,)
-        session.install('google-cloud-pubsub==0.29.4')
+        session.install('google-cloud-pubsub == 0.29.4')
     else:
-        pubsub_dep = 'google-cloud-pubsub=={}'.format(version)
+        pubsub_dep = 'google-cloud-pubsub == {}'.format(version)
         session.install(pubsub_dep)
+
+    # Remove ``grpcio`` duplicates.
+    if GRPC_OLD in all_deps:
+        all_deps = tuple(dep for dep in all_deps if dep != GRPC)
+
+    # Special handling for ``GRPC_NO_BINARY`` sentinel.
+    if GRPC_NO_BINARY in all_deps:
+        all_deps = tuple(dep for dep in all_deps
+                         if dep not in (GRPC, GRPC_NO_BINARY))
+        no_binary = True
+    else:
+        no_binary = False
 
     # NOTE: We install pinned dependencies **after** ``google-cloud-pubsub``
     #       since some of them may override dependencies of
     #       ``google-cloud-pubsub``.
     session.install(*all_deps)
+
+    if no_binary:
+        # NOTE: I have no idea why I must include ``grpcio`` twice in this
+        #       command but it fails silently without.
+        session.run(
+            'pip', 'install', GRPC,
+            '--ignore-installed', '--no-binary', 'grpcio')
 
     # Add current directory to PYTHONPATH so that ``thread_names.py`` and
     # ``utils.py`` can be imported.
@@ -92,7 +113,9 @@ def no_messages(session, version):
 def no_messages_too(session, version):
     extra_deps = ('psutil', 'boltons')
     if version == '0.29.4':
-        extra_deps += ('grpcio==1.7.3',)
+        extra_deps += (GRPC_OLD,)
+    if version == '0.30.1':
+        extra_deps += (GRPC_NO_BINARY,)
     _run('no-messages-too', session, version, *extra_deps)
 
 
